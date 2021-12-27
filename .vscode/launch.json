@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "parser.py",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/parser.py",
@@ -18,7 +18,7 @@
             "request": "launch",
             "module": "sphinx",
             "args": [
-                ".",
+                "src",
                 "build"
             ],
             "justMyCode": false

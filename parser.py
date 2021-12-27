@@ -7,12 +7,15 @@ logger = logging.getLogger(__name__)
 HERE = pathlib.Path(__file__).absolute().parent
 
 
-def main():
+def main(src: pathlib.Path, build: pathlib.Path):
+    static = src / '_static'
+    static.mkdir(exist_ok=True)
+
     app = sphinx.application.Sphinx(
-        srcdir=str(HERE),
-        confdir=str(HERE),
-        outdir=str(HERE / 'build'),
-        doctreedir=str(HERE / 'build/.doctree'),
+        srcdir=str(src),
+        confdir=str(src),
+        outdir=str(build),
+        doctreedir=str(build / '.doctree'),
         buildername='html'
     )
 
@@ -28,4 +31,4 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG,
                         format='[%(levelname)s]%(name)s:%(message)s')
     logging.lastResort = logging.NullHandler()
-    main()
+    main(HERE / 'src', HERE / 'build')
