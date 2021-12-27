@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'hello'
-copyright = '2021, mr'
-author = 'mr'
+project = 'read sphinx'
+copyright = '2021, ousttrue'
+author = 'ousttrue'
 
 
 # -- General configuration ---------------------------------------------------
@@ -28,6 +28,7 @@ author = 'mr'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "myst_parser"
 ]
 
 # Add any paths that contain templates here, relative to this directory.

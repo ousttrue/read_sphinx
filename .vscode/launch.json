@@ -13,6 +13,25 @@
             "justMyCode": false
         },
         {
+            "name": "print_env",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/print_env.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "dump_doctree",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/dump_doctree.py",
+            "args": [
+                "build/.doctrees/index.doctree"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
             "name": "Sphinx",
             "type": "python",
             "request": "launch",

@@ -15,7 +15,7 @@ def main(src: pathlib.Path, build: pathlib.Path):
         srcdir=str(src),
         confdir=str(src),
         outdir=str(build),
-        doctreedir=str(build / '.doctree'),
+        doctreedir=str(build / '.doctrees'),
         buildername='html'
     )
 
@@ -24,7 +24,8 @@ def main(src: pathlib.Path, build: pathlib.Path):
     for handler in logger.handlers[:]:
         logger.removeHandler(handler)
 
-    app.build(force_all=True)
+    # app.build(force_all=True)
+    app.build(filenames=['src/index.md'])
 
 
 if __name__ == '__main__':
