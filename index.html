@@ -34,25 +34,32 @@
             
   <section class="tex2jax_ignore mathjax_ignore" id="sphinx">
 <h1>Sphinx のソースを読む<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>parse</p></li>
+<li><p>write (env + doctree)</p></li>
+<li><p>build (jinja2 template)</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="run.html">動作</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="run.html#id2">初期化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="run.html#build">build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#venv">venv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#sphinx-application-sphinx">sphinx.application.Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#sphinx-registry-sphinxcomponentregistry-create-builder">sphinx.registry.SphinxComponentRegistry.create_builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#sphinx-builders-standalonehtmlbuilder">sphinx.builders.StandaloneHTMLBuilder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#sphinx-jijja2glue-builtintemplateloader">sphinx.jijja2glue.BuiltinTemplateLoader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#read">read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#write">write</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="builder.html">Builder</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#read">read</a></li>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#write">write</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doctree.html">doctree</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doctree.html#sphinx-addnodes-document">sphinx.addnodes.document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctree.html#docutils-nodes-document">docutils.nodes.document</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="document.html">document</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="document.html#sphinx-addnodes-document">sphinx.addnodes.document</a></li>
-<li class="toctree-l2"><a class="reference internal" href="document.html#docutils-nodes-document">docutils.nodes.document</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="event.html">Event</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme.html">theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extension.html">拡張</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autodoc.html">autodoc</a></li>
 </ul>
 </div>
 <section id="id1">
@@ -91,9 +98,10 @@
 <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="run.html">動作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="builder.html">Builder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="document.html">document</a></li>
-<li class="toctree-l1"><a class="reference internal" href="event.html">Event</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doctree.html">doctree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme.html">theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extension.html">拡張</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autodoc.html">autodoc</a></li>
 </ul>
 
 <div class="relations">

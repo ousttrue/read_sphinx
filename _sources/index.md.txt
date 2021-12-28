@@ -1,12 +1,17 @@
 # Sphinx のソースを読む
 
+* parse
+* write (env + doctree)
+* build (jinja2 template)
+
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
 run
-builder
-document
-event
+doctree
+theme
+extension
+autodoc
 ```
 
 ## 参考

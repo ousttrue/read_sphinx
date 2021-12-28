@@ -1,4 +1,4 @@
-# document
+# doctree
 
 <https://docutils.sourceforge.io/>
   * https://docutils.sourceforge.io/docs/index.html#ref-reference-material-for-all-groups
