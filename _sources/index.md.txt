@@ -7,11 +7,11 @@
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
-run
-doctree
-theme
-extension
-autodoc
+run/run
+doctree/doctree
+theme/theme
+extension/extension
+autodoc/autodoc
 ```
 
 ## 参考
