@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>フェーズ 4: 書き出し &#8212; read sphinx  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="docutil" href="../docutils/index.html" />
+    <link rel="prev" title="フェーズ 3: 解決" href="resolve.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../docutils/index.html" title="docutil"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="resolve.html" title="フェーズ 3: 解決"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">read sphinx  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">動作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">フェーズ 4: 書き出し</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>フェーズ 4: 書き出し<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">15.</span> <span class="n">Generate</span> <span class="n">output</span> <span class="n">files</span>
+<span class="mf">16.</span> <span class="n">event</span><span class="o">.</span><span class="n">build</span><span class="o">-</span><span class="n">finished</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">exception</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="sphinx-jijja2glue-builtintemplateloader">
+<h2>sphinx.jijja2glue.BuiltinTemplateLoader<a class="headerlink" href="#sphinx-jijja2glue-builtintemplateloader" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">jinja2.environment.get_template</span></code> <code class="docutils literal notranslate"><span class="pre">page.html</span></code></p>
+</section>
+<section id="write">
+<h2>write<a class="headerlink" href="#write" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">docname</span> <span class="ow">in</span> <span class="n">status_iterator</span><span class="p">(</span><span class="n">docnames</span><span class="p">,</span> <span class="n">__</span><span class="p">(</span><span class="s1">&#39;writing output... &#39;</span><span class="p">),</span> <span class="s2">&quot;darkgreen&quot;</span><span class="p">,</span>
+                                <span class="nb">len</span><span class="p">(</span><span class="n">docnames</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">verbosity</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">BuildPhase</span><span class="o">.</span><span class="n">RESOLVING</span>
+    <span class="c1"># doctree を env から得る</span>
+    <span class="n">doctree</span><span class="p">:</span> <span class="n">docutils</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_and_resolve_doctree</span><span class="p">(</span><span class="n">docname</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">BuildPhase</span><span class="o">.</span><span class="n">WRITING</span>
+    <span class="c1"># doctree を write する</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">write_doc_serialized</span><span class="p">(</span><span class="n">docname</span><span class="p">,</span> <span class="n">doctree</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">write_doc</span><span class="p">(</span><span class="n">docname</span><span class="p">,</span> <span class="n">doctree</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">フェーズ 4: 書き出し</a><ul>
+<li><a class="reference internal" href="#sphinx-jijja2glue-builtintemplateloader">sphinx.jijja2glue.BuiltinTemplateLoader</a></li>
+<li><a class="reference internal" href="#write">write</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="resolve.html"
+                        title="previous chapter">フェーズ 3: 解決</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../docutils/index.html"
+                        title="next chapter">docutil</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/run/write.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../docutils/index.html" title="docutil"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="resolve.html" title="フェーズ 3: 解決"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">read sphinx  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >動作</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">フェーズ 4: 書き出し</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, ousttrue.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>

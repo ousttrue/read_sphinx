@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>動作 &#8212; read sphinx  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="フェーズ 0: 初期化" href="init.html" />
+    <link rel="prev" title="Sphinx を読む" href="../index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="init.html" title="フェーズ 0: 初期化"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Sphinx を読む"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">read sphinx  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">動作</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>動作<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<section id="id2">
+<h2>デバッグ<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<section id="vscode">
+<h3>vscode<a class="headerlink" href="#vscode" title="Permalink to this headline">¶</a></h3>
+<p>launch.json</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sphinx&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;request&quot;</span><span class="p">:</span> <span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;build&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;justMyCode&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>とすることで <code class="docutils literal notranslate"><span class="pre">F5</span></code> で sphinx を実行できる。
+<code class="docutils literal notranslate"><span class="pre">&quot;justMyCode&quot;:</span> <span class="pre">false</span></code> がみそで、これがあると外部ライブラリの中でもブレイクできる。</p>
+</section>
+<section id="venv">
+<h3>venv<a class="headerlink" href="#venv" title="Permalink to this headline">¶</a></h3>
+<p>sphinx のソースをステップ実行したり、ブレイクポイントを置いたりするので、 <code class="docutils literal notranslate"><span class="pre">.venv</span></code> があった方がやりやすい。
+<code class="docutils literal notranslate"><span class="pre">.venv/Lib/site-packages/sphinx</span></code> 内に潜ってゆく。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">.</span><span class="n">venv</span>
+<span class="o">&gt;</span> <span class="o">.</span>\<span class="o">.</span><span class="n">venv</span>\<span class="n">Scripts</span>\<span class="n">Activate</span><span class="o">.</span><span class="n">ps1</span>
+<span class="p">(</span><span class="o">.</span><span class="n">venv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">autobuild</span> <span class="n">myst</span><span class="o">-</span><span class="n">parser</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h2><a class="reference external" href="https://www.sphinx-doc.org/ja/master/extdev/index.html#build-phases">ビルド・フェーズ</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/extdev/appapi.html#events">https://www.sphinx-doc.org/ja/master/extdev/appapi.html#events</a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="init.html">フェーズ 0: 初期化</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="init.html#sphinx-application-sphinx">sphinx.application.Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="init.html#extension-import-setup">extension の import と setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read.html">フェーズ 1: 読み込み</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read.html#environment">Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read.html#doctree">.doctree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resolve.html">フェーズ 3: 解決</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resolve.html#prepare-writing">prepare_writing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="write.html">フェーズ 4: 書き出し</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="write.html#sphinx-jijja2glue-builtintemplateloader">sphinx.jijja2glue.BuiltinTemplateLoader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="write.html#write">write</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">動作</a><ul>
+<li><a class="reference internal" href="#id2">デバッグ</a><ul>
+<li><a class="reference internal" href="#vscode">vscode</a></li>
+<li><a class="reference internal" href="#venv">venv</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">ビルド・フェーズ</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Sphinx を読む</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="init.html"
+                        title="next chapter">フェーズ 0: 初期化</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/run/index.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="init.html" title="フェーズ 0: 初期化"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Sphinx を読む"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">read sphinx  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">動作</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, ousttrue.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>
