@@ -5,7 +5,7 @@
 run/index
 docutils/index
 environment/index
-theme/theme
+theme/index
 extension/index
 command/index
 ```

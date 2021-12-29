@@ -1,4 +1,4 @@
-# docutil
+# Docutils
 
 ```{toctree}
 directive

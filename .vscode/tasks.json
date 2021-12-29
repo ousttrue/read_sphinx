@@ -8,7 +8,12 @@
             "type": "shell",
             "command": "sphinx-autobuild src build --open-browser",
             "problemMatcher": [],
-            "isBackground": true
+            "isBackground": true,
+            "options": {
+                "env": {
+                    "PATH": "${workspaceFolder}/.venv/Scripts:${env:PATH}"
+                }
+            }
         }
     ]
 }
