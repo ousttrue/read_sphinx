@@ -1,4 +1,4 @@
-# 拡張
+# Extension
 
 setup 関数をもつ python モジュール。
 
@@ -44,3 +44,12 @@ def setup(app: sphinx.application.Sphinx):
 ## 拡張の作り方
 
 <https://www.sphinx-doc.org/ja/master/development/tutorials/index.html>
+
+## サードパーティの拡張
+
+* [(6日目) Sphinx 拡張の紹介](https://tk0miya.hatenablog.com/entry/20111206/p1)
+
+```{toctree}
+blockdiag
+ablog
+```

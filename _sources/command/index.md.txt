@@ -1,4 +1,4 @@
-# command
+# Command
 
 ## sphinx-apidoc
 
