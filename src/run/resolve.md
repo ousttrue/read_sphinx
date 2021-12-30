@@ -1,4 +1,6 @@
-# フェーズ 3: 解決
+# BuildPhase.RESOLVING
+
+`フェーズ 3: 解決 `
 
 ```
 # The updated-docs list can be builder dependent, but generally includes all new/changed documents,
