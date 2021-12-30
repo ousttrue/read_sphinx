@@ -1,325 +1,53 @@
 
-<!DOCTYPE html>
+
+<!doctype html>
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>basic &#8212; read sphinx  documentation</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
-
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/my.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Extension" href="../extension/index.html" />
     <link rel="prev" title="Theme" href="index.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../extension/index.html" title="Extension"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Theme"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">read sphinx  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Theme</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">basic</a></li> 
+      </ul>
+    </div>  
 
-    <!-- Google Analytics -->
-    
-  </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">read sphinx  documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../run/index.html">
-   動作
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../run/init.html">
-     フェーズ 0: 初期化
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../run/read.html">
-     フェーズ 1: 読み込み
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../run/resolve.html">
-     フェーズ 3: 解決
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../run/write.html">
-     フェーズ 4: 書き出し
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../docutils/index.html">
-   Docutils
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../docutils/directive.html">
-     directive
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../docutils/roll.html">
-     roll
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../docutils/doctree.html">
-     doctree
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../environment/index.html">
-   Environment
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="index.html">
-   Theme
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     basic
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../extension/index.html">
-   Extension
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../extension/blockdiag.html">
-     blockdiag
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../extension/ablog.html">
-     ablog
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../command/index.html">
-   Command
-  </a>
- </li>
-</ul>
-
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/theme/basic.md.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#agogo">
-   agogo
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bizstyle">
-   bizstyle
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#classic">
-   classic
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#default">
-     default
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#epub">
-   epub
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#haiku">
-   haiku
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nature">
-   nature
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonav">
-   nonav
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pyramid">
-   pyramid
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scrolls">
-   scrolls
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sphinxdoc">
-   sphinxdoc
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#traditional">
-   traditional
-  </a>
- </li>
-</ul>
-
-            </nav>
-        </div>
-    </div>
-</div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
-                
   <div class="tex2jax_ignore mathjax_ignore section" id="basic">
 <h1>basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h1>
 <p>basic 系</p>
@@ -328,100 +56,244 @@
 <li><p>path</p></li>
 <li><p>table of contents</p></li>
 </ul>
+<div class="section" id="id1">
+<h2>動作<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="init">
+<h3>init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../run/init.html"><span class="doc">ビルドフェーズ0</span></a></p></li>
+<li><p>sphinx.builders.Builder#create_template_bridge</p></li>
+<li><p>sphinx.jinja2glue.BuiltinTemplateLoader#init</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">builder-inited</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="write">
+<h3>write<a class="headerlink" href="#write" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../run/write.html"><span class="doc">ビルドフェーズ4</span></a></p></li>
+<li><p>sphinx.builders.Builder#buile</p></li>
+<li><p>sphinx.builders.Builder#write</p></li>
+<li><p>sphinx.builders.StandaloneHTMLBuilder#write_doc</p></li>
+<li><p>sphinx.jinja2glue.BuiltinTemplateLoader#handle_page</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># page.html がエントリーポイント</span>
+    <span class="k">def</span> <span class="nf">handle_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pagename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">addctx</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">templatename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;page.html&#39;</span><span class="p">,</span>
+                    <span class="n">outfilename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">event_arg</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>sphinx.jinja2glue.BuiltinTemplateLoader#render</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">templatename</span><span class="p">,</span> <span class="n">ctx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>構成<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>page.html</p></li>
+</ul>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{%- extends &quot;layout.html&quot; %}
+{% block body %}
+  {{ body }}
+{% endblock %}
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>layout.html</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>block</p></th>
+<th class="head"><p>content</p></th>
+<th class="head"><p>class</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>relbar1</p></td>
+<td><p>relbar()</p></td>
+<td><p>class=”related”</p></td>
+</tr>
+<tr class="row-odd"><td><p>body</p></td>
+<td><p>page.html</p></td>
+<td><p>class=”body”</p></td>
+</tr>
+<tr class="row-even"><td><p>sidebar2</p></td>
+<td><p>sidebar()</p></td>
+<td><p>class=”sphinxsidebar”</p></td>
+</tr>
+<tr class="row-odd"><td><p>relbar2</p></td>
+<td><p>relbar()</p></td>
+<td><p>class=”related”</p></td>
+</tr>
+<tr class="row-even"><td><p>footer</p></td>
+<td><p>footer()</p></td>
+<td><p>class=”footer”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>basic を継承するテーマ<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="agogo">
-<h2>agogo<a class="headerlink" href="#agogo" title="Permalink to this headline">¶</a></h2>
+<h3>agogo<a class="headerlink" href="#agogo" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="bizstyle">
-<h2>bizstyle<a class="headerlink" href="#bizstyle" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">theme</span><span class="p">]</span>
-<span class="n">inherit</span> <span class="o">=</span> <span class="n">basic</span>
-<span class="n">stylesheet</span> <span class="o">=</span> <span class="n">bizstyle</span><span class="o">.</span><span class="n">css</span>
-<span class="n">pygments_style</span> <span class="o">=</span> <span class="n">friendly</span>
+<h3>bizstyle<a class="headerlink" href="#bizstyle" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[theme]
+inherit = basic
+stylesheet = bizstyle.css
+pygments_style = friendly
 
-<span class="p">[</span><span class="n">options</span><span class="p">]</span>
-<span class="n">rightsidebar</span> <span class="o">=</span> <span class="n">false</span>
-<span class="n">sidebarwidth</span> <span class="o">=</span> <span class="mi">210</span>
+[options]
+rightsidebar = false
+sidebarwidth = 210
 
-<span class="n">maincolor</span> <span class="o">=</span> <span class="c1">#336699</span>
+maincolor = #336699
 </pre></div>
 </div>
 </div>
 <div class="section" id="classic">
-<h2>classic<a class="headerlink" href="#classic" title="Permalink to this headline">¶</a></h2>
+<h3>classic<a class="headerlink" href="#classic" title="Permalink to this headline">¶</a></h3>
+</div>
 <div class="section" id="default">
 <h3>default<a class="headerlink" href="#default" title="Permalink to this headline">¶</a></h3>
 </div>
-</div>
 <div class="section" id="epub">
-<h2>epub<a class="headerlink" href="#epub" title="Permalink to this headline">¶</a></h2>
+<h3>epub<a class="headerlink" href="#epub" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="haiku">
-<h2>haiku<a class="headerlink" href="#haiku" title="Permalink to this headline">¶</a></h2>
+<h3>haiku<a class="headerlink" href="#haiku" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="nature">
-<h2>nature<a class="headerlink" href="#nature" title="Permalink to this headline">¶</a></h2>
+<h3>nature<a class="headerlink" href="#nature" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="nonav">
-<h2>nonav<a class="headerlink" href="#nonav" title="Permalink to this headline">¶</a></h2>
+<h3>nonav<a class="headerlink" href="#nonav" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="pyramid">
-<h2>pyramid<a class="headerlink" href="#pyramid" title="Permalink to this headline">¶</a></h2>
+<h3>pyramid<a class="headerlink" href="#pyramid" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="scrolls">
-<h2>scrolls<a class="headerlink" href="#scrolls" title="Permalink to this headline">¶</a></h2>
+<h3>scrolls<a class="headerlink" href="#scrolls" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>next, prev が無い</p></li>
 </ul>
 </div>
 <div class="section" id="sphinxdoc">
-<h2>sphinxdoc<a class="headerlink" href="#sphinxdoc" title="Permalink to this headline">¶</a></h2>
+<h3>sphinxdoc<a class="headerlink" href="#sphinxdoc" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="traditional">
-<h2>traditional<a class="headerlink" href="#traditional" title="Permalink to this headline">¶</a></h2>
+<h3>traditional<a class="headerlink" href="#traditional" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
 
-              </div>
-              
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Theme</p>
+            <div class="clearer"></div>
+          </div>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../extension/index.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Extension</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By ousttrue<br/>
-        
-            &copy; Copyright 2021, ousttrue.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
       </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
     </div>
-  
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Theme</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../extension/index.html"
+                        title="next chapter">Extension</a></p><div id="toc" class="sidebarRow">
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../run/index.html">動作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../run/init.html">フェーズ 0: 初期化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run/read.html">フェーズ 1: 読み込み</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run/resolve.html">BuildPhase.RESOLVING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run/write.html">BuildPhase.WRITING</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../docutils/index.html">Docutils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docutils/directive.html">directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docutils/roll.html">roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docutils/doctree.html">doctree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Theme</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">basic</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../extension/index.html">Extension</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../extension/blockdiag.html">blockdiag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extension/ablog.html">ablog</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../command/index.html">Command</a></li>
+</ul>
 
+</div>
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">basic</a><ul>
+<li><a class="reference internal" href="#id1">動作</a><ul>
+<li><a class="reference internal" href="#init">init</a></li>
+<li><a class="reference internal" href="#write">write</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">構成</a></li>
+<li><a class="reference internal" href="#id3">basic を継承するテーマ</a><ul>
+<li><a class="reference internal" href="#agogo">agogo</a></li>
+<li><a class="reference internal" href="#bizstyle">bizstyle</a></li>
+<li><a class="reference internal" href="#classic">classic</a></li>
+<li><a class="reference internal" href="#default">default</a></li>
+<li><a class="reference internal" href="#epub">epub</a></li>
+<li><a class="reference internal" href="#haiku">haiku</a></li>
+<li><a class="reference internal" href="#nature">nature</a></li>
+<li><a class="reference internal" href="#nonav">nonav</a></li>
+<li><a class="reference internal" href="#pyramid">pyramid</a></li>
+<li><a class="reference internal" href="#scrolls">scrolls</a></li>
+<li><a class="reference internal" href="#sphinxdoc">sphinxdoc</a></li>
+<li><a class="reference internal" href="#traditional">traditional</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../extension/index.html" title="Extension"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Theme"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">read sphinx  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Theme</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">basic</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, ousttrue.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
   </body>
 </html>

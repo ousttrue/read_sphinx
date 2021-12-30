@@ -1,14 +1,11 @@
-# フェーズ 4: 書き出し
+# BuildPhase.WRITING
+
+フェーズ 4: 書き出し
 
 ```
 15. Generate output files
 16. event.build-finished(app, exception)
 ```
-
-## sphinx.jijja2glue.BuiltinTemplateLoader
-
-`jinja2.environment.get_template` `page.html`
-
 ## write
 
 ```python
@@ -22,3 +19,5 @@ for docname in status_iterator(docnames, __('writing output... '), "darkgreen",
     self.write_doc_serialized(docname, doctree)
     self.write_doc(docname, doctree)
 ```
+
+HTML builder の場合、 {doc}`basic teheme の動作 </theme/basic>` に続く。
