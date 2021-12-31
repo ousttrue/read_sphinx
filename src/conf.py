@@ -55,7 +55,7 @@ html_sidebars = {
 
 
 def setup(app):
-    app.add_stylesheet('my.css')
+    app.add_css_file('my.css')
 
 
 # Add any paths that contain custom static files (such as style sheets) here,

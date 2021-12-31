@@ -3,9 +3,10 @@
 ```{toctree}
 :maxdepth: 2
 run/index
+configuration/index
 docutils/index
 environment/index
-theme/index
+builder/index
 extension/index
 command/index
 ```

@@ -1,4 +1,4 @@
-# basic
+# basicテーマ
 
 basic 系
 
@@ -6,36 +6,9 @@ basic 系
 -   path
 -   table of contents
 
-## 動作
-
-### init
-
--   {doc}`ビルドフェーズ0 </run/init>`
--   sphinx.builders.Builder#create_template_bridge
--   sphinx.jinja2glue.BuiltinTemplateLoader#init
--   `builder-inited`
-
-### write
-
--   {doc}`ビルドフェーズ4 </run/write>`
--   sphinx.builders.Builder#buile
--   sphinx.builders.Builder#write
--   sphinx.builders.StandaloneHTMLBuilder#write_doc
--   sphinx.jinja2glue.BuiltinTemplateLoader#handle_page
-
-```python
-    # page.html がエントリーポイント
-    def handle_page(self, pagename: str, addctx: Dict, templatename: str = 'page.html',
-                    outfilename: str = None, event_arg: Any = None) -> None:
-```
-
--   sphinx.jinja2glue.BuiltinTemplateLoader#render
-
-```python
-output = self.templates.render(templatename, ctx)
-```
-
 ## 構成
+
+`site-packages\sphinx\themes` に配置されている。
 
 -   page.html
 
