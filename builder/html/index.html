@@ -1,0 +1,327 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTMLBuilder &#8212; read sphinx  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/my.css" />
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Theme" href="theme/index.html" />
+    <link rel="prev" title="Builder" href="../index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="theme/index.html" title="Theme"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Builder"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">read sphinx  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Builder</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">HTMLBuilder</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="htmlbuilder">
+<h1>HTMLBuilder<a class="headerlink" href="#htmlbuilder" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://zenn.dev/attakei/articles/sphinx-make-dirhtml">Sphinxにひっそり存在するビルダー “dirhtml”の使い勝手を知る</a></p></li>
+</ul>
+<div class="section" id="id1">
+<h2>動作<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="init">
+<h3>init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">StandaloneHTMLBuilder</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx.jinja2glue.BuiltinTemplateLoader</span></code> をセットアップする。</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../run/init.html"><span class="doc">ビルドフェーズ0</span></a></p></li>
+<li><p>sphinx.builders.Builder#create_template_bridge</p></li>
+<li><p>sphinx.jinja2glue.BuiltinTemplateLoader()</p></li>
+<li><p>sphinx.jinja2glue.BuiltinTemplateLoader#init</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">builder-inited</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="write">
+<h3>write<a class="headerlink" href="#write" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx.jinja2glue.BuiltinTemplateLoader</span></code> を使う。</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../run/write.html"><span class="doc">ビルドフェーズ4</span></a></p></li>
+<li><p>sphinx.builders.Builder#buile</p></li>
+<li><p>sphinx.builders.Builder#write</p></li>
+<li><p>sphinx.builders.StandaloneHTMLBuilder#write_doc</p></li>
+<li><p>sphinx.jinja2glue.BuiltinTemplateLoader#handle_page</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># page.html がエントリーポイント</span>
+    <span class="k">def</span> <span class="nf">handle_page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pagename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">addctx</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">templatename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;page.html&#39;</span><span class="p">,</span>
+                    <span class="n">outfilename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">event_arg</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>sphinx.jinja2glue.BuiltinTemplateLoader#render</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">templatename</span><span class="p">,</span> <span class="n">ctx</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="sidebar">
+<h4>sidebar のメカニズム<a class="headerlink" href="#sidebar" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># StandaloneHTMLBuilder</span>
+    <span class="k">def</span> <span class="nf">add_sidebars</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pagename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ctx</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">has_wildcard</span><span class="p">(</span><span class="n">pattern</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">char</span> <span class="ow">in</span> <span class="n">pattern</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s1">&#39;*?[&#39;</span><span class="p">)</span>
+
+        <span class="n">sidebars</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">matched</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">customsidebar</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="c1"># default sidebars settings for selected theme</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;alabaster&#39;</span><span class="p">:</span>
+            <span class="c1"># provide default settings for alabaster (for compatibility)</span>
+            <span class="c1"># Note: this will be removed before Sphinx-2.0</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># get default sidebars settings from alabaster (if defined)</span>
+                <span class="n">theme_default_sidebars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">,</span> <span class="s1">&#39;sidebars&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">theme_default_sidebars</span><span class="p">:</span>
+                    <span class="n">sidebars</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">theme_default_sidebars</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)]</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="c1"># fallback to better default settings</span>
+                <span class="n">sidebars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;about.html&#39;</span><span class="p">,</span> <span class="s1">&#39;navigation.html&#39;</span><span class="p">,</span> <span class="s1">&#39;relations.html&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;searchbox.html&#39;</span><span class="p">,</span> <span class="s1">&#39;donate.html&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">theme_default_sidebars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">get_config</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">,</span> <span class="s1">&#39;sidebars&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">theme_default_sidebars</span><span class="p">:</span>
+                <span class="n">sidebars</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">theme_default_sidebars</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)]</span>
+
+        <span class="c1"># user sidebar settings</span>
+        <span class="n">html_sidebars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_builder_config</span><span class="p">(</span><span class="s1">&#39;sidebars&#39;</span><span class="p">,</span> <span class="s1">&#39;html&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">patsidebars</span> <span class="ow">in</span> <span class="n">html_sidebars</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">patmatch</span><span class="p">(</span><span class="n">pagename</span><span class="p">,</span> <span class="n">pattern</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">matched</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">has_wildcard</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+                        <span class="c1"># warn if both patterns contain wildcards</span>
+                        <span class="k">if</span> <span class="n">has_wildcard</span><span class="p">(</span><span class="n">matched</span><span class="p">):</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">__</span><span class="p">(</span><span class="s1">&#39;page </span><span class="si">%s</span><span class="s1"> matches two patterns in &#39;</span>
+                                              <span class="s1">&#39;html_sidebars: </span><span class="si">%r</span><span class="s1"> and </span><span class="si">%r</span><span class="s1">&#39;</span><span class="p">),</span>
+                                           <span class="n">pagename</span><span class="p">,</span> <span class="n">matched</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
+                        <span class="c1"># else the already matched pattern is more specific</span>
+                        <span class="c1"># than the present one, because it contains no wildcard</span>
+                        <span class="k">continue</span>
+                <span class="n">matched</span> <span class="o">=</span> <span class="n">pattern</span>
+                <span class="n">sidebars</span> <span class="o">=</span> <span class="n">patsidebars</span>
+
+        <span class="k">if</span> <span class="n">sidebars</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c1"># keep defaults</span>
+            <span class="k">pass</span>
+
+        <span class="n">ctx</span><span class="p">[</span><span class="s1">&#39;sidebars&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sidebars</span> <span class="c1"># 👈</span>
+        <span class="n">ctx</span><span class="p">[</span><span class="s1">&#39;customsidebar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">customsidebar</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sphinx-jinja2glue-builtintemplateloader">
+<h2>sphinx.jinja2glue.BuiltinTemplateLoader<a class="headerlink" href="#sphinx-jinja2glue-builtintemplateloader" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="render">
+<h3>render<a class="headerlink" href="#render" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">environment</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">template</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>template: <code class="docutils literal notranslate"><span class="pre">page.html</span></code>, <code class="docutils literal notranslate"><span class="pre">genindex.html</span></code>, <code class="docutils literal notranslate"><span class="pre">search.html</span></code> 等が入力する。</p></li>
+<li><p>context: は jinja template に渡す変数</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># StandaloneHTMLBuilder</span>
+        <span class="n">ctx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">globalcontext</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">prepare_writing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docnames</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span> 
+        <span class="c1"># 省略</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">globalcontext</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;embedded&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">embedded</span><span class="p">,</span>
+            <span class="s1">&#39;project&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">project</span><span class="p">,</span> <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;release&#39;</span><span class="p">:</span> <span class="n">return_codes_re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">release</span><span class="p">),</span>  <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">version</span><span class="p">,</span>  <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;last_updated&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_updated</span><span class="p">,</span> 
+            <span class="s1">&#39;copyright&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">copyright</span><span class="p">,</span> <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;master_doc&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">root_doc</span><span class="p">,</span> <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;root_doc&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">root_doc</span><span class="p">,</span>  <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;use_opensearch&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html_use_opensearch</span><span class="p">,</span> <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;docstitle&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html_title</span><span class="p">,</span>  <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;shorttitle&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html_short_title</span><span class="p">,</span>  <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;show_copyright&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html_show_copyright</span><span class="p">,</span>  <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;show_sphinx&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html_show_sphinx</span><span class="p">,</span> <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;has_source&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html_copy_source</span><span class="p">,</span> <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;show_source&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html_show_sourcelink</span><span class="p">,</span> <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;sourcelink_suffix&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html_sourcelink_suffix</span><span class="p">,</span> <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;file_suffix&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_suffix</span><span class="p">,</span>
+            <span class="s1">&#39;link_suffix&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">link_suffix</span><span class="p">,</span>
+            <span class="s1">&#39;script_files&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">script_files</span><span class="p">,</span>
+            <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">language</span><span class="p">,</span> <span class="c1"># 👈 conf.py</span>
+            <span class="s1">&#39;css_files&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">css_files</span><span class="p">,</span>
+            <span class="s1">&#39;sphinx_version&#39;</span><span class="p">:</span> <span class="n">__display_version__</span><span class="p">,</span>
+            <span class="s1">&#39;sphinx_version_tuple&#39;</span><span class="p">:</span> <span class="n">sphinx_version</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_style_filename</span><span class="p">(),</span>
+            <span class="s1">&#39;rellinks&#39;</span><span class="p">:</span> <span class="n">rellinks</span><span class="p">,</span>
+            <span class="s1">&#39;builder&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s1">&#39;parents&#39;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s1">&#39;logo&#39;</span><span class="p">:</span> <span class="n">logo</span><span class="p">,</span>
+            <span class="s1">&#39;favicon&#39;</span><span class="p">:</span> <span class="n">favicon</span><span class="p">,</span>
+            <span class="s1">&#39;html5_doctype&#39;</span><span class="p">:</span> <span class="n">html5_ready</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html4_writer</span><span class="p">,</span> <span class="c1"># 👈 conf.py</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="p">:</span>
+            <span class="c1"># 👇 global context に theme.conf の option 項の値が追加される</span>
+            <span class="c1"># [options]</span>
+            <span class="c1"># rightsidebar = false</span>
+            <span class="c1"># sidebarwidth = 210</span>
+            <span class="c1"># maincolor = #336699</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">globalcontext</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="p">(</span><span class="s1">&#39;theme_&#39;</span> <span class="o">+</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">get_options</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">theme_options</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">globalcontext</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html_context</span><span class="p">)</span>        
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="theme/index.html">Theme</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Builder</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="theme/index.html"
+                        title="next chapter">Theme</a></p><div id="toc" class="sidebarRow">
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../run/index.html">動作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../run/init.html">フェーズ 0: 初期化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../run/read.html">フェーズ 1: 読み込み</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../run/resolve.html">BuildPhase.RESOLVING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../run/write.html">BuildPhase.WRITING</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration/index.html">conf.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docutils/index.html">Docutils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docutils/directive.html">directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docutils/roll.html">roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docutils/doctree.html">doctree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Builder</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">HTMLBuilder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="theme/index.html">Theme</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="theme/basic.html">basicテーマ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="theme/customize.html">customize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="theme/create.html">テーマの作成</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../extension/index.html">Extension</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../extension/blockdiag.html">blockdiag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../extension/ablog.html">ablog</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../command/index.html">Command</a></li>
+</ul>
+
+</div>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">HTMLBuilder</a><ul>
+<li><a class="reference internal" href="#id1">動作</a><ul>
+<li><a class="reference internal" href="#init">init</a></li>
+<li><a class="reference internal" href="#write">write</a><ul>
+<li><a class="reference internal" href="#sidebar">sidebar のメカニズム</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sphinx-jinja2glue-builtintemplateloader">sphinx.jinja2glue.BuiltinTemplateLoader</a><ul>
+<li><a class="reference internal" href="#render">render</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="theme/index.html" title="Theme"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Builder"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">read sphinx  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Builder</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">HTMLBuilder</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, ousttrue.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>

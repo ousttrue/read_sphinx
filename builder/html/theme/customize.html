@@ -1,0 +1,257 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>customize &#8212; read sphinx  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/bizstyle.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/my.css" />
+    
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="テーマの作成" href="create.html" />
+    <link rel="prev" title="basicテーマ" href="basic.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="create.html" title="テーマの作成"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="basic.html" title="basicテーマ"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">read sphinx  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Builder</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >HTMLBuilder</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">Theme</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">customize</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="customize">
+<h1>customize<a class="headerlink" href="#customize" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sidebar">
+<h2>sidebar<a class="headerlink" href="#sidebar" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>コンテンツを選ぶ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">https://www.sphinx-doc.org/en/master/usage/configuration.html</a></p></li>
+</ul>
+<p>conf.py</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_sidebars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;**&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;globaltoc.html&#39;</span><span class="p">,</span> <span class="s1">&#39;localtoc.html&#39;</span><span class="p">,</span> <span class="s1">&#39;relations.html&#39;</span><span class="p">,</span> <span class="s1">&#39;sourcelink.html&#39;</span><span class="p">,</span> <span class="s1">&#39;searchbox.html&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>カスタムのテンプレートを追加する<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://qiita.com/takakiku/items/99cf6505fb5c893a5168">Sphinxですべての目次をサイドバーに表示する</a></p></li>
+<li><p><a class="reference external" href="http://www.areanine.gr.jp/~banjo/chocomemo/sphinx/sidebar.html">サイドバーに全体目次を表示したい</a></p></li>
+</ul>
+<p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/templating.html#toctree">https://www.sphinx-doc.org/ja/master/templating.html#toctree</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">customtoc.html</span></code></p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;toc&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;sidebarRow&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ pathto(master_doc) }}&quot;</span><span class="p">&gt;</span>{{ _(&#39;Table of Contents&#39;) }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+    {{ toctree (maxdepth=4, collapse=False, includehidden=False, titles_only=True) }}
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="css">
+<h3>更に css を追加する<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h3>
+<p>選択中の <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;&lt;a&gt;</span></code> に <code class="docutils literal notranslate"><span class="pre">current</span></code> class が付与されるので <code class="docutils literal notranslate"><span class="pre">css</span></code> で見た目が変わるようにすると見やすくなる。</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">li</span><span class="p">.</span><span class="nc">current</span> <span class="o">&gt;</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>css<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://kuttsun.blogspot.com/2016/11/sphinx-sphinxrtdtheme.html">Sphinx の sphinx_rtd_theme をカスタマイズする</a></p></li>
+<li><p><a class="reference external" href="https://qh73xebitbucketorg.readthedocs.io/ja/latest/1.Programmings/python/LIB/sphinx/addcss/">sphinx で CSS の設定を追加する</a></p></li>
+</ul>
+</div>
+<div class="section" id="inherit">
+<h2>inherit<a class="headerlink" href="#inherit" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sphinx-users.jp/cookbook/makingwebsite/index.html">Webサイトを作ろう(オリジナルテーマの作成)</a></p></li>
+<li><p><a class="reference external" href="https://blog.amedama.jp/entry/2016/01/06/122931">Sphinx: 既存のテーマをカスタマイズする</a></p></li>
+</ul>
+<div class="section" id="id4">
+<h3>手順<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>テーマ名決める(仮に custom とする)</p></li>
+<li><p>conf.py のあるフォルダに <code class="docutils literal notranslate"><span class="pre">custom</span></code> フォルダを作る</p></li>
+<li><p>custom/theme.conf を作成</p>
+<p>[theme]
+inherit = basic
+stylesheet = main.css
+pygments_style = sphinx</p>
+<p>[option]
+nosidebar = false</p>
+</li>
+<li><p>conf.py が <code class="docutils literal notranslate"><span class="pre">custom</span></code> を使うように設定する</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;custom&#39;</span>
+<span class="n">html_theme_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>custom/static/main.css</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">body</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">silver</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">related</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#a2e8fe</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">sphinxsidebar</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#4b7afd</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">footer</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fcc1c1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="basic.html"
+                        title="previous chapter">basicテーマ</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="create.html"
+                        title="next chapter">テーマの作成</a></p><div id="toc" class="sidebarRow">
+    <h3><a href="../../../index.html">Table of Contents</a></h3>
+    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../run/index.html">動作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../run/init.html">フェーズ 0: 初期化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../run/read.html">フェーズ 1: 読み込み</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../run/resolve.html">BuildPhase.RESOLVING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../run/write.html">BuildPhase.WRITING</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configuration/index.html">conf.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docutils/index.html">Docutils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../docutils/directive.html">directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docutils/roll.html">roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docutils/doctree.html">doctree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../environment/index.html">Environment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Builder</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">HTMLBuilder</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Theme</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="basic.html">basicテーマ</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">customize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="create.html">テーマの作成</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../extension/index.html">Extension</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../extension/blockdiag.html">blockdiag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../extension/ablog.html">ablog</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../command/index.html">Command</a></li>
+</ul>
+
+</div>
+  <h3><a href="../../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">customize</a><ul>
+<li><a class="reference internal" href="#sidebar">sidebar</a><ul>
+<li><a class="reference internal" href="#id1">コンテンツを選ぶ</a></li>
+<li><a class="reference internal" href="#id2">カスタムのテンプレートを追加する</a></li>
+<li><a class="reference internal" href="#css">更に css を追加する</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">css</a></li>
+<li><a class="reference internal" href="#inherit">inherit</a><ul>
+<li><a class="reference internal" href="#id4">手順</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="create.html" title="テーマの作成"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="basic.html" title="basicテーマ"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">read sphinx  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Builder</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >HTMLBuilder</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >Theme</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">customize</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, ousttrue.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>
