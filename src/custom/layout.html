@@ -19,6 +19,7 @@
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 {%- endblock doctype %}
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     {%- if not html5_doctype and not skip_ua_compatible %}
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
@@ -76,6 +77,30 @@
 
 </head>
 
+{%- macro relbar() %}
+<div class="related" role="navigation" aria-label="related navigation">
+    <!-- <h3>{{ _('Navigation') }}</h3> -->
+    <ul>
+        {%- for rellink in rellinks %}
+        <li class="right" {% if loop.first %}style="margin-right: 10px" {% endif %}>
+            <a href="{{ pathto(rellink[0])|e }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{
+                rellink[3] }}</a>
+            {%- if not loop.first %}{{ reldelim2 }}{% endif %}
+        </li>
+        {%- endfor %}
+        {%- block rootrellink %}
+        <li class="nav-item nav-item-0"><a href="{{ pathto(root_doc)|e }}">{{ shorttitle|e }}</a>{{ reldelim1 }}</li>
+        {%- endblock %}
+        {%- for parent in parents %}
+        <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U")
+                }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
+        {%- endfor %}
+        <li class="nav-item nav-item-this"><a href="{{ link|e }}">{{ title }}</a></li>
+        {%- block relbaritems %} {% endblock %}
+    </ul>
+</div>
+{%- endmacro %}
+
 {%- macro globals() %}
 {%- for sidebartemplate in theme_globals.split(',') %}
 {%- include sidebartemplate.strip() %}
@@ -109,7 +134,7 @@ sphinx_version }}.{% endtrans %}
 <body>
     <div id="header">
         {%- block header %}
-        <a href="{{ pathto(root_doc)|e }}">{{ title }}</a>
+        {{ relbar() }}
         {%- endblock header %}
     </div>
     <div id="document">

@@ -16,6 +16,12 @@
             }
         },
         {
+            "label": "rebuild",
+            "type": "shell",
+            "command": "sphinx-build src build -E",
+            "problemMatcher": [],
+        },
+        {
             "label": "sync",
             "type": "shell",
             "command": ".venv/Scripts/python.exe sync.py",

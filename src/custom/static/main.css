@@ -1,3 +1,6 @@
+/************************ grid end ******************************/
+/************************ grid ******************************/
+
 html {
     margin: 0;
     padding: 0;
@@ -13,36 +16,120 @@ body {
     height: 100%;
 
     display: grid;
-    grid-template-columns: auto minmax(600px, 1000px) auto;
-    grid-template-rows: 100px auto 100px;
+    grid-template-areas:
+        ". header header header ."
+        ". lsb document rsb ."
+        ". . footer . .";
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 1fr minmax(250px, 300px) minmax(720px, 1048px) minmax(250px, 300px) 1fr;
 }
 
 #document {
-    background-color: gold;
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
+    grid-area: document;
 }
 
 #header {
-    background-color: orange;
-    grid-row: 1 / 2;
-    grid-column: 1 / 4;
+    /* background-color: orange; */
+    grid-area: header;
 }
 
 #global {
-    background-color: greenyellow;
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
+    /* background-color: greenyellow; */
+    grid-area: lsb;
+    padding: 1em;
 }
 
 #local {
-    background-color: cornflowerblue;
-    grid-row: 2 / 3;
-    grid-column: 3 / 4;
+    /* background-color: cornflowerblue; */
+    grid-area: rsb;
+    padding: 1em;
 }
 
 #footer {
-    background-color: orange;
-    grid-row: 3 / 4;
-    grid-column: 1 / 4;
+    /* background-color: orange; */
+    grid-area: footer;
+    padding: 0.5em;
+    text-align: right;
+}
+
+/************************ grid end ******************************/
+#document {
+    background-color: snow;
+    border-radius: 1em;
+    padding: 1em;
+    line-height: 1.3em;
+    /* font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif; */
+}
+#document pre {
+    font-family: "Consolas", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+}
+#document div.highlight {
+    padding: 0.5em;
+    border-radius: 5px;
+    border: solid 1px;
+    margin: 0 0 1em 0;
+}
+span.pre {
+    background-color: #ddd;
+    font-family: "Consolas", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+    border-radius: 5px;
+    padding: 0.2em;
+}
+
+ul {
+    padding: 0 0 0 1em;
+}
+li {
+    padding: 0;
+}
+
+#header ul {
+    list-style: none;
+}
+#header li {
+    margin: 0.5em;
+    display: inline;
+}
+#header li.right {
+    float: right;
+}
+#header li.left {
+    float: left;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+}
+td {
+    padding: 0 0.5em;
+}
+table th {
+    font-weight: bold;
+    background: #3f3f3f;
+    color: #ffffff;
+}
+tr:nth-child(even) {
+    background: #d9d9d9;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 2em;
+}
+
+#document li {
+    padding: 0.1em 0 0 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
 }
