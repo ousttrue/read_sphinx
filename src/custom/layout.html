@@ -76,50 +76,60 @@
 
 </head>
 
+{%- macro globals() %}
+{%- for sidebartemplate in theme_globals.split(',') %}
+{%- include sidebartemplate.strip() %}
+{%- endfor %}
+{%- endmacro %}
+
+{%- macro locals() %}
+{%- for sidebartemplate in theme_locals.split(',') %}
+{%- include sidebartemplate.strip() %}
+{%- endfor %}
+{%- endmacro %}
+
+{%- macro footer() %}
+{%- if show_copyright %}
+{%- if hasdoc('copyright') %}
+{% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{
+copyright }}.{% endtrans %}
+{%- else %}
+{% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
+{%- endif %}
+{%- endif %}
+{%- if last_updated %}
+{% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+{%- endif %}
+{%- if show_sphinx %}
+{% trans sphinx_version=sphinx_version|e %}Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> {{
+sphinx_version }}.{% endtrans %}
+{%- endif %}
+{%- endmacro %}
+
 <body>
-    {%- block header %}
     <div id="header">
+        {%- block header %}
         <a href="{{ pathto(root_doc)|e }}">{{ title }}</a>
+        {%- endblock header %}
     </div>
-    {%- endblock header %}
-    {%- block document %}
     <div id="document">
         {%- block body %}{%- endblock body %}
     </div>
-    {%- endblock document %}
-    {%- block global %}
     <div id="global">
-        {%- for sidebartemplate in theme_globals.split(',') %}
-        {%- include sidebartemplate.strip() %}
-        {%- endfor %}
+        {%- block global %}
+        {{ globals() }}
+        {%- endblock global %}
     </div>
-    {%- endblock global %}
-    {%- block local %}
     <div id="local">
-        {%- for sidebartemplate in theme_locals.split(',') %}
-        {%- include sidebartemplate.strip() %}
-        {%- endfor %}
+        {%- block local %}
+        {{ locals() }}
+        {%- endblock local %}
     </div>
-    {%- endblock local %}
-    {%- block footer %}
     <div id="footer">
-        {%- if show_copyright %}
-        {%- if hasdoc('copyright') %}
-        {% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{
-        copyright }}.{% endtrans %}
-        {%- else %}
-        {% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
-        {%- endif %}
-        {%- endif %}
-        {%- if last_updated %}
-        {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
-        {%- endif %}
-        {%- if show_sphinx %}
-        {% trans sphinx_version=sphinx_version|e %}Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> {{
-        sphinx_version }}.{% endtrans %}
-        {%- endif %}
+        {%- block footer %}
+        {{ footer() }}
+        {%- endblock footer %}
     </div>
-    {%- endblock footer %}
 </body>
 
 </html>
