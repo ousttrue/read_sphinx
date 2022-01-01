@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>フェーズ 1: 読み込み</title>
+    <title>BuildPhase.READING</title>
 <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
 <link rel="stylesheet" type="text/css" href="../_static/main.css" />
 <link rel="stylesheet" type="text/css" href="../_static/my.css" />
@@ -38,14 +38,14 @@
         </li>
         <li class="nav-item nav-item-0"><a href="../index.html">read sphinx  documentation</a></li>
         <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">動作</a></li>
-        <li class="nav-item nav-item-this"><a href="">フェーズ 1: 読み込み</a></li> 
+        <li class="nav-item nav-item-this"><a href="">BuildPhase.READING</a></li> 
     </ul>
 </div>
     </div>
     <div id="document">
-<div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>フェーズ 1: 読み込み<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>中間ファイルを書き出す</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="buildphase-reading">
+<h1>BuildPhase.READING<a class="headerlink" href="#buildphase-reading" title="Permalink to this headline">¶</a></h1>
+<p>フェーズ 1: 読み込み</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">3.</span> <span class="n">event</span><span class="o">.</span><span class="n">env</span><span class="o">-</span><span class="n">get</span><span class="o">-</span><span class="n">outdated</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">added</span><span class="p">,</span> <span class="n">changed</span><span class="p">,</span> <span class="n">removed</span><span class="p">)</span>
 <span class="mf">4.</span> <span class="n">event</span><span class="o">.</span><span class="n">env</span><span class="o">-</span><span class="n">before</span><span class="o">-</span><span class="n">read</span><span class="o">-</span><span class="n">docs</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">docnames</span><span class="p">)</span>
 
@@ -65,6 +65,72 @@
 
 <span class="mf">10.</span> <span class="n">event</span><span class="o">.</span><span class="n">env</span><span class="o">-</span><span class="n">updated</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="section" id="read">
+<h2>read<a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">added</span><span class="p">,</span> <span class="n">changed</span><span class="p">,</span> <span class="n">removed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_outdated_files</span><span class="p">(</span><span class="n">updated</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>docutils の Publisher で parse する。</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx.io.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_doc</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="s2">&quot;Sphinx&quot;</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">BuildEnvironment</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nodes</span><span class="o">.</span><span class="n">document</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Parse a document and convert to doctree.&quot;&quot;&quot;</span>
+    <span class="c1"># set up error_handler for the target document</span>
+    <span class="n">error_handler</span> <span class="o">=</span> <span class="n">UnicodeDecodeErrorHandler</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">docname</span><span class="p">)</span>
+    <span class="n">codecs</span><span class="o">.</span><span class="n">register_error</span><span class="p">(</span><span class="s1">&#39;sphinx&#39;</span><span class="p">,</span> <span class="n">error_handler</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">SphinxStandaloneReader</span><span class="p">()</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+    <span class="n">filetype</span> <span class="o">=</span> <span class="n">get_filetype</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">source_suffix</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">create_source_parser</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">filetype</span><span class="p">)</span> <span class="c1"># 👈 拡張子に応じて myst_parser になる</span>
+
+    <span class="k">if</span> <span class="n">parser</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;CommonMarkParser&#39;</span> <span class="ow">and</span> <span class="n">parser</span><span class="o">.</span><span class="n">settings_spec</span> <span class="o">==</span> <span class="p">():</span>
+        <span class="c1"># a workaround for recommonmark</span>
+        <span class="c1">#   If recommonmark.AutoStrictify is enabled, the parser invokes reST parser</span>
+        <span class="c1">#   internally.  But recommonmark-0.4.0 does not provide settings_spec for reST</span>
+        <span class="c1">#   parser.  As a workaround, this copies settings_spec for RSTParser to the</span>
+        <span class="c1">#   CommonMarkParser.</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">settings_spec</span> <span class="o">=</span> <span class="n">RSTParser</span><span class="o">.</span><span class="n">settings_spec</span>
+
+    <span class="n">pub</span> <span class="o">=</span> <span class="n">Publisher</span><span class="p">(</span><span class="n">reader</span><span class="o">=</span><span class="n">reader</span><span class="p">,</span>
+                    <span class="n">parser</span><span class="o">=</span><span class="n">parser</span><span class="p">,</span>
+                    <span class="n">writer</span><span class="o">=</span><span class="n">SphinxDummyWriter</span><span class="p">(),</span>
+                    <span class="n">source_class</span><span class="o">=</span><span class="n">SphinxFileInput</span><span class="p">,</span>
+                    <span class="n">destination</span><span class="o">=</span><span class="n">NullOutput</span><span class="p">())</span>
+    <span class="n">pub</span><span class="o">.</span><span class="n">process_programmatic_settings</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">settings</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">pub</span><span class="o">.</span><span class="n">set_source</span><span class="p">(</span><span class="n">source_path</span><span class="o">=</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">pub</span><span class="o">.</span><span class="n">publish</span><span class="p">()</span> <span class="c1"># 👈 myst parser が使われれる</span>
+    <span class="k">return</span> <span class="n">pub</span><span class="o">.</span><span class="n">document</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MystParser</span><span class="p">(</span><span class="n">SphinxParser</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputstring</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">document</span><span class="p">:</span> <span class="n">nodes</span><span class="o">.</span><span class="n">document</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Parse source text.</span>
+
+<span class="sd">        :param inputstring: The source string to parse</span>
+<span class="sd">        :param document: The root docutils node to add AST elements to</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">myst_config</span>
+        <span class="n">parser</span> <span class="o">=</span> <span class="n">default_parser</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;document&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">document</span>
+        <span class="n">env</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">inputstring</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">tokens</span> <span class="ow">or</span> <span class="n">tokens</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="s2">&quot;front_matter&quot;</span><span class="p">:</span>
+            <span class="c1"># we always add front matter, so that we can merge it with global keys,</span>
+            <span class="c1"># specified in the sphinx configuration</span>
+            <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">Token</span><span class="p">(</span><span class="s2">&quot;front_matter&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;{}&quot;</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])]</span> <span class="o">+</span> <span class="n">tokens</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">parser</span><span class="o">.</span><span class="n">options</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span> <span class="c1"># 👈 myst_parser.sphinx_renderer.SphinxRenderer</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">myst_parser.docutils_renderer.DocutilsRenderer</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">render_front_matter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">token</span><span class="p">:</span> <span class="n">SyntaxTreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Pass document front matter data.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="environment">
 <h2>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h2>
@@ -97,7 +163,7 @@
     <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">動作</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="init.html">フェーズ 0: 初期化</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">フェーズ 1: 読み込み</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BuildPhase.READING</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resolve.html">BuildPhase.RESOLVING</a></li>
 <li class="toctree-l2"><a class="reference internal" href="write.html">BuildPhase.WRITING</a></li>
 </ul>
@@ -136,7 +202,8 @@
         
   <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">フェーズ 1: 読み込み</a><ul>
+<li><a class="reference internal" href="#">BuildPhase.READING</a><ul>
+<li><a class="reference internal" href="#read">read</a></li>
 <li><a class="reference internal" href="#environment">Environment</a></li>
 <li><a class="reference internal" href="#doctree">.doctree</a></li>
 </ul>
