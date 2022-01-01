@@ -20,4 +20,4 @@ for docname in status_iterator(docnames, __('writing output... '), "darkgreen",
     self.write_doc(docname, doctree)
 ```
 
-HTML builder の場合、 {doc}`basic teheme の動作 </theme/basic>` に続く。
+HTML builder の場合、 {doc}`basic teheme の動作 </builder/html/theme/basic>` に続く。

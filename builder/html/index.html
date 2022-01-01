@@ -1,54 +1,49 @@
 
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-<!doctype html>
-
-<html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTMLBuilder &#8212; read sphinx  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/bizstyle.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/my.css" />
-    
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/bizstyle.js"></script>
+    <title>HTMLBuilder</title>
+<link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+<link rel="stylesheet" type="text/css" href="../../_static/main.css" />
+<link rel="stylesheet" type="text/css" href="../../_static/my.css" />
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Theme" href="theme/index.html" />
-    <link rel="prev" title="Builder" href="../index.html" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <!--[if lt IE 9]>
-    <script src="_static/css3-mediaqueries.js"></script>
-    <![endif]-->
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="theme/index.html" title="Theme"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../index.html" title="Builder"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">read sphinx  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Builder</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">HTMLBuilder</a></li> 
-      </ul>
-    </div>  
+    <link rel="prev" title="Builder" href="../index.html" /> 
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="tex2jax_ignore mathjax_ignore section" id="htmlbuilder">
+</head>
+
+<body>
+    <div id="header">
+        
+<div class="related" role="navigation" aria-label="related navigation">
+    <!-- <h3>Navigation</h3> -->
+    <ul>
+        <li class="right" style="margin-right: 10px" >
+            <a href="../../genindex.html" title="General Index" accesskey="I">index</a>
+        </li>
+        <li class="right" >
+            <a href="theme/index.html" title="Theme" accesskey="N">next</a>
+        </li>
+        <li class="right" >
+            <a href="../index.html" title="Builder" accesskey="P">previous</a>
+        </li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">read sphinx  documentation</a></li>
+        <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Builder</a></li>
+        <li class="nav-item nav-item-this"><a href="">HTMLBuilder</a></li> 
+    </ul>
+</div>
+    </div>
+    <div id="document">
+<div class="tex2jax_ignore mathjax_ignore section" id="htmlbuilder">
 <h1>HTMLBuilder<a class="headerlink" href="#htmlbuilder" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://zenn.dev/attakei/articles/sphinx-make-dirhtml">Sphinxにひっそり存在するビルダー “dirhtml”の使い勝手を知る</a></p></li>
@@ -209,6 +204,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">globalcontext</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">html_context</span><span class="p">)</span>        
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">conf.py</span></code> による <code class="docutils literal notranslate"><span class="pre">[options]</span></code> の上書き</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Theme options are theme-specific and customize the look and feel of a theme</span>
+<span class="c1"># further.  For a list of options available for each theme, see the</span>
+<span class="c1"># documentation.</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;linkcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="c1"># 👈 theme_linkcolor</span>
+  <span class="s1">&#39;headerbgcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span> <span class="c1"># 👈 theme_headerbgcolor</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="theme/index.html">Theme</a></li>
@@ -219,12 +224,9 @@
 </div>
 
 
-            <div class="clearer"></div>
-          </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
+    </div>
+    <div id="global">
+        
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -234,13 +236,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../index.html"
-                        title="previous chapter">Builder</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="theme/index.html"
-                        title="next chapter">Theme</a></p><div id="toc" class="sidebarRow">
+<script>$('#searchbox').show(0);</script><div id="toc" class="sidebarRow">
     <h3><a href="../../index.html">Table of Contents</a></h3>
     <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../run/index.html">動作</a><ul>
@@ -279,6 +275,9 @@
 </ul>
 
 </div>
+    </div>
+    <div id="local">
+        
   <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">HTMLBuilder</a><ul>
@@ -298,30 +297,18 @@
 </li>
 </ul>
 
-        </div>
-      </div>
-      <div class="clearer"></div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Builder</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="theme/index.html"
+                        title="next chapter">Theme</a></p>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="theme/index.html" title="Theme"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../index.html" title="Builder"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">read sphinx  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >Builder</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">HTMLBuilder</a></li> 
-      </ul>
+    <div id="footer">
+        
+&#169; Copyright 2021, ousttrue.
+Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
     </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, ousttrue.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
-    </div>
-  </body>
+</body>
+
 </html>

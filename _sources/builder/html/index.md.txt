@@ -156,6 +156,18 @@ output = self.templates.render(templatename, ctx)
         self.globalcontext.update(self.config.html_context)        
 ```
 
+`conf.py` による `[options]` の上書き
+
+```python
+# Theme options are theme-specific and customize the look and feel of a theme
+# further.  For a list of options available for each theme, see the
+# documentation.
+html_theme_options = {
+  'linkcolor': 'red', # 👈 theme_linkcolor
+  'headerbgcolor': 'blue' # 👈 theme_headerbgcolor
+}
+```
+
 ```{toctree}
 :maxdepth: 1
 theme/index
