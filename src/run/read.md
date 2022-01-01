@@ -1,6 +1,6 @@
-# フェーズ 1: 読み込み
+# BuildPhase.READING
 
-中間ファイルを書き出す
+フェーズ 1: 読み込み
 
 ```
 3. event.env-get-outdated(app, env, added, changed, removed)
@@ -21,6 +21,77 @@ for docname in docnames:
    - if running in parallel mode, this event will be emitted for each process
 
 10. event.env-updated(app, env)
+```
+
+## read
+
+```python
+added, changed, removed = self.env.get_outdated_files(updated)
+```
+
+* docutils の Publisher で parse する。
+
+
+`sphinx.io.py`
+
+```python
+def read_doc(app: "Sphinx", env: BuildEnvironment, filename: str) -> nodes.document:
+    """Parse a document and convert to doctree."""
+    # set up error_handler for the target document
+    error_handler = UnicodeDecodeErrorHandler(env.docname)
+    codecs.register_error('sphinx', error_handler)  # type: ignore
+
+    reader = SphinxStandaloneReader()
+    reader.setup(app)
+    filetype = get_filetype(app.config.source_suffix, filename)
+
+    parser = app.registry.create_source_parser(app, filetype) # 👈 拡張子に応じて myst_parser になる
+
+    if parser.__class__.__name__ == 'CommonMarkParser' and parser.settings_spec == ():
+        # a workaround for recommonmark
+        #   If recommonmark.AutoStrictify is enabled, the parser invokes reST parser
+        #   internally.  But recommonmark-0.4.0 does not provide settings_spec for reST
+        #   parser.  As a workaround, this copies settings_spec for RSTParser to the
+        #   CommonMarkParser.
+        parser.settings_spec = RSTParser.settings_spec
+
+    pub = Publisher(reader=reader,
+                    parser=parser,
+                    writer=SphinxDummyWriter(),
+                    source_class=SphinxFileInput,
+                    destination=NullOutput())
+    pub.process_programmatic_settings(None, env.settings, None)
+    pub.set_source(source_path=filename)
+    pub.publish() # 👈 myst parser が使われれる
+    return pub.document
+```
+
+```python
+class MystParser(SphinxParser):
+    def parse(self, inputstring: str, document: nodes.document) -> None:
+        """Parse source text.
+
+        :param inputstring: The source string to parse
+        :param document: The root docutils node to add AST elements to
+
+        """
+        config = document.settings.env.myst_config
+        parser = default_parser(config)
+        parser.options["document"] = document
+        env: dict = {}
+        tokens = parser.parse(inputstring, env)
+        if not tokens or tokens[0].type != "front_matter":
+            # we always add front matter, so that we can merge it with global keys,
+            # specified in the sphinx configuration
+            tokens = [Token("front_matter", "", 0, content="{}", map=[0, 0])] + tokens
+        parser.renderer.render(tokens, parser.options, env) # 👈 myst_parser.sphinx_renderer.SphinxRenderer
+```
+
+`myst_parser.docutils_renderer.DocutilsRenderer`
+
+```python
+    def render_front_matter(self, token: SyntaxTreeNode) -> None:
+        """Pass document front matter data."""
 ```
 
 ## Environment
