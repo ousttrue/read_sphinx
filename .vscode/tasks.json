@@ -14,6 +14,13 @@
                     "PATH": "${workspaceFolder}/.venv/Scripts:${env:PATH}"
                 }
             }
+        },
+        {
+            "label": "sync",
+            "type": "shell",
+            "command": ".venv/Scripts/python.exe sync.py",
+            "problemMatcher": [],
+            "isBackground": true,
         }
     ]
 }
