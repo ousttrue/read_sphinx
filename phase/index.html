@@ -1,0 +1,177 @@
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuildPhase</title>
+<link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+<link rel="stylesheet" type="text/css" href="../_static/main.css" />
+<link rel="stylesheet" type="text/css" href="../_static/my.css" />
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="INITIALIZATION" href="init.html" />
+    <link rel="prev" title="デバッグ" href="../debug.html" /> 
+
+</head>
+
+<body>
+    <div id="header">
+        
+<div class="related" role="navigation" aria-label="related navigation">
+    <!-- <h3>Navigation</h3> -->
+    <ul>
+        <li class="right" style="margin-right: 10px" >
+            <a href="../genindex.html" title="General Index" accesskey="I">index</a>
+        </li>
+        <li class="right" >
+            <a href="init.html" title="INITIALIZATION" accesskey="N">next</a>
+        </li>
+        <li class="right" >
+            <a href="../debug.html" title="デバッグ" accesskey="P">previous</a>
+        </li>
+        <li class="nav-item nav-item-0"><a href="../index.html">read sphinx  documentation</a></li>
+        <li class="nav-item nav-item-this"><a href="">BuildPhase</a></li> 
+    </ul>
+</div>
+    </div>
+    <div id="document">
+<div class="tex2jax_ignore mathjax_ignore section" id="buildphase">
+<h1>BuildPhase<a class="headerlink" href="#buildphase" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/extdev/index.html#build-phases">https://www.sphinx-doc.org/ja/master/extdev/index.html#build-phases</a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
+
+
+<span class="k">class</span> <span class="nc">BuildPhase</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build phase of Sphinx application.&quot;&quot;&quot;</span>
+    <span class="n">INITIALIZATION</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">READING</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">CONSISTENCY_CHECK</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">RESOLVING</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">WRITING</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="init.html">INITIALIZATION</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="init.html#sphinx-application-sphinx">sphinx.application.Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="init.html#extension-import-setup">extension の import と setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read.html">READING</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read.html#read">read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read.html#environment">Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read.html#doctree">.doctree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="consistency_check.html">CONSISTENCY_CHECK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="consistency_check.html#document-isn-t-included-in-any-toctree">document isn’t included in any toctree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resolve.html">RESOLVING</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resolve.html#prepare-writing">prepare_writing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="write.html">WRITING</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="write.html#write">write</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="buildevent">
+<h2>BuildEvent<a class="headerlink" href="#buildevent" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/extdev/appapi.html#events">https://www.sphinx-doc.org/ja/master/extdev/appapi.html#events</a></p></li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+    <div id="global">
+        
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><div id="toc" class="sidebarRow">
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../debug.html">デバッグ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BuildPhase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="init.html">INITIALIZATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read.html">READING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consistency_check.html">CONSISTENCY_CHECK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resolve.html">RESOLVING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="write.html">WRITING</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">conf.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docutils/index.html">Docutils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docutils/directive.html">directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docutils/roll.html">roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docutils/doctree.html">doctree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder/index.html">Builder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../builder/html/index.html">HTMLBuilder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../builder/html/theme/index.html">Theme</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../builder/html/theme/basic.html">basicテーマ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../builder/html/theme/customize.html">customize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../builder/html/theme/create.html">テーマの作成</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../extension/index.html">Extension</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../extension/myst_parser.html">myst_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extension/blockdiag.html">blockdiag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extension/ablog.html">ablog</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../command/index.html">Command</a></li>
+</ul>
+
+</div>
+    </div>
+    <div id="local">
+        
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">BuildPhase</a><ul>
+<li><a class="reference internal" href="#buildevent">BuildEvent</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../debug.html"
+                        title="previous chapter">デバッグ</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="init.html"
+                        title="next chapter">INITIALIZATION</a></p>
+    </div>
+    <div id="footer">
+        
+&#169; Copyright 2021, ousttrue.
+Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+</body>
+
+</html>

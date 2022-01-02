@@ -1,5 +1,7 @@
 
-# フェーズ 0: 初期化
+# INITIALIZATION
+
+フェーズ 0: 初期化
 
 ## sphinx.application.Sphinx
 

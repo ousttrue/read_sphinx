@@ -1,0 +1,228 @@
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myst_parser</title>
+<link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+<link rel="stylesheet" type="text/css" href="../_static/main.css" />
+<link rel="stylesheet" type="text/css" href="../_static/my.css" />
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="blockdiag" href="blockdiag.html" />
+    <link rel="prev" title="Extension" href="index.html" /> 
+
+</head>
+
+<body>
+    <div id="header">
+        
+<div class="related" role="navigation" aria-label="related navigation">
+    <!-- <h3>Navigation</h3> -->
+    <ul>
+        <li class="right" style="margin-right: 10px" >
+            <a href="../genindex.html" title="General Index" accesskey="I">index</a>
+        </li>
+        <li class="right" >
+            <a href="blockdiag.html" title="blockdiag" accesskey="N">next</a>
+        </li>
+        <li class="right" >
+            <a href="index.html" title="Extension" accesskey="P">previous</a>
+        </li>
+        <li class="nav-item nav-item-0"><a href="../index.html">read sphinx  documentation</a></li>
+        <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Extension</a></li>
+        <li class="nav-item nav-item-this"><a href="">myst_parser</a></li> 
+    </ul>
+</div>
+    </div>
+    <div id="document">
+<div class="tex2jax_ignore mathjax_ignore section" id="myst-parser">
+<h1>myst_parser<a class="headerlink" href="#myst-parser" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Initialize Sphinx extension.&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">myst_parser.sphinx_parser</span> <span class="kn">import</span> <span class="n">MystParser</span>
+
+    <span class="n">app</span><span class="o">.</span><span class="n">add_source_suffix</span><span class="p">(</span><span class="s2">&quot;.md&quot;</span><span class="p">,</span> <span class="s2">&quot;markdown&quot;</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_source_parser</span><span class="p">(</span><span class="n">MystParser</span><span class="p">)</span>
+
+    <span class="n">setup_sphinx</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="n">__version__</span><span class="p">,</span> <span class="s2">&quot;parallel_read_safe&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">setup_sphinx</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="s2">&quot;Sphinx&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Initialize all settings and transforms in Sphinx.&quot;&quot;&quot;</span>
+    <span class="c1"># we do this separately to setup,</span>
+    <span class="c1"># so that it can be called by external packages like myst_nb</span>
+    <span class="kn">from</span> <span class="nn">myst_parser.directives</span> <span class="kn">import</span> <span class="n">FigureMarkdown</span><span class="p">,</span> <span class="n">SubstitutionReferenceRole</span>
+    <span class="kn">from</span> <span class="nn">myst_parser.main</span> <span class="kn">import</span> <span class="n">MdParserConfig</span>
+    <span class="kn">from</span> <span class="nn">myst_parser.mathjax</span> <span class="kn">import</span> <span class="n">override_mathjax</span>
+    <span class="kn">from</span> <span class="nn">myst_parser.myst_refs</span> <span class="kn">import</span> <span class="n">MystReferenceResolver</span>
+
+    <span class="n">app</span><span class="o">.</span><span class="n">add_role</span><span class="p">(</span><span class="s2">&quot;sub-ref&quot;</span><span class="p">,</span> <span class="n">SubstitutionReferenceRole</span><span class="p">())</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s2">&quot;figure-md&quot;</span><span class="p">,</span> <span class="n">FigureMarkdown</span><span class="p">)</span>
+
+    <span class="n">app</span><span class="o">.</span><span class="n">add_post_transform</span><span class="p">(</span><span class="n">MystReferenceResolver</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">default</span> <span class="ow">in</span> <span class="n">MdParserConfig</span><span class="p">()</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;renderer&quot;</span><span class="p">:</span>
+            <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;myst_{name}&quot;</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="s2">&quot;env&quot;</span><span class="p">)</span>
+
+    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;builder-inited&quot;</span><span class="p">,</span> <span class="n">create_myst_config</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;builder-inited&quot;</span><span class="p">,</span> <span class="n">override_mathjax</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="mystparser">
+<h2>MystParser<a class="headerlink" href="#mystparser" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">docutils.readers.Reader</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Parse `self.input` into a document tree.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">document</span> <span class="o">=</span> <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_document</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">,</span> <span class="n">document</span><span class="p">)</span>
+        <span class="n">document</span><span class="o">.</span><span class="n">current_source</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">current_line</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">myst_parser.sphinx_parser.MystParser</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputstring</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">document</span><span class="p">:</span> <span class="n">nodes</span><span class="o">.</span><span class="n">document</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Parse source text.</span>
+
+<span class="sd">        :param inputstring: The source string to parse</span>
+<span class="sd">        :param document: The root docutils node to add AST elements to</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">myst_config</span>
+        <span class="n">parser</span> <span class="o">=</span> <span class="n">default_parser</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;document&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">document</span>
+        <span class="n">env</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">inputstring</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">tokens</span> <span class="ow">or</span> <span class="n">tokens</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="s2">&quot;front_matter&quot;</span><span class="p">:</span>
+            <span class="c1"># we always add front matter, so that we can merge it with global keys,</span>
+            <span class="c1"># specified in the sphinx configuration</span>
+            <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">Token</span><span class="p">(</span><span class="s2">&quot;front_matter&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;{}&quot;</span><span class="p">,</span> <span class="nb">map</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])]</span> <span class="o">+</span> <span class="n">tokens</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">parser</span><span class="o">.</span><span class="n">options</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">myst_parser.sphinx_renderer.SphinxRenderer</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">tokens</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Token</span><span class="p">],</span> <span class="n">options</span><span class="p">,</span> <span class="n">md_env</span><span class="p">:</span> <span class="n">MutableMapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nodes</span><span class="o">.</span><span class="n">document</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_render_tokens</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">tokens</span><span class="p">))</span>
+        
+    <span class="k">def</span> <span class="nf">_render_tokens</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tokens</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Token</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="c1"># render</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">node_tree</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+            <span class="c1"># skip hidden?</span>
+            <span class="k">if</span> <span class="n">f</span><span class="s2">&quot;render_{child.type}&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rules</span><span class="p">[</span><span class="n">f</span><span class="s2">&quot;render_{child.type}&quot;</span><span class="p">](</span><span class="n">child</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">create_warning</span><span class="p">(</span>
+                    <span class="n">f</span><span class="s2">&quot;No render method for: {child.type}&quot;</span><span class="p">,</span>
+                    <span class="n">line</span><span class="o">=</span><span class="n">token_line</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+                    <span class="n">subtype</span><span class="o">=</span><span class="s2">&quot;render&quot;</span><span class="p">,</span>
+                    <span class="n">append_to</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">current_node</span><span class="p">,</span>
+                <span class="p">)</span>
+
+<span class="c1"># child.type</span>
+<span class="n">front_matter</span>
+<span class="n">inline</span>
+<span class="n">inline</span>
+<span class="n">heading</span>
+
+<span class="c1"># child.type</span>
+<span class="n">front_matter</span>
+<span class="n">inline</span>
+<span class="n">inline</span>
+<span class="n">paragraph</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+    <div id="global">
+        
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><div id="toc" class="sidebarRow">
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../debug.html">デバッグ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../phase/index.html">BuildPhase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../phase/init.html">INITIALIZATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phase/read.html">READING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phase/consistency_check.html">CONSISTENCY_CHECK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phase/resolve.html">RESOLVING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phase/write.html">WRITING</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">conf.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docutils/index.html">Docutils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../docutils/directive.html">directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docutils/roll.html">roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docutils/doctree.html">doctree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder/index.html">Builder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../builder/html/index.html">HTMLBuilder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../builder/html/theme/index.html">Theme</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../builder/html/theme/basic.html">basicテーマ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../builder/html/theme/customize.html">customize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../builder/html/theme/create.html">テーマの作成</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Extension</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">myst_parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockdiag.html">blockdiag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ablog.html">ablog</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../command/index.html">Command</a></li>
+</ul>
+
+</div>
+    </div>
+    <div id="local">
+        
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">myst_parser</a><ul>
+<li><a class="reference internal" href="#mystparser">MystParser</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Extension</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="blockdiag.html"
+                        title="next chapter">blockdiag</a></p>
+    </div>
+    <div id="footer">
+        
+&#169; Copyright 2021, ousttrue.
+Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+</body>
+
+</html>

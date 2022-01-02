@@ -2,7 +2,8 @@
 
 ```{toctree}
 :maxdepth: 2
-run/index
+debug
+phase/index
 configuration/index
 docutils/index
 environment/index
