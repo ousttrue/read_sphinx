@@ -50,6 +50,7 @@ def setup(app: sphinx.application.Sphinx):
 * [(6日目) Sphinx 拡張の紹介](https://tk0miya.hatenablog.com/entry/20111206/p1)
 
 ```{toctree}
+myst_parser
 blockdiag
 ablog
 ```

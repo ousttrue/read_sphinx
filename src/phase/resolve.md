@@ -1,4 +1,4 @@
-# BuildPhase.RESOLVING
+# RESOLVING
 
 `フェーズ 3: 解決 `
 

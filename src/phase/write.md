@@ -1,4 +1,4 @@
-# BuildPhase.WRITING
+# WRITING
 
 フェーズ 4: 書き出し
 

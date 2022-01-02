@@ -136,11 +136,15 @@ body {
     border: solid 1px;
     margin: 0.5em 0 1em 0;
 }
-span.pre {
+.docutils.literal.notranslate {
     background-color: #ddd;
     font-family: "Consolas", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
     border-radius: 5px;
     padding: 0 0.2em;
+}
+.py {
+    background-color: cornflowerblue;
+    border: solid 1px;
 }
 
 ul {
