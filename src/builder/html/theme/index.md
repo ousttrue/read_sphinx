@@ -28,6 +28,7 @@ basic
 
 ## その他のテーマ
 
+-   <https://pradyunsg.me/furo/quickstart/>
 -   <https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/>
 -   <https://github.com/executablebooks/sphinx-book-theme>
 -   <https://github.com/shiguredo/sphinx_shiguredo_theme>

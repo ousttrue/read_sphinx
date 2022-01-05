@@ -1,6 +1,7 @@
 # BuildPhase
 
 * <https://www.sphinx-doc.org/ja/master/extdev/index.html#build-phases>
+* <https://www.sphinx-doc.org/ja/master/extdev/appapi.html#events>
 
 ```python
 from enum import IntEnum
@@ -22,7 +23,3 @@ consistency_check
 resolve
 write
 ```
-
-## BuildEvent
-
-* <https://www.sphinx-doc.org/ja/master/extdev/appapi.html#events>

@@ -37,7 +37,12 @@ def setup_sphinx(app: "Sphinx"):
 
 ## MystParser
 
-`docutils.readers.Reader`
+<https://myst-parser.readthedocs.io/en/latest/api/index.html>
+
+    - <https://myst-parser.readthedocs.io/en/latest/sphinx/index.html#myst-sphinx>
+    - <https://myst-parser.readthedocs.io/en/latest/docutils.html#myst-docutils>
+
+### `docutils.readers.Reader`
 
 ```python
     def parse(self):
@@ -47,7 +52,7 @@ def setup_sphinx(app: "Sphinx"):
         document.current_source = document.current_line = None
 ```
 
-`myst_parser.sphinx_parser.MystParser`
+### `myst_parser.sphinx_parser.MystParser`
 
 ```python
     def parse(self, inputstring: str, document: nodes.document) -> None:
@@ -61,7 +66,7 @@ def setup_sphinx(app: "Sphinx"):
         parser = default_parser(config)
         parser.options["document"] = document
         env: dict = {}
-        tokens = parser.parse(inputstring, env)
+        tokens = parser.parse(inputstring, env) # 👈 markdown-it tokens
         if not tokens or tokens[0].type != "front_matter":
             # we always add front matter, so that we can merge it with global keys,
             # specified in the sphinx configuration
@@ -69,7 +74,13 @@ def setup_sphinx(app: "Sphinx"):
         parser.renderer.render(tokens, parser.options, env)
 ```
 
-`myst_parser.sphinx_renderer.SphinxRenderer`
+#### markdown-it-py parser
+
+myst_parser の markdown parser。
+
+* <https://markdown-it-py.readthedocs.io/en/latest/>
+
+### `myst_parser.sphinx_renderer.SphinxRenderer`
 
 ```python
     def render(

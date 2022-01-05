@@ -10,7 +10,7 @@
 
 `sphinx.jinja2glue.BuiltinTemplateLoader` をセットアップする。
 
--   {doc}`ビルドフェーズ0 </run/init>`
+-   {doc}`ビルドフェーズ0 </phase/init>`
 -   sphinx.builders.Builder#create_template_bridge
 -   sphinx.jinja2glue.BuiltinTemplateLoader()
 -   sphinx.jinja2glue.BuiltinTemplateLoader#init
@@ -20,7 +20,7 @@
 
 `sphinx.jinja2glue.BuiltinTemplateLoader` を使う。
 
--   {doc}`ビルドフェーズ4 </run/write>`
+-   {doc}`ビルドフェーズ4 </phase/write>`
 -   sphinx.builders.Builder#buile
 -   sphinx.builders.Builder#write
 -   sphinx.builders.StandaloneHTMLBuilder#write_doc
@@ -167,6 +167,13 @@ html_theme_options = {
   'headerbgcolor': 'blue' # 👈 theme_headerbgcolor
 }
 ```
+
+## static 要素のコピー動作は？
+
+* css や script を build 先にコピーする仕組みは？
+* また、そのときに scss とか使えないだろうか
+
+## theme
 
 ```{toctree}
 :maxdepth: 1
