@@ -17,7 +17,7 @@ jobs:
       - run: pip install myst-parser
       - run: pip install gitinclude
       - run: pip install sphinxcontrib-actdiag sphinxcontrib-blockdiag sphinxcontrib-nwdiag sphinxcontrib-seqdiag
-      - run: pip install sphinx-book-theme
+      - run: pip install furo
       - run: sphinx-build src build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
