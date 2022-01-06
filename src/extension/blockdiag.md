@@ -5,6 +5,8 @@
 
 * <https://blog.interstellar.co.jp/2018/09/sphinxblockdiag/>
 
+`pip install sphinxcontrib-blockdiag sphinxcontrib-seqdiag sphinxcontrib-actdiag sphinxcontrib-nwdiag`
+
 ```python
 def setup(app):
     app.add_node(blockdiag_node,

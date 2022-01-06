@@ -1,5 +1,7 @@
 # Theme
 
+{doc}`/builder/html/index` の見た目のカスタマイズ。
+
 -   rtd の `toplevelのtoctree + 現在地` が使い易い
 
 | theme             |         | navigation                         |
@@ -28,7 +30,9 @@ basic
 
 ## その他のテーマ
 
--   <https://pradyunsg.me/furo/quickstart/>
+```{toctree}
+furo
+```
 -   <https://sphinx-themes.org/sample-sites/sphinx-rtd-theme/>
 -   <https://github.com/executablebooks/sphinx-book-theme>
 -   <https://github.com/shiguredo/sphinx_shiguredo_theme>

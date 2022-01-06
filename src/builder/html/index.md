@@ -173,9 +173,3 @@ html_theme_options = {
 * css や script を build 先にコピーする仕組みは？
 * また、そのときに scss とか使えないだろうか
 
-## theme
-
-```{toctree}
-:maxdepth: 1
-theme/index
-```

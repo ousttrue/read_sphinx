@@ -11,9 +11,11 @@ configuration/index
 docutils/index
 environment/index
 builder/index
+theme/index
 extension/index
 command/index
 i18n/index
+language_server/index
 ```
 
 ## Indices and tables
