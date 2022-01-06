@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Docutils" href="../docutils/index.html" /><link rel="prev" title="WRITING" href="../phase/write.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="workflow" href="workflow.html" /><link rel="prev" title="Command" href="../command/index.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>conf.py - read sphinx documentation</title>
+        <title>Internationalization(i18n) - read sphinx documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -164,7 +164,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../phase/write.html">WRITING</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">conf.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">conf.py</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../docutils/index.html">Docutils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../docutils/directive.html">directive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docutils/roll.html">roll</a></li>
@@ -191,9 +191,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../command/index.html">Command</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../i18n/index.html">Internationalization(i18n)</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../i18n/workflow.html">workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../i18n/build.html">build</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Internationalization(i18n)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">build</a></li>
 </ul>
 </li>
 </ul>
@@ -222,9 +222,24 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="conf-py">
-<h1>conf.py<a class="headerlink" href="#conf-py" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/usage/configuration.html">https://www.sphinx-doc.org/ja/master/usage/configuration.html</a></p>
+          <section class="tex2jax_ignore mathjax_ignore" id="internationalization-i18n">
+<h1>Internationalization(i18n)<a class="headerlink" href="#internationalization-i18n" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/usage/advanced/intl.html">https://www.sphinx-doc.org/ja/master/usage/advanced/intl.html</a></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html#pot-file">pot file の作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html#po-file">po file の作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html#po">po の翻訳作業</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html#build">build</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build.html">build</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build.html#sphinx-transforms-i18n">sphinx.transforms.i18n</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 
         </article>
@@ -232,23 +247,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../docutils/index.html">
+          <a class="next-page" href="workflow.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Docutils</div>
+                <div class="title">workflow</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../phase/write.html">
+          <a class="prev-page" href="../command/index.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">WRITING</div>
+                <div class="title">Command</div>
                 
               </div>
             </a>
@@ -258,7 +273,7 @@
               Copyright &#169; 2021, ousttrue |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/configuration/index.md.txt"
+            | <a class="muted-link" href="../_sources/i18n/index.md.txt"
                rel="nofollow">
               Show Source
             </a>

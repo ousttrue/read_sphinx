@@ -2,6 +2,7 @@
 
 <https://github.com/sphinx-doc/sphinx/>
 
+
 ```{toctree}
 :maxdepth: 2
 debug
@@ -12,7 +13,7 @@ environment/index
 builder/index
 extension/index
 command/index
-intl/index
+i18n/index
 ```
 
 ## Indices and tables

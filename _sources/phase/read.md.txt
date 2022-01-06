@@ -2,6 +2,8 @@
 
 フェーズ 1: 読み込み
 
+最初に翻訳カタログの処理。 {doc}`/i18n/index`
+
 ```
 3. event.env-get-outdated(app, env, added, changed, removed)
 4. event.env-before-read-docs(app, env, docnames)
@@ -31,7 +33,6 @@ added, changed, removed = self.env.get_outdated_files(updated)
 
 * docutils の Publisher で parse する。
 
-
 `sphinx.io.py`
 
 ```python
@@ -41,7 +42,7 @@ def read_doc(app: "Sphinx", env: BuildEnvironment, filename: str) -> nodes.docum
     error_handler = UnicodeDecodeErrorHandler(env.docname)
     codecs.register_error('sphinx', error_handler)  # type: ignore
 
-    reader = SphinxStandaloneReader()
+    reader = SphinxStandaloneReader() # これ
     reader.setup(app)
     filetype = get_filetype(app.config.source_suffix, filename)
 
@@ -65,6 +66,21 @@ def read_doc(app: "Sphinx", env: BuildEnvironment, filename: str) -> nodes.docum
     pub.publish() # 👈 myst parser が使われれる
     return pub.document
 ```
+
+`sphinx.io.SphinxStandaloneReader`
+
+```py
+    def read(self, source: Input, parser: Parser, settings: Values) -> nodes.document:
+        self.source = source
+
+    def read_source(self, env: BuildEnvironment) -> str:
+        """Read content from source and do post-process."""
+        content = self.source.read()    
+```
+
+`SphinxFileInput`
+
+
 
 ```python
 class MystParser(SphinxParser):

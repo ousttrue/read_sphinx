@@ -191,7 +191,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../command/index.html">Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../intl/index.html">多言語化</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../i18n/index.html">Internationalization(i18n)</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../i18n/workflow.html">workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i18n/build.html">build</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -220,8 +224,14 @@
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="blockdiag">
 <h1>blockdiag<a class="headerlink" href="#blockdiag" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/blockdiag/sphinxcontrib-blockdiag">https://github.com/blockdiag/sphinxcontrib-blockdiag</a></p>
-<p><a class="reference external" href="https://github.com/blockdiag/sphinxcontrib-blockdiag/blob/master/sphinxcontrib/blockdiag.py#L299">https://github.com/blockdiag/sphinxcontrib-blockdiag/blob/master/sphinxcontrib/blockdiag.py#L299</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/blockdiag/sphinxcontrib-blockdiag">https://github.com/blockdiag/sphinxcontrib-blockdiag</a></p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/blockdiag/sphinxcontrib-blockdiag/blob/master/sphinxcontrib/blockdiag.py#L299">https://github.com/blockdiag/sphinxcontrib-blockdiag/blob/master/sphinxcontrib/blockdiag.py#L299</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://blog.interstellar.co.jp/2018/09/sphinxblockdiag/">https://blog.interstellar.co.jp/2018/09/sphinxblockdiag/</a></p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
     <span class="n">app</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">blockdiag_node</span><span class="p">,</span>
                  <span class="n">html</span><span class="o">=</span><span class="p">(</span><span class="n">html_visit_blockdiag</span><span class="p">,</span> <span class="n">html_depart_blockdiag</span><span class="p">))</span>

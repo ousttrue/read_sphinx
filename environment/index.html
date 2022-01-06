@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -191,7 +191,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../command/index.html">Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../intl/index.html">多言語化</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../i18n/index.html">Internationalization(i18n)</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../i18n/workflow.html">workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i18n/build.html">build</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -212,7 +216,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -222,6 +226,11 @@
 <h1>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h1>
 <p>doctree がドキュメントひとつひとつ表すのに対して、
 Enviroment にはサイト全体の情報が格納される。</p>
+<section id="sphinx-environment-buildenvironment">
+<h2>sphinx.environment.BuildEnvironment<a class="headerlink" href="#sphinx-environment-buildenvironment" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">builder.use_message_catalog</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">find_files</span></code> で翻訳する？</p>
+</section>
 </section>
 
         </article>
@@ -263,8 +272,27 @@ Enviroment にはサイト全体の情報が格納される。</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Environment</a><ul>
+<li><a class="reference internal" href="#sphinx-environment-buildenvironment">sphinx.environment.BuildEnvironment</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

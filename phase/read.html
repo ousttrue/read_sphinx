@@ -191,7 +191,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../command/index.html">Command</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../intl/index.html">多言語化</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../i18n/index.html">Internationalization(i18n)</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../i18n/workflow.html">workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i18n/build.html">build</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -221,6 +225,7 @@
           <section class="tex2jax_ignore mathjax_ignore" id="reading">
 <h1>READING<a class="headerlink" href="#reading" title="Permalink to this headline">¶</a></h1>
 <p>フェーズ 1: 読み込み</p>
+<p>最初に翻訳カタログの処理。 <a class="reference internal" href="../i18n/index.html"><span class="doc">Internationalization(i18n)</span></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">3.</span> <span class="n">event</span><span class="o">.</span><span class="n">env</span><span class="o">-</span><span class="n">get</span><span class="o">-</span><span class="n">outdated</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">added</span><span class="p">,</span> <span class="n">changed</span><span class="p">,</span> <span class="n">removed</span><span class="p">)</span>
 <span class="mf">4.</span> <span class="n">event</span><span class="o">.</span><span class="n">env</span><span class="o">-</span><span class="n">before</span><span class="o">-</span><span class="n">read</span><span class="o">-</span><span class="n">docs</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">docnames</span><span class="p">)</span>
 
@@ -256,7 +261,7 @@
     <span class="n">error_handler</span> <span class="o">=</span> <span class="n">UnicodeDecodeErrorHandler</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">docname</span><span class="p">)</span>
     <span class="n">codecs</span><span class="o">.</span><span class="n">register_error</span><span class="p">(</span><span class="s1">'sphinx'</span><span class="p">,</span> <span class="n">error_handler</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
 
-    <span class="n">reader</span> <span class="o">=</span> <span class="n">SphinxStandaloneReader</span><span class="p">()</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">SphinxStandaloneReader</span><span class="p">()</span> <span class="c1"># これ</span>
     <span class="n">reader</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
     <span class="n">filetype</span> <span class="o">=</span> <span class="n">get_filetype</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">source_suffix</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
 
@@ -281,6 +286,16 @@
     <span class="k">return</span> <span class="n">pub</span><span class="o">.</span><span class="n">document</span>
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx.io.SphinxStandaloneReader</span></code></p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Input</span><span class="p">,</span> <span class="n">parser</span><span class="p">:</span> <span class="n">Parser</span><span class="p">,</span> <span class="n">settings</span><span class="p">:</span> <span class="n">Values</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nodes</span><span class="o">.</span><span class="n">document</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
+
+    <span class="k">def</span> <span class="nf">read_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">BuildEnvironment</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">"""Read content from source and do post-process."""</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>    
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">SphinxFileInput</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MystParser</span><span class="p">(</span><span class="n">SphinxParser</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputstring</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">document</span><span class="p">:</span> <span class="n">nodes</span><span class="o">.</span><span class="n">document</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">"""Parse source text.</span>
