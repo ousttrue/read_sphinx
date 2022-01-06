@@ -1,8 +1,9 @@
 # blockdiag
 
-<https://github.com/blockdiag/sphinxcontrib-blockdiag>
+* <https://github.com/blockdiag/sphinxcontrib-blockdiag>
+    * <https://github.com/blockdiag/sphinxcontrib-blockdiag/blob/master/sphinxcontrib/blockdiag.py#L299>
 
-<https://github.com/blockdiag/sphinxcontrib-blockdiag/blob/master/sphinxcontrib/blockdiag.py#L299>
+* <https://blog.interstellar.co.jp/2018/09/sphinxblockdiag/>
 
 ```python
 def setup(app):
