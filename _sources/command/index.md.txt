@@ -17,8 +17,6 @@ html の生成など
 
 ## 外部コマンド
 
-### sphinx-autobuild
-
-`pip install sphinx-autobuild`
-
-preview server。ファイルの更新を監視して自動ビルドする機能と、HTML のホスティング。
+```{toctree}
+sphinx-autobuild
+```

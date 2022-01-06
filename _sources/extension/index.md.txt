@@ -54,3 +54,5 @@ myst_parser
 blockdiag
 ablog
 ```
+
+* <https://nbsphinx.readthedocs.io/en/0.8.8/>
