@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="conf.py" href="../configuration/index.html" /><link rel="prev" title="RESOLVING" href="resolve.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Environment" href="../environment/index.html" /><link rel="prev" title="doctree" href="doctree.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>WRITING - read sphinx documentation</title>
+        <title>Transform - read sphinx documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -156,20 +156,20 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../debug.html">デバッグ</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">BuildPhase</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="init.html">INITIALIZATION</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read.html">READING</a></li>
-<li class="toctree-l2"><a class="reference internal" href="consistency_check.html">CONSISTENCY_CHECK</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resolve.html">RESOLVING</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">WRITING</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../phase/index.html">BuildPhase</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../phase/init.html">INITIALIZATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phase/read.html">READING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phase/consistency_check.html">CONSISTENCY_CHECK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phase/resolve.html">RESOLVING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phase/write.html">WRITING</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">conf.py</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../docutils/index.html">Docutils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../docutils/directive.html">directive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docutils/roll.html">roll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docutils/doctree.html">doctree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docutils/transform.html">Transform</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Docutils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="directive.html">directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roll.html">roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctree.html">doctree</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Transform</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
@@ -220,34 +220,51 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="writing">
-<h1>WRITING<a class="headerlink" href="#writing" title="Permalink to this headline">¶</a></h1>
-<p>フェーズ 4: 書き出し</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">15.</span> <span class="n">Generate</span> <span class="n">output</span> <span class="n">files</span>
-<span class="mf">16.</span> <span class="n">event</span><span class="o">.</span><span class="n">build</span><span class="o">-</span><span class="n">finished</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">exception</span><span class="p">)</span>
+          <section class="tex2jax_ignore mathjax_ignore" id="transform">
+<h1>Transform<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx.application.Sphinx</span></code></p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">add_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transform</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Transform</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">"""Register a Docutils transform to be applied after parsing.</span>
+
+<span class="sd">        Add the standard docutils :class:`Transform` subclass *transform* to</span>
+<span class="sd">        the list of transforms that are applied after Sphinx parses a reST</span>
+<span class="sd">        document.</span>
+
+<span class="sd">        :param transform: A transform class</span>
+
+<span class="sd">        .. list-table:: priority range categories for Sphinx transforms</span>
+<span class="sd">           :widths: 20,80</span>
+
+<span class="sd">           * - Priority</span>
+<span class="sd">             - Main purpose in Sphinx</span>
+<span class="sd">           * - 0-99</span>
+<span class="sd">             - Fix invalid nodes by docutils. Translate a doctree.</span>
+<span class="sd">           * - 100-299</span>
+<span class="sd">             - Preparation</span>
+<span class="sd">           * - 300-399</span>
+<span class="sd">             - early</span>
+<span class="sd">           * - 400-699</span>
+<span class="sd">             - main</span>
+<span class="sd">           * - 700-799</span>
+<span class="sd">             - Post processing. Deadline to modify text and referencing.</span>
+<span class="sd">           * - 800-899</span>
+<span class="sd">             - Collect referencing and referenced nodes. Domain processing.</span>
+<span class="sd">           * - 900-999</span>
+<span class="sd">             - Finalize and clean up.</span>
+
+<span class="sd">        refs: `Transform Priority Range Categories`__</span>
+
+<span class="sd">        __ https://docutils.sourceforge.io/docs/ref/transforms.html#transform-priority-range-categories</span>
+<span class="sd">        """</span>  <span class="c1"># NOQA</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">registry</span><span class="o">.</span><span class="n">add_transform</span><span class="p">(</span><span class="n">transform</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="write">
-<h2>write<a class="headerlink" href="#write" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">docname</span> <span class="ow">in</span> <span class="n">status_iterator</span><span class="p">(</span><span class="n">docnames</span><span class="p">,</span> <span class="n">__</span><span class="p">(</span><span class="s1">'writing output... '</span><span class="p">),</span> <span class="s2">"darkgreen"</span><span class="p">,</span>
-                                <span class="nb">len</span><span class="p">(</span><span class="n">docnames</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">verbosity</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">BuildPhase</span><span class="o">.</span><span class="n">RESOLVING</span>
-    <span class="c1"># doctree を env から得る</span>
-    <span class="n">doctree</span><span class="p">:</span> <span class="n">docutils</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_and_resolve_doctree</span><span class="p">(</span><span class="n">docname</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">phase</span> <span class="o">=</span> <span class="n">BuildPhase</span><span class="o">.</span><span class="n">WRITING</span>
-    <span class="c1"># doctree を write する</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">write_doc_serialized</span><span class="p">(</span><span class="n">docname</span><span class="p">,</span> <span class="n">doctree</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">write_doc</span><span class="p">(</span><span class="n">docname</span><span class="p">,</span> <span class="n">doctree</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>HTML builder の場合、 <span class="xref std std-doc">basic teheme の動作</span> に続く。</p>
-</section>
 </section>
 
         </article>
@@ -255,23 +272,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../configuration/index.html">
+          <a class="next-page" href="../environment/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">conf.py</div>
+                <div class="title">Environment</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="resolve.html">
+          <a class="prev-page" href="doctree.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">RESOLVING</div>
+                <div class="title">doctree</div>
                 
               </div>
             </a>
@@ -281,7 +298,7 @@
               Copyright &#169; 2021, ousttrue |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/phase/write.md.txt"
+            | <a class="muted-link" href="../_sources/docutils/transform.md.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -289,27 +306,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">WRITING</a><ul>
-<li><a class="reference internal" href="#write">write</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
