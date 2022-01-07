@@ -16,7 +16,8 @@ def main(src: pathlib.Path, build: pathlib.Path):
         confdir=str(src),
         outdir=str(build),
         doctreedir=str(build / '.doctrees'),
-        buildername='html'
+        buildername='html',
+        freshenv=True
     )
 
     logger = logging.getLogger(sphinx.util.logging.NAMESPACE)
@@ -24,12 +25,15 @@ def main(src: pathlib.Path, build: pathlib.Path):
     for handler in logger.handlers[:]:
         logger.removeHandler(handler)
 
+    # for t in sorted(app.registry.transforms, key=lambda x: x.default_priority):
+    #     print(f'{t.default_priority:03d}: {t}')
+
     # app.build(force_all=True)
     app.build(filenames=['src/index.md'])
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         format='[%(levelname)s]%(name)s:%(message)s')
     logging.lastResort = logging.NullHandler()
     main(HERE / 'src', HERE / 'build')
