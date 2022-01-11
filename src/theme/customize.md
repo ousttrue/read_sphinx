@@ -34,10 +34,19 @@ html_sidebars = {
 
 選択中の `<li><a>` に `current` class が付与されるので `css` で見た目が変わるようにすると見やすくなる。
 
+`_static/custom.css`
+
 ```css
 li.current > a {
     font-weight: bold;
 }
+```
+
+`conf.py`
+
+```py
+def setup(app):
+  app.add_css_file('custom.css')
 ```
 
 ## css

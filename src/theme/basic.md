@@ -22,7 +22,7 @@ basic 系
 -   layout.html
 
 | block    | content   | class                 |
-| -------- | --------- | --------------------- |
+|----------|-----------|-----------------------|
 | relbar1  | relbar()  | class="related"       |
 | body     | page.html | class="body"          |
 | sidebar2 | sidebar() | class="sphinxsidebar" |
@@ -31,39 +31,17 @@ basic 系
 
 ## basic を継承するテーマ
 
-### agogo
-
-### bizstyle
-
-    [theme]
-    inherit = basic
-    stylesheet = bizstyle.css
-    pygments_style = friendly
-
-    [options]
-    rightsidebar = false
-    sidebarwidth = 210
-
-    maincolor = #336699
-
-### classic
-
-### default
-
-### epub
-
-### haiku
-
-### nature
-
-### nonav
-
-### pyramid
-
-### scrolls
-
--   next, prev が無い
-
-### sphinxdoc
-
-### traditional
+| theme       | html_sidebars | comment           |
+|-------------|---------------|-------------------|
+| aoggo       |               |                   |
+| bizstyle    | enable        |                   |
+| classic     | enable        |                   |
+| default     | enable        | classic と同じ    |
+| pyramid     | enable        |                   |
+| nature      | enable        |                   |
+| sphinxdoc   | enable        |                   |
+| traditional | enable        |                   |
+| haiku       | no sidebar    |                   |
+| scrolls     | no sidebar    | next, prev が無い |
+| epub        |               |                   |
+| nonav       |               |                   |
