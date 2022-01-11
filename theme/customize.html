@@ -260,9 +260,15 @@
 <section id="css">
 <h3>更に css を追加する<a class="headerlink" href="#css" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>選択中の <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;&lt;a&gt;</span></code> に <code class="docutils literal notranslate"><span class="pre">current</span></code> class が付与されるので <code class="docutils literal notranslate"><span class="pre">css</span></code> で見た目が変わるようにすると見やすくなる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">_static/custom.css</span></code></p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">li</span><span class="p">.</span><span class="nc">current</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">conf.py</span></code></p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+  <span class="n">app</span><span class="o">.</span><span class="n">add_css_file</span><span class="p">(</span><span class="s1">'custom.css'</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
