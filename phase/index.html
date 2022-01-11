@@ -1,12 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="INITIALIZATION" href="init.html" /><link rel="prev" title="デバッグ" href="../debug.html" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="INITIALIZATION" href="init.html" /><link rel="prev" title="デバッグ" href="../debug.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>BuildPhase - read sphinx documentation</title>
+        <title>BuildPhase - read sphinx ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">read sphinx  documentation</div></a>
+      <a href="../index.html"><div class="brand">read sphinx  ドキュメント</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,10 +146,10 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">read sphinx  documentation</span>
+  <span class="sidebar-brand-text">read sphinx  ドキュメント</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder=検索 name="q" aria-label="検索">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -227,7 +227,7 @@
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="buildphase">
-<h1>BuildPhase<a class="headerlink" href="#buildphase" title="Permalink to this headline">¶</a></h1>
+<h1>BuildPhase<a class="headerlink" href="#buildphase" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/extdev/index.html#build-phases">https://www.sphinx-doc.org/ja/master/extdev/index.html#build-phases</a></p></li>
 <li><p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/extdev/appapi.html#events">https://www.sphinx-doc.org/ja/master/extdev/appapi.html#events</a></p></li>
@@ -254,7 +254,7 @@
 </ul>
 </div>
 <section id="reading">
-<h2>Reading<a class="headerlink" href="#reading" title="Permalink to this headline">¶</a></h2>
+<h2>Reading<a class="headerlink" href="#reading" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="align-default"><svg height="280" viewbox="0 0 832 280" width="832" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs id="defs_block">
 <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
@@ -316,16 +316,27 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="read.html">READING</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="read.html#read">read</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read.html#environment">Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read.html#doctree">.doctree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read.html#prepare">prepare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read.html#foreach-docname">foreach docname</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="read.html#if-doc-changed-and-not-removed">if doc changed and not removed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read.html#run-source-parsers-text-docutils-document">run source parsers: text -&gt; docutils.document</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read.html#apply-transforms-based-on-priority-docutils-document-docutils-document">apply transforms based on priority: docutils.document -&gt; docutils.document</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="read.html#merge-if-running-in-parallel-mode-this-event-will-be-emitted-for-each-process">merge(if running in parallel mode, this event will be emitted for each process)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read.html#updated">updated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read.html#id1">中間ファイル</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="read.html#environment">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="read.html#doctree">.doctree</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </section>
 <section id="check-resolve-writing">
-<h2>Check, Resolve, Writing<a class="headerlink" href="#check-resolve-writing" title="Permalink to this headline">¶</a></h2>
+<h2>Check, Resolve, Writing<a class="headerlink" href="#check-resolve-writing" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="align-default"><svg height="440" viewbox="0 0 640 440" width="640" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs id="defs_block">
 <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
@@ -388,7 +399,7 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="consistency_check.html">CONSISTENCY_CHECK</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="consistency_check.html#document-isn-t-included-in-any-toctree">document isn’t included in any toctree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consistency_check.html#document-isn-t-included-in-any-toctree">document isn't included in any toctree</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resolve.html">RESOLVING</a><ul>
@@ -437,7 +448,7 @@
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             | <a class="muted-link" href="../_sources/phase/index.md.txt"
                rel="nofollow">
-              Show Source
+              ソースコードを表示
             </a>
         </div>
         
@@ -449,7 +460,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            コンテンツ
           </span>
         </div>
         <div class="toc-tree-container">
@@ -474,5 +485,6 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/translations.js"></script>
     </body>
 </html>

@@ -2,7 +2,7 @@
 
 ## vscode
 
-launch.json
+### launch.json
 
 ```json
 {
@@ -21,6 +21,12 @@ launch.json
 とすることで `F5` で sphinx を実行できる。
 `"justMyCode": false` がみそで、これがあると外部ライブラリの中でもブレイクできる。
 
+### problemMatcher
+
+```js
+
+```
+
 ## venv
 
 sphinx のソースをステップ実行したり、ブレイクポイントを置いたりするので、 `.venv` があった方がやりやすい。
@@ -30,4 +36,33 @@ sphinx のソースをステップ実行したり、ブレイクポイントを�
 > py -m venv .venv
 > .\.venv\Scripts\Activate.ps1
 (.venv) > pip install sphinx-autobuild myst-parser
+```
+
+## mod
+### phase
+
+```py
+    @property
+    def phase(self):
+        return self._phase
+
+    @phase.setter
+    def phase(self, value: BuildPhase):
+        from .util.console import colorize
+        color_phase = colorize('yellow', value.name)
+        logger.info(f'phase: {color_phase}')
+        self._phase = value
+```
+
+```py
+    def emit(self, name: str, *args: Any,
+             allowed_exceptions: Tuple[Type[Exception], ...] = ()) -> List:
+        """Emit a Sphinx event."""
+        try:            
+            from .util.console import colorize
+            logger.debug(f'[app] emitting event: {colorize("green", name)}{repr(args)[:100]}')
+        except Exception:
+            # not every object likes to be repr()'d (think
+            # random stuff coming via autodoc)
+            pass
 ```

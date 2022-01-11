@@ -1,12 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="BuildPhase" href="phase/index.html" /><link rel="prev" title="Sphinx を読む" href="index.html" />
+<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="検索" href="search.html" /><link rel="next" title="BuildPhase" href="phase/index.html" /><link rel="prev" title="Sphinx を読む" href="index.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>デバッグ - read sphinx documentation</title>
+        <title>デバッグ - read sphinx ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">read sphinx  documentation</div></a>
+      <a href="index.html"><div class="brand">read sphinx  ドキュメント</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,10 +146,10 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">read sphinx  documentation</span>
+  <span class="sidebar-brand-text">read sphinx  ドキュメント</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder=検索 name="q" aria-label="検索">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -227,10 +227,11 @@
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>デバッグ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>デバッグ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <section id="vscode">
-<h2>vscode<a class="headerlink" href="#vscode" title="Permalink to this headline">¶</a></h2>
-<p>launch.json</p>
+<h2>vscode<a class="headerlink" href="#vscode" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="launch-json">
+<h3>launch.json<a class="headerlink" href="#launch-json" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sphinx"</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"python"</span><span class="p">,</span><span class="w"></span>
@@ -247,8 +248,15 @@
 <p>とすることで <code class="docutils literal notranslate"><span class="pre">F5</span></code> で sphinx を実行できる。
 <code class="docutils literal notranslate"><span class="pre">"justMyCode":</span> <span class="pre">false</span></code> がみそで、これがあると外部ライブラリの中でもブレイクできる。</p>
 </section>
+<section id="problemmatcher">
+<h3>problemMatcher<a class="headerlink" href="#problemmatcher" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
 <section id="venv">
-<h2>venv<a class="headerlink" href="#venv" title="Permalink to this headline">¶</a></h2>
+<h2>venv<a class="headerlink" href="#venv" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>sphinx のソースをステップ実行したり、ブレイクポイントを置いたりするので、 <code class="docutils literal notranslate"><span class="pre">.venv</span></code> があった方がやりやすい。
 <code class="docutils literal notranslate"><span class="pre">.venv/Lib/site-packages/sphinx</span></code> 内に潜ってゆく。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">.</span><span class="n">venv</span>
@@ -256,6 +264,36 @@
 <span class="p">(</span><span class="o">.</span><span class="n">venv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">autobuild</span> <span class="n">myst</span><span class="o">-</span><span class="n">parser</span>
 </pre></div>
 </div>
+</section>
+<section id="mod">
+<h2>mod<a class="headerlink" href="#mod" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="phase">
+<h3>phase<a class="headerlink" href="#phase" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">phase</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_phase</span>
+
+    <span class="nd">@phase</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">phase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">BuildPhase</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">.util.console</span> <span class="kn">import</span> <span class="n">colorize</span>
+        <span class="n">color_phase</span> <span class="o">=</span> <span class="n">colorize</span><span class="p">(</span><span class="s1">'yellow'</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'phase: </span><span class="si">{</span><span class="n">color_phase</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_phase</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+             <span class="n">allowed_exceptions</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="ne">Exception</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">())</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+        <span class="sd">"""Emit a Sphinx event."""</span>
+        <span class="k">try</span><span class="p">:</span>            
+            <span class="kn">from</span> <span class="nn">.util.console</span> <span class="kn">import</span> <span class="n">colorize</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">'[app] emitting event: </span><span class="si">{</span><span class="n">colorize</span><span class="p">(</span><span class="s2">"green"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span><span class="si">}{</span><span class="nb">repr</span><span class="p">(</span><span class="n">args</span><span class="p">)[:</span><span class="mi">100</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="c1"># not every object likes to be repr()'d (think</span>
+            <span class="c1"># random stuff coming via autodoc)</span>
+            <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -292,7 +330,7 @@
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             | <a class="muted-link" href="_sources/debug.md.txt"
                rel="nofollow">
-              Show Source
+              ソースコードを表示
             </a>
         </div>
         
@@ -304,15 +342,23 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            コンテンツ
           </span>
         </div>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">デバッグ</a><ul>
-<li><a class="reference internal" href="#vscode">vscode</a></li>
+<li><a class="reference internal" href="#vscode">vscode</a><ul>
+<li><a class="reference internal" href="#launch-json">launch.json</a></li>
+<li><a class="reference internal" href="#problemmatcher">problemMatcher</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#venv">venv</a></li>
+<li><a class="reference internal" href="#mod">mod</a><ul>
+<li><a class="reference internal" href="#phase">phase</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -329,5 +375,6 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script src="_static/translations.js"></script>
     </body>
 </html>
