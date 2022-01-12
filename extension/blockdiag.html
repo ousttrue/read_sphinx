@@ -237,6 +237,16 @@
 <li><p><a class="reference external" href="https://blog.interstellar.co.jp/2018/09/sphinxblockdiag/">https://blog.interstellar.co.jp/2018/09/sphinxblockdiag/</a></p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sphinxcontrib-blockdiag</span> <span class="pre">sphinxcontrib-seqdiag</span> <span class="pre">sphinxcontrib-actdiag</span> <span class="pre">sphinxcontrib-nwdiag</span></code></p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'sphinxcontrib.blockdiag'</span><span class="p">,</span>
+    <span class="s1">'sphinxcontrib.seqdiag'</span><span class="p">,</span>
+    <span class="s1">'sphinxcontrib.actdiag'</span><span class="p">,</span>
+    <span class="s1">'sphinxcontrib.nwdiag'</span><span class="p">,</span>
+    <span class="s1">'sphinxcontrib.rackdiag'</span><span class="p">,</span>
+    <span class="s1">'sphinxcontrib.packetdiag'</span>
+<span class="p">]</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
     <span class="n">app</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">blockdiag_node</span><span class="p">,</span>
                  <span class="n">html</span><span class="o">=</span><span class="p">(</span><span class="n">html_visit_blockdiag</span><span class="p">,</span> <span class="n">html_depart_blockdiag</span><span class="p">))</span>
