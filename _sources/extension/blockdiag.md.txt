@@ -2,6 +2,7 @@
 
 * <https://github.com/blockdiag/sphinxcontrib-blockdiag>
     * <https://github.com/blockdiag/sphinxcontrib-blockdiag/blob/master/sphinxcontrib/blockdiag.py#L299>
+* <http://blockdiag.com/ja/blockdiag/index.html>
 
 * <https://blog.interstellar.co.jp/2018/09/sphinxblockdiag/>
 
@@ -16,6 +17,12 @@ extensions = [
     'sphinxcontrib.rackdiag',
     'sphinxcontrib.packetdiag'
 ]
+blockdiag_html_image_format = "SVG"
+seqdiag_html_image_format = "SVG"
+actdiag_html_image_format = "SVG"
+nwdiag_html_image_format = "SVG"
+rackdiag_html_image_format = "SVG"
+packetdiag_html_image_format = "SVG"
 ```
 
 ```python
