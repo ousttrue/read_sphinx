@@ -17,10 +17,6 @@
 -   <https://sphinx-users.jp/cookbook/changetheme/index.html>
 -   <https://pypi.org/search/?c=Framework+%3A%3A+Sphinx+%3A%3A+Theme>
 
-## basicテーマ
-
--   [テンプレート](https://www.sphinx-doc.org/ja/master/templating.html)
-
 [alabaster](https://github.com/bitprophet/alabaster) も含めて `builtin` のテーマはすべて basic テーマを継承している。
 
 ```{toctree}

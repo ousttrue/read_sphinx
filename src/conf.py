@@ -10,9 +10,15 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import os
+import pathlib
+HERE = pathlib.Path(__file__).absolute().parent
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
+if os.name == 'nt':
+    os.environ['PATH'] = f"{os.environ['PATH']};C:\\Program Files\\Graphviz\\bin"
 
 
 # -- Project information -----------------------------------------------------
@@ -35,8 +41,10 @@ extensions = [
     'sphinxcontrib.actdiag',
     'sphinxcontrib.nwdiag',
     'sphinxcontrib.rackdiag',
-    'sphinxcontrib.packetdiag'
+    'sphinxcontrib.packetdiag',
+    'sphinx.ext.graphviz',
 ]
+graphviz_output_format = 'svg'
 blockdiag_html_image_format = 'SVG'
 seqdiag_html_image_format = 'SVG'
 actdiag_html_image_format = 'SVG'

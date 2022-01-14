@@ -1,5 +1,9 @@
 # blockdiag
 
+```{blockdiag}
+A -> B;
+```
+
 * <https://github.com/blockdiag/sphinxcontrib-blockdiag>
     * <https://github.com/blockdiag/sphinxcontrib-blockdiag/blob/master/sphinxcontrib/blockdiag.py#L299>
 * <http://blockdiag.com/ja/blockdiag/index.html>
