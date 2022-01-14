@@ -1,5 +1,7 @@
 # customize
 
+-   [テンプレート](https://www.sphinx-doc.org/ja/master/templating.html)
+
 ## sidebar
 
 ### コンテンツを選ぶ

@@ -1,0 +1,34 @@
+# 組み込み拡張
+
+<https://www.sphinx-doc.org/ja/master/usage/extensions/index.html>
+
+## graphviz
+
+`conf.py`
+
+```py
+import os
+import pathlib
+HERE = pathlib.Path(__file__).absolute().parent
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
+if os.name == 'nt':
+    # windows で dot.exe にパスを通してやる例
+    os.environ['PATH'] = f"{os.environ['PATH']};C:\\Program Files\\Graphviz\\bin"
+
+extensions = [
+    'sphinx.ext.graphviz',
+]
+graphviz_output_format = 'svg'    
+```
+
+```{digraph} G
+rankdir="BT"
+B->A
+C->A
+```
+
+### dot 言語
+
+* [DOT 言語でグラフの方向を変えるには](https://www.johf.com/log/20121228a.html)
+* [クラス図を自動生成する](https://qiita.com/kenichi-hamaguchi/items/c0b947ed15725bfdfb5a)
