@@ -489,7 +489,12 @@ div.rendered_html tbody tr:hover {
 </ul>
 </li>
 </ul>
-<p><a class="reference external" href="https://jupyter.org/">jupyter</a> の実行結果を .doctree 化することで sphinx で扱えるようにするぽい。 わりとフリーダムにいろんなものを埋め込めるようである。 きちんと <code class="docutils literal notranslate"><span class="pre">.venv</span></code> で管理しないと、<code class="docutils literal notranslate"><span class="pre">github</span> <span class="pre">action</span></code> のビルドに失敗しそう。</p>
+<p><code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> ファイルを sphinx のページとして扱う。最低限、マークダウンで見出しを付けること。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">markdown</span></code> は <code class="docutils literal notranslate"><span class="pre">myst</span></code> そのものではないようで sphinx の ディレクティブ埋め込みは効かないぽい。<code class="docutils literal notranslate"><span class="pre">jupyter</span></code> 独自の <code class="docutils literal notranslate"><span class="pre">markdown</span></code> 拡張があるかも。</p></li>
+<li><p><a class="reference external" href="https://jupyter.org/">jupyter</a> の実行結果を .doctree 化することで sphinx で扱えるようにするぽい</p></li>
+</ul>
+<p>わりとフリーダムにいろんなものを埋め込めるようである。 きちんと <code class="docutils literal notranslate"><span class="pre">.venv</span></code> で管理しないと、<code class="docutils literal notranslate"><span class="pre">github</span> <span class="pre">action</span></code> のビルドに失敗しそう。 <code class="docutils literal notranslate"><span class="pre">folium</span></code> は <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> に含まれていないのに動作しているなど。 <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> カーネル回りはローカルの実行環境にあれば十分？</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiita.com/kozo2/items/ec032ad80fe9a994f0ea">nbsphinx の紹介</a></p></li>
 </ul>
