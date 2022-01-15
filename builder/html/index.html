@@ -2,8 +2,7 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="Theme" href="../../theme/index.html" /><link rel="prev" title="Builder" href="../index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="Theme" href="../../theme/index.html" /><link rel="prev" title="Builder" href="../index.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>HTMLBuilder - read sphinx ドキュメント</title>
@@ -233,14 +232,14 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="htmlbuilder">
+          <div class="tex2jax_ignore mathjax_ignore section" id="htmlbuilder">
 <h1>HTMLBuilder<a class="headerlink" href="#htmlbuilder" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://zenn.dev/attakei/articles/sphinx-make-dirhtml">Sphinxにひっそり存在するビルダー "dirhtml"の使い勝手を知る</a></p></li>
 </ul>
-<section id="id1">
+<div class="section" id="id1">
 <h2>動作<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<section id="init">
+<div class="section" id="init">
 <h3>init<a class="headerlink" href="#init" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">StandaloneHTMLBuilder</span></code></p></li>
@@ -253,8 +252,8 @@
 <li><p>sphinx.jinja2glue.BuiltinTemplateLoader#init</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">builder-inited</span></code></p></li>
 </ul>
-</section>
-<section id="write">
+</div>
+<div class="section" id="write">
 <h3>write<a class="headerlink" href="#write" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">sphinx.jinja2glue.BuiltinTemplateLoader</span></code> を使う。</p>
 <ul class="simple">
@@ -275,7 +274,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">templatename</span><span class="p">,</span> <span class="n">ctx</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="sidebar">
+<div class="section" id="sidebar">
 <h4>sidebar のメカニズム<a class="headerlink" href="#sidebar" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># StandaloneHTMLBuilder</span>
     <span class="k">def</span> <span class="nf">add_sidebars</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pagename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ctx</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -329,12 +328,12 @@
         <span class="n">ctx</span><span class="p">[</span><span class="s1">'customsidebar'</span><span class="p">]</span> <span class="o">=</span> <span class="n">customsidebar</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
-<section id="sphinx-jinja2glue-builtintemplateloader">
+</div>
+</div>
+</div>
+<div class="section" id="sphinx-jinja2glue-builtintemplateloader">
 <h2>sphinx.jinja2glue.BuiltinTemplateLoader<a class="headerlink" href="#sphinx-jinja2glue-builtintemplateloader" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<section id="render">
+<div class="section" id="render">
 <h3>render<a class="headerlink" href="#render" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">environment</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">template</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
@@ -404,16 +403,16 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="static">
+</div>
+</div>
+<div class="section" id="static">
 <h2>static 要素のコピー動作は？<a class="headerlink" href="#static" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li><p>css や script を build 先にコピーする仕組みは？</p></li>
 <li><p>また、そのときに scss とか使えないだろうか</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
         </article>
       </div>
@@ -497,5 +496,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>

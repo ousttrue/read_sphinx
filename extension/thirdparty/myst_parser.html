@@ -2,8 +2,7 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="blockdiag" href="blockdiag.html" /><link rel="prev" title="外部拡張" href="index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="blockdiag" href="blockdiag.html" /><link rel="prev" title="外部拡張" href="index.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>myst_parser - read sphinx ドキュメント</title>
@@ -233,7 +232,7 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="myst-parser">
+          <div class="tex2jax_ignore mathjax_ignore section" id="myst-parser">
 <h1>myst_parser<a class="headerlink" href="#myst-parser" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
     <span class="sd">"""Initialize Sphinx extension."""</span>
@@ -269,14 +268,14 @@
     <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"builder-inited"</span><span class="p">,</span> <span class="n">override_mathjax</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="mystparser">
+<div class="section" id="mystparser">
 <h2>MystParser<a class="headerlink" href="#mystparser" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/api/index.html">https://myst-parser.readthedocs.io/en/latest/api/index.html</a></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- &lt;https://myst-parser.readthedocs.io/en/latest/sphinx/index.html#myst-sphinx&gt;
 - &lt;https://myst-parser.readthedocs.io/en/latest/docutils.html#myst-docutils&gt;
 </pre></div>
 </div>
-<section id="docutils-readers-reader">
+<div class="section" id="docutils-readers-reader">
 <h3><code class="docutils literal notranslate"><span class="pre">docutils.readers.Reader</span></code><a class="headerlink" href="#docutils-readers-reader" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">"""Parse `self.input` into a document tree."""</span>
@@ -285,8 +284,8 @@
         <span class="n">document</span><span class="o">.</span><span class="n">current_source</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">current_line</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
-</section>
-<section id="myst-parser-sphinx-parser-mystparser">
+</div>
+<div class="section" id="myst-parser-sphinx-parser-mystparser">
 <h3><code class="docutils literal notranslate"><span class="pre">myst_parser.sphinx_parser.MystParser</span></code><a class="headerlink" href="#myst-parser-sphinx-parser-mystparser" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputstring</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">document</span><span class="p">:</span> <span class="n">nodes</span><span class="o">.</span><span class="n">document</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">"""Parse source text.</span>
@@ -307,15 +306,15 @@
         <span class="n">parser</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">parser</span><span class="o">.</span><span class="n">options</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="markdown-it-py-parser">
+<div class="section" id="markdown-it-py-parser">
 <h4>markdown-it-py parser<a class="headerlink" href="#markdown-it-py-parser" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>myst_parser の markdown parser。</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://markdown-it-py.readthedocs.io/en/latest/">https://markdown-it-py.readthedocs.io/en/latest/</a></p></li>
 </ul>
-</section>
-</section>
-<section id="myst-parser-sphinx-renderer-sphinxrenderer">
+</div>
+</div>
+<div class="section" id="myst-parser-sphinx-renderer-sphinxrenderer">
 <h3><code class="docutils literal notranslate"><span class="pre">myst_parser.sphinx_renderer.SphinxRenderer</span></code><a class="headerlink" href="#myst-parser-sphinx-renderer-sphinxrenderer" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">tokens</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Token</span><span class="p">],</span> <span class="n">options</span><span class="p">,</span> <span class="n">md_env</span><span class="p">:</span> <span class="n">MutableMapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
@@ -349,9 +348,9 @@
 <span class="n">paragraph</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
         </article>
       </div>
@@ -431,5 +430,6 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>

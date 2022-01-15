@@ -2,8 +2,7 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="conf.py" href="../configuration/index.html" /><link rel="prev" title="RESOLVING" href="resolve.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="conf.py" href="../configuration/index.html" /><link rel="prev" title="RESOLVING" href="resolve.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>WRITING - read sphinx ドキュメント</title>
@@ -233,14 +232,14 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="writing">
+          <div class="tex2jax_ignore mathjax_ignore section" id="writing">
 <h1>WRITING<a class="headerlink" href="#writing" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>フェーズ 4: 書き出し</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">15.</span> <span class="n">Generate</span> <span class="n">output</span> <span class="n">files</span>
 <span class="mf">16.</span> <span class="n">event</span><span class="o">.</span><span class="n">build</span><span class="o">-</span><span class="n">finished</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">exception</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="write">
+<div class="section" id="write">
 <h2>write<a class="headerlink" href="#write" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">docname</span> <span class="ow">in</span> <span class="n">status_iterator</span><span class="p">(</span><span class="n">docnames</span><span class="p">,</span> <span class="n">__</span><span class="p">(</span><span class="s1">'writing output... '</span><span class="p">),</span> <span class="s2">"darkgreen"</span><span class="p">,</span>
                                 <span class="nb">len</span><span class="p">(</span><span class="n">docnames</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">verbosity</span><span class="p">):</span>
@@ -253,9 +252,9 @@
     <span class="bp">self</span><span class="o">.</span><span class="n">write_doc</span><span class="p">(</span><span class="n">docname</span><span class="p">,</span> <span class="n">doctree</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>HTML builder の場合、 <span class="xref std std-doc">basic teheme の動作</span> に続く。</p>
-</section>
-</section>
+<p>HTML builder の場合、 <a class="reference internal" href="../theme/basic.html"><span class="doc">basic teheme の動作</span></a> に続く。</p>
+</div>
+</div>
 
         </article>
       </div>
@@ -327,5 +326,6 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>

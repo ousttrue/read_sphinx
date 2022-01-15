@@ -2,8 +2,7 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="CONSISTENCY_CHECK" href="consistency_check.html" /><link rel="prev" title="INITIALIZATION" href="init.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="CONSISTENCY_CHECK" href="consistency_check.html" /><link rel="prev" title="INITIALIZATION" href="init.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>READING - read sphinx ドキュメント</title>
@@ -233,7 +232,7 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="reading">
+          <div class="tex2jax_ignore mathjax_ignore section" id="reading">
 <h1>READING<a class="headerlink" href="#reading" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>フェーズ 1: 読み込み</p>
 <div class="align-default"><svg height="120" viewbox="0 0 640 120" width="640" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -259,7 +258,7 @@
 <polygon fill="rgb(0,0,0)" points="447,60 440,56 440,64 447,60" stroke="rgb(0,0,0)"></polygon>
 </svg>
 </div>
-<section id="prepare">
+<div class="section" id="prepare">
 <h2>prepare<a class="headerlink" href="#prepare" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>更新ファイルのチェック。</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -280,8 +279,8 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">added</span><span class="p">,</span> <span class="n">changed</span><span class="p">,</span> <span class="n">removed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get_outdated_files</span><span class="p">(</span><span class="n">updated</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="foreach-docname">
+</div>
+<div class="section" id="foreach-docname">
 <h2>foreach docname<a class="headerlink" href="#foreach-docname" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -295,7 +294,7 @@
 </tr>
 </tbody>
 </table></div>
-<section id="if-doc-changed-and-not-removed">
+<div class="section" id="if-doc-changed-and-not-removed">
 <h3>if doc changed and not removed<a class="headerlink" href="#if-doc-changed-and-not-removed" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -313,13 +312,13 @@
 <li><p><a class="reference internal" href="../docutils/transform.html"><span class="doc">Transform</span></a></p></li>
 <li><p><a class="reference internal" href="../i18n/index.html"><span class="doc">Internationalization(i18n)</span></a></p></li>
 </ul>
-</section>
-<section id="run-source-parsers-text-docutils-document">
+</div>
+<div class="section" id="run-source-parsers-text-docutils-document">
 <h3>run source parsers: text -&gt; docutils.document<a class="headerlink" href="#run-source-parsers-text-docutils-document" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>parsers can be added with the app.add_source_parser() API</p>
-<p><span class="xref std std-doc">/extension/myst_parser</span></p>
-</section>
-<section id="apply-transforms-based-on-priority-docutils-document-docutils-document">
+<p><a class="reference internal" href="../extension/thirdparty/myst_parser.html"><span class="doc">myst_parser</span></a></p>
+</div>
+<div class="section" id="apply-transforms-based-on-priority-docutils-document-docutils-document">
 <h3>apply transforms based on priority: docutils.document -&gt; docutils.document<a class="headerlink" href="#apply-transforms-based-on-priority-docutils-document-docutils-document" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>transforms come before/after this event depending on their priority.</p>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
@@ -334,9 +333,9 @@
 </tr>
 </tbody>
 </table></div>
-</section>
-</section>
-<section id="merge-if-running-in-parallel-mode-this-event-will-be-emitted-for-each-process">
+</div>
+</div>
+<div class="section" id="merge-if-running-in-parallel-mode-this-event-will-be-emitted-for-each-process">
 <h2>merge(if running in parallel mode, this event will be emitted for each process)<a class="headerlink" href="#merge-if-running-in-parallel-mode-this-event-will-be-emitted-for-each-process" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -350,8 +349,8 @@
 </tr>
 </tbody>
 </table></div>
-</section>
-<section id="updated">
+</div>
+<div class="section" id="updated">
 <h2>updated<a class="headerlink" href="#updated" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="table-wrapper"><table class="colwidths-auto docutils align-default">
 <thead>
@@ -365,22 +364,22 @@
 </tr>
 </tbody>
 </table></div>
-</section>
-<section id="id1">
+</div>
+<div class="section" id="id1">
 <h2>中間ファイル<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<section id="environment">
+<div class="section" id="environment">
 <h3>Environment<a class="headerlink" href="#environment" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">sphinx.application.ENV_PICKLE_FILENAME</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">build/.doctrees/enviroment.pickle</span></code></p>
 <p><a class="reference external" href="https://www.ykrods.net/posts/2020/10/15/sphinx-docutils-extension/#environment-domain">Environment と Domain</a></p>
-</section>
-<section id="doctree">
+</div>
+<div class="section" id="doctree">
 <h3>.doctree<a class="headerlink" href="#doctree" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">build/.doctrees/*.doctree*</span></code></p>
 <p><a class="reference external" href="https://sphinx-users.jp/reverse-dict/system/doctree.html">中間ファイル *.doctree の内容をみてSphinxがどのようにreSTをparseしているか知りたい</a></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
         </article>
       </div>
@@ -465,5 +464,6 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>

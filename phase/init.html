@@ -2,8 +2,7 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="READING" href="read.html" /><link rel="prev" title="BuildPhase" href="index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="READING" href="read.html" /><link rel="prev" title="BuildPhase" href="index.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>INITIALIZATION - read sphinx ドキュメント</title>
@@ -233,10 +232,10 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="initialization">
+          <div class="tex2jax_ignore mathjax_ignore section" id="initialization">
 <h1>INITIALIZATION<a class="headerlink" href="#initialization" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>フェーズ 0: 初期化</p>
-<section id="sphinx-application-sphinx">
+<div class="section" id="sphinx-application-sphinx">
 <h2>sphinx.application.Sphinx<a class="headerlink" href="#sphinx-application-sphinx" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">app</span> <span class="o">=</span> <span class="n">sphinx</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">Sphinx</span><span class="p">(</span>
         <span class="n">srcdir</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">src</span><span class="p">),</span>
@@ -251,8 +250,8 @@
 <span class="mf">2.</span> <span class="n">event</span><span class="o">.</span><span class="n">builder</span><span class="o">-</span><span class="n">inited</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="extension-import-setup">
+</div>
+<div class="section" id="extension-import-setup">
 <h2>extension の import と setup<a class="headerlink" href="#extension-import-setup" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/_modules/sphinx/application.html?highlight=builtin_extensions#">https://www.sphinx-doc.org/ja/master/_modules/sphinx/application.html?highlight=builtin_extensions#</a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="c1"># load all built-in extension modules</span>
@@ -271,8 +270,8 @@
 <p>例えば、</p>
 <p><a class="reference external" href="https://github.com/bitprophet/alabaster/blob/master/alabaster/__init__.py#L18">https://github.com/bitprophet/alabaster/blob/master/alabaster/__init__.py#L18</a></p>
 <p><a class="reference internal" href="../extension/index.html"><span class="doc">Extension</span></a></p>
-</section>
-</section>
+</div>
+</div>
 
         </article>
       </div>
@@ -345,5 +344,6 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>

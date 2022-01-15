@@ -2,8 +2,7 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="テーマの作成" href="create.html" /><link rel="prev" title="furo" href="furo.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="テーマの作成" href="create.html" /><link rel="prev" title="furo" href="furo.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>customize - read sphinx ドキュメント</title>
@@ -233,14 +232,14 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="customize">
+          <div class="tex2jax_ignore mathjax_ignore section" id="customize">
 <h1>customize<a class="headerlink" href="#customize" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/templating.html">テンプレート</a></p></li>
 </ul>
-<section id="sidebar">
+<div class="section" id="sidebar">
 <h2>sidebar<a class="headerlink" href="#sidebar" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<section id="id1">
+<div class="section" id="id1">
 <h3>コンテンツを選ぶ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">https://www.sphinx-doc.org/en/master/usage/configuration.html</a></p></li>
@@ -251,8 +250,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h3>カスタムのテンプレートを追加する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiita.com/takakiku/items/99cf6505fb5c893a5168">Sphinxですべての目次をサイドバーに表示する</a></p></li>
@@ -266,14 +265,14 @@
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="css">
+</div>
+<div class="section" id="css">
 <h3>更に css を追加する<a class="headerlink" href="#css" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>選択中の <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;&lt;a&gt;</span></code> に <code class="docutils literal notranslate"><span class="pre">current</span></code> class が付与されるので <code class="docutils literal notranslate"><span class="pre">css</span></code> で見た目が変わるようにすると見やすくなる。</p>
 <p><code class="docutils literal notranslate"><span class="pre">_static/custom.css</span></code></p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">li</span><span class="p">.</span><span class="nc">current</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">li</span><span class="p">.</span><span class="nc">current</span> <span class="o">&gt;</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">conf.py</span></code></p>
@@ -281,22 +280,22 @@
   <span class="n">app</span><span class="o">.</span><span class="n">add_css_file</span><span class="p">(</span><span class="s1">'custom.css'</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id3">
+</div>
+</div>
+<div class="section" id="id3">
 <h2>css<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://kuttsun.blogspot.com/2016/11/sphinx-sphinxrtdtheme.html">Sphinx の sphinx_rtd_theme をカスタマイズする</a></p></li>
 <li><p><a class="reference external" href="https://qh73xebitbucketorg.readthedocs.io/ja/latest/1.Programmings/python/LIB/sphinx/addcss/">sphinx で CSS の設定を追加する</a></p></li>
 </ul>
-</section>
-<section id="inherit">
+</div>
+<div class="section" id="inherit">
 <h2>inherit<a class="headerlink" href="#inherit" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://sphinx-users.jp/cookbook/makingwebsite/index.html">Webサイトを作ろう(オリジナルテーマの作成)</a></p></li>
 <li><p><a class="reference external" href="https://blog.amedama.jp/entry/2016/01/06/122931">Sphinx: 既存のテーマをカスタマイズする</a></p></li>
 </ul>
-<section id="id4">
+<div class="section" id="id4">
 <h3>手順<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul>
 <li><p>テーマ名決める(仮に custom とする)</p></li>
@@ -318,26 +317,26 @@ nosidebar = false</p>
 <ul class="simple">
 <li><p>custom/static/main.css</p></li>
 </ul>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">body</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">silver</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">body</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">silver</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="p">.</span><span class="nc">related</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#a2e8fe</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">related</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#a2e8fe</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="p">.</span><span class="nc">sphinxsidebar</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4b7afd</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">sphinxsidebar</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#4b7afd</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="p">.</span><span class="nc">footer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#fcc1c1</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">footer</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fcc1c1</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
         </article>
       </div>
@@ -419,5 +418,6 @@ nosidebar = false</p>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>

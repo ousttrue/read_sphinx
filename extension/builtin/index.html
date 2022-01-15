@@ -2,8 +2,7 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="外部拡張" href="../thirdparty/index.html" /><link rel="prev" title="Extension" href="../index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="外部拡張" href="../thirdparty/index.html" /><link rel="prev" title="Extension" href="../index.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>組み込み拡張 - read sphinx ドキュメント</title>
@@ -233,17 +232,17 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="id1">
+          <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>組み込み拡張<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/usage/extensions/index.html">https://www.sphinx-doc.org/ja/master/usage/extensions/index.html</a></p>
-<section id="graphviz">
+<div class="section" id="graphviz">
 <h2>graphviz<a class="headerlink" href="#graphviz" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>dot.exe に PATH を通す必要あり</p>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">conf.py</span></code></p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
-<span class="n">HERE</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
-<span class="c1"># import sys</span>
-<span class="c1"># sys.path.insert(0, os.path.abspath('.'))</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">'nt'</span><span class="p">:</span>
     <span class="c1"># windows で dot.exe にパスを通してやる例</span>
     <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'PATH'</span><span class="p">]</span><span class="si">}</span><span class="s2">;C:</span><span class="se">\\</span><span class="s2">Program Files</span><span class="se">\\</span><span class="s2">Graphviz</span><span class="se">\\</span><span class="s2">bin"</span>
@@ -254,20 +253,21 @@
 <span class="n">graphviz_output_format</span> <span class="o">=</span> <span class="s1">'svg'</span>    
 </pre></div>
 </div>
-digraph G {
+<div class="graphviz"><object class="graphviz" data="../../_images/graphviz-3f4a2258aed0cecfdc5cf3efacd2b558cfdd79cf.svg" type="image/svg+xml">
+<p class="warning">digraph G {
 rankdir="BT"
 B-&gt;A
 C-&gt;A
-}
-<section id="dot">
+}</p></object></div>
+<div class="section" id="dot">
 <h3>dot 言語<a class="headerlink" href="#dot" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.johf.com/log/20121228a.html">DOT 言語でグラフの方向を変えるには</a></p></li>
 <li><p><a class="reference external" href="https://qiita.com/kenichi-hamaguchi/items/c0b947ed15725bfdfb5a">クラス図を自動生成する</a></p></li>
 </ul>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
         </article>
       </div>
@@ -342,5 +342,6 @@ C-&gt;A
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>

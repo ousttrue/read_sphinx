@@ -2,8 +2,7 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="検索" href="search.html" /><link rel="next" title="BuildPhase" href="phase/index.html" /><link rel="prev" title="Sphinx を読む" href="index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="genindex.html" /><link rel="search" title="検索" href="search.html" /><link rel="next" title="BuildPhase" href="phase/index.html" /><link rel="prev" title="Sphinx を読む" href="index.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>デバッグ - read sphinx ドキュメント</title>
@@ -233,36 +232,36 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="id1">
+          <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>デバッグ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<section id="vscode">
+<div class="section" id="vscode">
 <h2>vscode<a class="headerlink" href="#vscode" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<section id="launch-json">
+<div class="section" id="launch-json">
 <h3>launch.json<a class="headerlink" href="#launch-json" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sphinx"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"python"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"request"</span><span class="p">:</span><span class="w"> </span><span class="s2">"launch"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sphinx"</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"."</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="s2">"build"</span><span class="w"></span>
-<span class="w">    </span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">"justMyCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"Sphinx"</span><span class="p">,</span>
+    <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"python"</span><span class="p">,</span>
+    <span class="nt">"request"</span><span class="p">:</span> <span class="s2">"launch"</span><span class="p">,</span>
+    <span class="nt">"module"</span><span class="p">:</span> <span class="s2">"sphinx"</span><span class="p">,</span>
+    <span class="nt">"args"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"."</span><span class="p">,</span>
+        <span class="s2">"build"</span>
+    <span class="p">],</span>
+    <span class="nt">"justMyCode"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>とすることで <code class="docutils literal notranslate"><span class="pre">F5</span></code> で sphinx を実行できる。
 <code class="docutils literal notranslate"><span class="pre">"justMyCode":</span> <span class="pre">false</span></code> がみそで、これがあると外部ライブラリの中でもブレイクできる。</p>
-</section>
-<section id="problemmatcher">
+</div>
+<div class="section" id="problemmatcher">
 <h3>problemMatcher<a class="headerlink" href="#problemmatcher" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="venv">
+</div>
+</div>
+<div class="section" id="venv">
 <h2>venv<a class="headerlink" href="#venv" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>sphinx のソースをステップ実行したり、ブレイクポイントを置いたりするので、 <code class="docutils literal notranslate"><span class="pre">.venv</span></code> があった方がやりやすい。
 <code class="docutils literal notranslate"><span class="pre">.venv/Lib/site-packages/sphinx</span></code> 内に潜ってゆく。</p>
@@ -271,10 +270,10 @@
 <span class="p">(</span><span class="o">.</span><span class="n">venv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">autobuild</span> <span class="n">myst</span><span class="o">-</span><span class="n">parser</span>
 </pre></div>
 </div>
-</section>
-<section id="mod">
+</div>
+<div class="section" id="mod">
 <h2>mod<a class="headerlink" href="#mod" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<section id="phase">
+<div class="section" id="phase">
 <h3>phase<a class="headerlink" href="#phase" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span>    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">phase</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -300,9 +299,9 @@
             <span class="k">pass</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
         </article>
       </div>
@@ -383,5 +382,6 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
     <script src="_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>
