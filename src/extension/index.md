@@ -4,9 +4,6 @@ sphinx 拡張は、 setup 関数をもつ python モジュール。
 
 * [(6日目) Sphinx 拡張の紹介](https://tk0miya.hatenablog.com/entry/20111206/p1)
 
-## サードパーティの拡張
-
-
 ```{toctree}
 builtin/index
 thirdparty/index
