@@ -40,7 +40,7 @@ added, changed, removed = self.env.get_outdated_files(updated)
 
 parsers can be added with the app.add_source_parser() API
 
-{doc}`/extension/myst_parser`
+{doc}`/extension/thirdparty/myst_parser`
 
 ### apply transforms based on priority: docutils.document -> docutils.document
 

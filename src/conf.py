@@ -19,7 +19,7 @@ HERE = pathlib.Path(__file__).absolute().parent
 # sys.path.insert(0, os.path.abspath('.'))
 if os.name == 'nt':
     os.environ['PATH'] = f"{os.environ['PATH']};C:\\Program Files\\Graphviz\\bin"
-
+    os.environ['PATH'] = f"{os.environ['PATH']};C:\\Program Files\\Pandoc"
 
 # -- Project information -----------------------------------------------------
 
@@ -43,6 +43,7 @@ extensions = [
     'sphinxcontrib.rackdiag',
     'sphinxcontrib.packetdiag',
     'sphinx.ext.graphviz',
+    'nbsphinx',
 ]
 graphviz_output_format = 'svg'
 blockdiag_html_image_format = 'SVG'

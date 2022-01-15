@@ -4,14 +4,15 @@
 
 ## graphviz
 
+
+```{warning}
+dot.exe に PATH を通す必要あり
+```
+
 `conf.py`
 
 ```py
 import os
-import pathlib
-HERE = pathlib.Path(__file__).absolute().parent
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
 if os.name == 'nt':
     # windows で dot.exe にパスを通してやる例
     os.environ['PATH'] = f"{os.environ['PATH']};C:\\Program Files\\Graphviz\\bin"

@@ -13,11 +13,14 @@ jobs:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
       - uses: actions/checkout@v1
+      - run: sudo apt install pandoc
+      - run: sudo apt install graphviz
       - run: pip install sphinx
       - run: pip install myst-parser
       - run: pip install gitinclude
       - run: pip install sphinxcontrib-actdiag sphinxcontrib-blockdiag sphinxcontrib-nwdiag sphinxcontrib-seqdiag
       - run: pip install furo
+      - run: pip install nbsphinx
       - run: sphinx-build src build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
