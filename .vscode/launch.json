@@ -9,7 +9,7 @@
             "type": "python",
             "python": "${workspaceFolder}/.venv/Scripts/python",
             "request": "launch",
-            "program": "${workspaceFolder}/parser.py",
+            "program": "${workspaceFolder}/scripts/parser.py",
             "console": "integratedTerminal",
             "justMyCode": false,
             "debugStdLib": true
@@ -18,7 +18,7 @@
             "name": "print_env",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/print_env.py",
+            "program": "${workspaceFolder}/scripts/print_env.py",
             "console": "integratedTerminal",
             "justMyCode": false
         },
@@ -26,7 +26,7 @@
             "name": "dump_doctree",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/dump_doctree.py",
+            "program": "${workspaceFolder}/scripts/dump_doctree.py",
             "args": [
                 "build/.doctrees/index.doctree"
             ],
