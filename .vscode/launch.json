@@ -11,14 +11,13 @@
             "request": "launch",
             "program": "${workspaceFolder}/scripts/parser.py",
             "console": "integratedTerminal",
-            "justMyCode": false,
-            "debugStdLib": true
+            "justMyCode": false
         },
         {
-            "name": "print_env",
+            "name": "env_view",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/scripts/print_env.py",
+            "program": "${workspaceFolder}/scripts/env_view.py",
             "console": "integratedTerminal",
             "justMyCode": false
         },

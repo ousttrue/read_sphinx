@@ -12,8 +12,12 @@ Enviroment にはサイト全体の情報が格納される。
 | all_docs   | おそらくdoctreeの一覧                                               |
 | found_docs | 元になるファイルの一覧(rst, md...) @property: self.project.docnames |
 | project    | `sphinx.project.Project`                                            |
+| domaindata | domain の dict                                                      |
+| tocs       |
 
 ```{toctree}
 init
 project
+domaindata
+collector
 ```
