@@ -15,11 +15,6 @@
     )
 ```
 
-```
-1. event.config-inited(app,config)
-2. event.builder-inited(app)
-```
-
 ## extension の import と setup
 
 <https://www.sphinx-doc.org/ja/master/_modules/sphinx/application.html?highlight=builtin_extensions#>
@@ -43,3 +38,36 @@
 
 
 {doc}`/extension/index`
+
+
+```
+1. event.config-inited(app,config)
+```
+
+## sphinx.application.Sphinx._init_env
+
+```py
+    def _init_env(self, freshenv: bool) -> None:
+        # build/.doctree/environment.pickle
+        filename = path.join(self.doctreedir, ENV_PICKLE_FILENAME)
+        if freshenv or not os.path.exists(filename):
+            self.env = BuildEnvironment(self)
+            self.env.find_files(self.config, self.builder)
+        else:
+            try:
+                with progress_message(__('loading pickled environment')):
+                    with open(filename, 'rb') as f:
+                        self.env = pickle.load(f)
+                        self.env.setup(self)
+            except Exception as err:
+                logger.info(__('failed: %s'), err)
+                self._init_env(freshenv=True)
+```
+
+{doc}`/environment/index`
+
+### sphinx.application.Sphinx._init_builder
+
+```
+2. event.builder-inited(app)
+```

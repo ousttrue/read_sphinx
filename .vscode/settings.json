@@ -2,5 +2,6 @@
     "cSpell.words": [
         "doctree",
         "docutils"
-    ]
+    ],
+    "search.useIgnoreFiles": false
 }

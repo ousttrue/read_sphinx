@@ -7,10 +7,12 @@
         {
             "name": "parser.py",
             "type": "python",
+            "python": "${workspaceFolder}/.venv/Scripts/python",
             "request": "launch",
             "program": "${workspaceFolder}/parser.py",
             "console": "integratedTerminal",
-            "justMyCode": false
+            "justMyCode": false,
+            "debugStdLib": true
         },
         {
             "name": "print_env",
