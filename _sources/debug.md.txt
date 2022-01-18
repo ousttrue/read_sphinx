@@ -4,6 +4,8 @@
 
 ### launch.json
 
+<https://srbrnote.work/archives/4231>
+
 ```json
 {
     "name": "Sphinx",
@@ -36,6 +38,14 @@ sphinx のソースをステップ実行したり、ブレイクポイントを�
 > py -m venv .venv
 > .\.venv\Scripts\Activate.ps1
 (.venv) > pip install sphinx-autobuild myst-parser
+```
+
+.venv も search 対象に入れる。
+
+`.vscode/settings.json`
+
+```js
+ "search.useIgnoreFiles": false
 ```
 
 ## mod

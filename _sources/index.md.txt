@@ -1,7 +1,7 @@
 # Sphinx を読む
 
-<https://github.com/sphinx-doc/sphinx/>
-
+-   <https://www.sphinx-doc.org/en/master/>
+    -   <https://github.com/sphinx-doc/sphinx/>
 
 ```{toctree}
 :maxdepth: 3

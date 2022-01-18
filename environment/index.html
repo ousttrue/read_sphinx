@@ -2,7 +2,7 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="Builder" href="../builder/index.html" /><link rel="prev" title="Transform" href="../docutils/transform.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="初期化" href="init.html" /><link rel="prev" title="Transform" href="../docutils/transform.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>Environment - read sphinx ドキュメント</title>
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -172,21 +172,27 @@
 <li class="toctree-l2"><a class="reference internal" href="../docutils/transform.html">Transform</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Environment</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../builder/index.html">Builder</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Environment</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="init.html">初期化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html">sphinx.project.Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html">domaindata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collector.html">EnvironmentCollector</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../builder/index.html">Builder</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../builder/html/index.html">HTMLBuilder</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../theme/index.html">Theme</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../theme/index.html">Theme</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../theme/basic.html">basicテーマ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../theme/furo.html">furo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../theme/customize.html">customize</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../theme/create.html">テーマの作成</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../extension/index.html">Extension</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../extension/index.html">Extension</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../extension/builtin/index.html">組み込み拡張</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../extension/thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../extension/thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/myst_parser.html">myst_parser</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/blockdiag.html">blockdiag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/ablog.html">ablog</a></li>
@@ -196,11 +202,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../extension/create_extension.html">拡張の作り方</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../command/index.html">Command</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../command/index.html">Command</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../command/sphinx-autobuild.html">sphinx-autobuild</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../i18n/index.html">Internationalization(i18n)</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../i18n/index.html">Internationalization(i18n)</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../i18n/workflow.html">workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../i18n/build.html">build</a></li>
 </ul>
@@ -226,7 +232,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -234,12 +240,63 @@
         <article role="main">
           <div class="tex2jax_ignore mathjax_ignore section" id="environment">
 <h1>Environment<a class="headerlink" href="#environment" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>doctree がドキュメントひとつひとつ表すのに対して、
-Enviroment にはサイト全体の情報が格納される。</p>
-<div class="section" id="sphinx-environment-buildenvironment">
-<h2>sphinx.environment.BuildEnvironment<a class="headerlink" href="#sphinx-environment-buildenvironment" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">builder.use_message_catalog</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">find_files</span></code> で翻訳する？</p>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx.environment.BuildEnvironment</span></code></p>
+<p>Enviroment にはサイト全体の情報が格納される。</p>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx.application.Sphinx.__init__</span></code> 内 <code class="docutils literal notranslate"><span class="pre">_init_env</span></code> で初期化される。
+<code class="docutils literal notranslate"><span class="pre">build/.doctree/environment.pickle</span></code> の有無で新規と更新に別れる。</p>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>field</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>all_docs</p></td>
+<td><p>おそらくdoctreeの一覧</p></td>
+</tr>
+<tr class="row-odd"><td><p>found_docs</p></td>
+<td><p>元になるファイルの一覧(rst, md...) @property: self.project.docnames</p></td>
+</tr>
+<tr class="row-even"><td><p>project</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sphinx.project.Project</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>domaindata</p></td>
+<td><p>domain の dict</p></td>
+</tr>
+<tr class="row-even"><td><p>tocs</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table></div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="init.html">初期化</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="init.html#sphinx-environment-buildenvironment">新規: sphinx.environment.BuildEnvironment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="init.html#find-files">find_files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="init.html#id2">更新: sphinx.environment.BuildEnvironment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="init.html#setup">setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">sphinx.project.Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="domaindata.html">domaindata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html#c">c</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html#changeset">changeset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html#citation">citation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html#cpp">cpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html#index">index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html#js">js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html#math">math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html#py">py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html#rst">rst</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domaindata.html#std">std</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="collector.html">EnvironmentCollector</a></li>
+</ul>
 </div>
 </div>
 
@@ -248,12 +305,12 @@ Enviroment にはサイト全体の情報が格納される。</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../builder/index.html">
+          <a class="next-page" href="init.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Builder</div>
+                <div class="title">初期化</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -282,27 +339,8 @@ Enviroment にはサイト全体の情報が格納される。</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            コンテンツ
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Environment</a><ul>
-<li><a class="reference internal" href="#sphinx-environment-buildenvironment">sphinx.environment.BuildEnvironment</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

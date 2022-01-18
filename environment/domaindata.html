@@ -2,10 +2,10 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="組み込み拡張" href="builtin/index.html" /><link rel="prev" title="テーマの作成" href="../theme/create.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="EnvironmentCollector" href="collector.html" /><link rel="prev" title="sphinx.project.Project" href="project.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>Extension - read sphinx ドキュメント</title>
+        <title>domaindata - read sphinx ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -172,11 +172,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../docutils/transform.html">Transform</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../environment/index.html">Environment</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../environment/init.html">初期化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment/project.html">sphinx.project.Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment/domaindata.html">domaindata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../environment/collector.html">EnvironmentCollector</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Environment</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="init.html">初期化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html">sphinx.project.Project</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">domaindata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collector.html">EnvironmentCollector</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../builder/index.html">Builder</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -190,16 +190,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../theme/create.html">テーマの作成</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Extension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="builtin/index.html">組み込み拡張</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/myst_parser.html">myst_parser</a></li>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/blockdiag.html">blockdiag</a></li>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/ablog.html">ablog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/nbsphinx.html">nbsphinx</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../extension/index.html">Extension</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../extension/builtin/index.html">組み込み拡張</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../extension/thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/myst_parser.html">myst_parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/blockdiag.html">blockdiag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/ablog.html">ablog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/nbsphinx.html">nbsphinx</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="create_extension.html">拡張の作り方</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extension/create_extension.html">拡張の作り方</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../command/index.html">Command</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -232,54 +232,43 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="tex2jax_ignore mathjax_ignore section" id="extension">
-<h1>Extension<a class="headerlink" href="#extension" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>sphinx 拡張は、 setup 関数をもつ python モジュール。</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://tk0miya.hatenablog.com/entry/20111206/p1">(6日目) Sphinx 拡張の紹介</a></p></li>
-</ul>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="builtin/index.html">組み込み拡張</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="builtin/index.html#graphviz">graphviz</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="builtin/index.html#dot">dot 言語</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="thirdparty/index.html">外部拡張</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="thirdparty/myst_parser.html">myst_parser</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/myst_parser.html#mystparser">MystParser</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="thirdparty/myst_parser.html#docutils-readers-reader"><code class="docutils literal notranslate"><span class="pre">docutils.readers.Reader</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="thirdparty/myst_parser.html#myst-parser-sphinx-parser-mystparser"><code class="docutils literal notranslate"><span class="pre">myst_parser.sphinx_parser.MystParser</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="thirdparty/myst_parser.html#markdown-it-py-parser">markdown-it-py parser</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="thirdparty/myst_parser.html#myst-parser-sphinx-renderer-sphinxrenderer"><code class="docutils literal notranslate"><span class="pre">myst_parser.sphinx_renderer.SphinxRenderer</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="thirdparty/blockdiag.html">blockdiag</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thirdparty/ablog.html">ablog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thirdparty/nbsphinx.html">nbsphinx</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/nbsphinx.html#jupyter-の参考">jupyter の参考</a></li>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/nbsphinx.html#実行例">実行例</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="create_extension.html">拡張の作り方</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="create_extension.html#setup">setup</a></li>
-</ul>
-</li>
-</ul>
+          <div class="tex2jax_ignore mathjax_ignore section" id="domaindata">
+<h1>domaindata<a class="headerlink" href="#domaindata" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="c">
+<h2>c<a class="headerlink" href="#c" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="changeset">
+<h2>changeset<a class="headerlink" href="#changeset" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="citation">
+<h2>citation<a class="headerlink" href="#citation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="cpp">
+<h2>cpp<a class="headerlink" href="#cpp" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="index">
+<h2>index<a class="headerlink" href="#index" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="js">
+<h2>js<a class="headerlink" href="#js" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="math">
+<h2>math<a class="headerlink" href="#math" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="py">
+<h2>py<a class="headerlink" href="#py" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="rst">
+<h2>rst<a class="headerlink" href="#rst" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="std">
+<h2>std<a class="headerlink" href="#std" title="このヘッドラインへのパーマリンク">¶</a></h2>
 </div>
 </div>
 
@@ -288,23 +277,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="builtin/index.html">
+          <a class="next-page" href="collector.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">組み込み拡張</div>
+                <div class="title">EnvironmentCollector</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../theme/create.html">
+          <a class="prev-page" href="project.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">テーマの作成</div>
+                <div class="title">sphinx.project.Project</div>
                 
               </div>
             </a>
@@ -314,7 +303,7 @@
               Copyright &#169; 2021, ousttrue |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/extension/index.md.txt"
+            | <a class="muted-link" href="../_sources/environment/domaindata.md.txt"
                rel="nofollow">
               ソースコードを表示
             </a>
@@ -322,8 +311,36 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            コンテンツ
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">domaindata</a><ul>
+<li><a class="reference internal" href="#c">c</a></li>
+<li><a class="reference internal" href="#changeset">changeset</a></li>
+<li><a class="reference internal" href="#citation">citation</a></li>
+<li><a class="reference internal" href="#cpp">cpp</a></li>
+<li><a class="reference internal" href="#index">index</a></li>
+<li><a class="reference internal" href="#js">js</a></li>
+<li><a class="reference internal" href="#math">math</a></li>
+<li><a class="reference internal" href="#py">py</a></li>
+<li><a class="reference internal" href="#rst">rst</a></li>
+<li><a class="reference internal" href="#std">std</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
