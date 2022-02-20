@@ -6,14 +6,9 @@
         {
             "label": "sphinx-autobuild",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/Scripts/sphinx-autobuild src build --open-browser --port=0",
+            "command": "sphinx-autobuild src build --open-browser --port=0",
             "problemMatcher": [],
             "isBackground": true,
-            "options": {
-                "env": {
-                    "PATH": "${workspaceFolder}/.venv/Scripts:${env:PATH}"
-                }
-            }
         },
         {
             "label": "rebuild",
