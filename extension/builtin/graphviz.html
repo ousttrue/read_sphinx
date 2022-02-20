@@ -2,10 +2,10 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="myst_parser" href="myst_parser.html" /><link rel="prev" title="inheritance_diagram" href="../builtin/inheritance_diagram.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="inheritance_diagram" href="inheritance_diagram.html" /><link rel="prev" title="autodoc" href="autodoc.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>外部拡張 - read sphinx ドキュメント</title>
+        <title>graphviz - read sphinx ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -192,17 +192,17 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Extension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../builtin/index.html">組み込み拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../builtin/autodoc.html">autodoc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../builtin/graphviz.html">graphviz</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../builtin/inheritance_diagram.html">inheritance_diagram</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">組み込み拡張</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="autodoc.html">autodoc</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">graphviz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inheritance_diagram.html">inheritance_diagram</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">外部拡張</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="myst_parser.html">myst_parser</a></li>
-<li class="toctree-l3"><a class="reference internal" href="blockdiag.html">blockdiag</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ablog.html">ablog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nbsphinx.html">nbsphinx</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../thirdparty/myst_parser.html">myst_parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thirdparty/blockdiag.html">blockdiag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thirdparty/ablog.html">ablog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thirdparty/nbsphinx.html">nbsphinx</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../create_extension.html">拡張の作り方</a></li>
@@ -238,35 +238,42 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>外部拡張<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="myst_parser.html">myst_parser</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="myst_parser.html#mystparser">MystParser</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="myst_parser.html#docutils-readers-reader"><code class="docutils literal notranslate"><span class="pre">docutils.readers.Reader</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="myst_parser.html#myst-parser-sphinx-parser-mystparser"><code class="docutils literal notranslate"><span class="pre">myst_parser.sphinx_parser.MystParser</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="myst_parser.html#markdown-it-py-parser">markdown-it-py parser</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="myst_parser.html#myst-parser-sphinx-renderer-sphinxrenderer"><code class="docutils literal notranslate"><span class="pre">myst_parser.sphinx_renderer.SphinxRenderer</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="blockdiag.html">blockdiag</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ablog.html">ablog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nbsphinx.html">nbsphinx</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nbsphinx.html#jupyter-の参考">jupyter の参考</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nbsphinx.html#実行例">実行例</a></li>
-</ul>
-</li>
+          <div class="tex2jax_ignore mathjax_ignore section" id="graphviz">
+<h1>graphviz<a class="headerlink" href="#graphviz" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>dot.exe に PATH を通す必要あり</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">conf.py</span></code></p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">'nt'</span><span class="p">:</span>
+    <span class="c1"># windows で dot.exe にパスを通してやる例</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'PATH'</span><span class="p">]</span><span class="si">}</span><span class="s2">;C:</span><span class="se">\\</span><span class="s2">Program Files</span><span class="se">\\</span><span class="s2">Graphviz</span><span class="se">\\</span><span class="s2">bin"</span>
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'sphinx.ext.graphviz'</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="c1"># default では png 画像が生成される</span>
+<span class="n">graphviz_output_format</span> <span class="o">=</span> <span class="s1">'svg'</span>    
+</pre></div>
+</div>
+<div class="graphviz"><object class="graphviz" data="../../_images/graphviz-c95ac936cf88733fe0c2ad1b91ed3aa6af7b54d9.svg" type="image/svg+xml">
+<p class="warning">digraph G {
+rankdir="BT"
+B-&gt;A
+C-&gt;A
+}</p></object></div>
+<div class="section" id="dot">
+<h2>dot 言語<a class="headerlink" href="#dot" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.johf.com/log/20121228a.html">DOT 言語でグラフの方向を変えるには</a></p></li>
+<li><p><a class="reference external" href="https://qiita.com/kenichi-hamaguchi/items/c0b947ed15725bfdfb5a">クラス図を自動生成する</a></p></li>
 </ul>
 </div>
 </div>
@@ -276,23 +283,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="myst_parser.html">
+          <a class="next-page" href="inheritance_diagram.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">myst_parser</div>
+                <div class="title">inheritance_diagram</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../builtin/inheritance_diagram.html">
+          <a class="prev-page" href="autodoc.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">inheritance_diagram</div>
+                <div class="title">autodoc</div>
                 
               </div>
             </a>
@@ -302,7 +309,7 @@
               Copyright &#169; 2021, ousttrue |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/extension/thirdparty/index.md.txt"
+            | <a class="muted-link" href="../../_sources/extension/builtin/graphviz.md.txt"
                rel="nofollow">
               ソースコードを表示
             </a>
@@ -310,8 +317,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            コンテンツ
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">graphviz</a><ul>
+<li><a class="reference internal" href="#dot">dot 言語</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -166,6 +166,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration/index.html">conf.py</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../docutils/index.html">Docutils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../docutils/nodes.html">nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docutils/directive.html">directive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docutils/roll.html">roll</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docutils/doctree.html">doctree</a></li>
@@ -193,6 +194,8 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Extension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">組み込み拡張</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="autodoc.html">autodoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graphviz.html">graphviz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inheritance_diagram.html">inheritance_diagram</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -235,7 +238,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -252,42 +255,15 @@
 <li class="toctree-l2"><a class="reference internal" href="autodoc.html#docstring-style">docstring の style</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="graphviz.html">graphviz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="graphviz.html#dot">dot 言語</a></li>
 </ul>
-</div>
-<div class="section" id="graphviz">
-<h2>graphviz<a class="headerlink" href="#graphviz" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>dot.exe に PATH を通す必要あり</p>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">conf.py</span></code></p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">'nt'</span><span class="p">:</span>
-    <span class="c1"># windows で dot.exe にパスを通してやる例</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'PATH'</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'PATH'</span><span class="p">]</span><span class="si">}</span><span class="s2">;C:</span><span class="se">\\</span><span class="s2">Program Files</span><span class="se">\\</span><span class="s2">Graphviz</span><span class="se">\\</span><span class="s2">bin"</span>
-
-<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'sphinx.ext.graphviz'</span><span class="p">,</span>
-<span class="p">]</span>
-<span class="n">graphviz_output_format</span> <span class="o">=</span> <span class="s1">'svg'</span>    
-</pre></div>
-</div>
-<div class="graphviz"><object class="graphviz" data="../../_images/graphviz-3f4a2258aed0cecfdc5cf3efacd2b558cfdd79cf.svg" type="image/svg+xml">
-<p class="warning">digraph G {
-rankdir="BT"
-B-&gt;A
-C-&gt;A
-}</p></object></div>
-<div class="section" id="dot">
-<h3>dot 言語<a class="headerlink" href="#dot" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.johf.com/log/20121228a.html">DOT 言語でグラフの方向を変えるには</a></p></li>
-<li><p><a class="reference external" href="https://qiita.com/kenichi-hamaguchi/items/c0b947ed15725bfdfb5a">クラス図を自動生成する</a></p></li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance_diagram.html">inheritance_diagram</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="inheritance_diagram.html#apidoc">apidoc と連携する例</a></li>
 </ul>
-</div>
-</div>
-<div class="section" id="autodoc">
-<h2>autodoc<a class="headerlink" href="#autodoc" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</li>
+</ul>
 </div>
 </div>
 
@@ -330,31 +306,8 @@ C-&gt;A
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            コンテンツ
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">組み込み拡張</a><ul>
-<li><a class="reference internal" href="#graphviz">graphviz</a><ul>
-<li><a class="reference internal" href="#dot">dot 言語</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#autodoc">autodoc</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

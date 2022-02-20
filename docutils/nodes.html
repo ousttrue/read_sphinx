@@ -2,10 +2,10 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="Command" href="../command/index.html" /><link rel="prev" title="nbsphinx" href="thirdparty/nbsphinx.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="directive" href="directive.html" /><link rel="prev" title="Docutils" href="index.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>拡張の作り方 - read sphinx ドキュメント</title>
+        <title>nodes - read sphinx ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -165,12 +165,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">conf.py</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../docutils/index.html">Docutils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../docutils/nodes.html">nodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docutils/directive.html">directive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docutils/roll.html">roll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docutils/doctree.html">doctree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docutils/transform.html">Transform</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Docutils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directive.html">directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roll.html">roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doctree.html">doctree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform.html">Transform</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../environment/index.html">Environment</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -191,21 +191,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../theme/create.html">テーマの作成</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Extension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="builtin/index.html">組み込み拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="builtin/autodoc.html">autodoc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="builtin/graphviz.html">graphviz</a></li>
-<li class="toctree-l3"><a class="reference internal" href="builtin/inheritance_diagram.html">inheritance_diagram</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../extension/index.html">Extension</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../extension/builtin/index.html">組み込み拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extension/builtin/autodoc.html">autodoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extension/builtin/graphviz.html">graphviz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extension/builtin/inheritance_diagram.html">inheritance_diagram</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/myst_parser.html">myst_parser</a></li>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/blockdiag.html">blockdiag</a></li>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/ablog.html">ablog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="thirdparty/nbsphinx.html">nbsphinx</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../extension/thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/myst_parser.html">myst_parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/blockdiag.html">blockdiag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/ablog.html">ablog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/nbsphinx.html">nbsphinx</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">拡張の作り方</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extension/create_extension.html">拡張の作り方</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../command/index.html">Command</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,48 +238,16 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>拡張の作り方<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="section" id="setup">
-<h2>setup<a class="headerlink" href="#setup" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>setup は 引数 <code class="docutils literal notranslate"><span class="pre">app:</span> <span class="pre">sphinx.application.Sphinx</span></code> をとる。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">sphinx</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">Sphinx</span><span class="p">):</span>
-    <span class="c1"># ノードを登録する</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">deleted</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="p">(</span><span class="n">visit_deleted</span><span class="p">,</span> <span class="n">depart_deleted</span><span class="p">))</span>
-
-    <span class="c1"># ロール</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_role</span><span class="p">(</span><span class="s1">'del'</span><span class="p">,</span> <span class="n">deleted_role</span><span class="p">)</span>
-
-    <span class="c1"># Directiveを登録する</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s2">"helloworld"</span><span class="p">,</span> <span class="n">HelloWorld</span><span class="p">)</span>
-
-    <span class="c1"># conf を追加する</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="s1">'graphviz_dot'</span><span class="p">,</span> <span class="s1">'dot'</span><span class="p">,</span> <span class="s1">'html'</span><span class="p">)</span>
-
-    <span class="c1"># custom event</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_event</span><span class="p">(</span><span class="s1">'todo-defined'</span><span class="p">)</span>
-    <span class="c1"># event handler</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'env-updated'</span><span class="p">,</span> <span class="n">create_nojekyll_and_cname</span><span class="p">)</span>
-
-    <span class="c1"># transform</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_transform</span><span class="p">(</span><span class="n">GlossaryDecorator</span><span class="p">)</span>
-
-    <span class="c1"># 拡張のメタデータを返す</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'0.1'</span><span class="p">,</span>
-        <span class="s1">'parallel_read_safe'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">'parallel_write_safe'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="p">}</span>
-</pre></div>
-</div>
-<p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/development/tutorials/index.html">https://www.sphinx-doc.org/ja/master/development/tutorials/index.html</a></p>
-</div>
+          <div class="tex2jax_ignore mathjax_ignore section" id="nodes">
+<h1>nodes<a class="headerlink" href="#nodes" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ソースが大きすぎて、 <code class="docutils literal notranslate"><span class="pre">pyright</span></code> が解析を打ち切るのでインテリセンスが効かないぽい。</p>
+<p><img alt="nodes" src="../_images/nodes.jpg"/></p>
 </div>
 
         </article>
@@ -287,23 +255,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../command/index.html">
+          <a class="next-page" href="directive.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Command</div>
+                <div class="title">directive</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="thirdparty/nbsphinx.html">
+          <a class="prev-page" href="index.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">nbsphinx</div>
+                <div class="title">Docutils</div>
                 
               </div>
             </a>
@@ -313,7 +281,7 @@
               Copyright &#169; 2021, ousttrue |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/extension/create_extension.md.txt"
+            | <a class="muted-link" href="../_sources/docutils/nodes.md.txt"
                rel="nofollow">
               ソースコードを表示
             </a>
@@ -321,27 +289,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            コンテンツ
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">拡張の作り方</a><ul>
-<li><a class="reference internal" href="#setup">setup</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

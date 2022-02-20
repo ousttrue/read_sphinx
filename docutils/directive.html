@@ -2,7 +2,7 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="roll" href="roll.html" /><link rel="prev" title="Docutils" href="index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="検索" href="../search.html" /><link rel="next" title="roll" href="roll.html" /><link rel="prev" title="nodes" href="nodes.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
         <title>directive - read sphinx ドキュメント</title>
@@ -166,6 +166,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">conf.py</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Docutils</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="nodes.html">nodes</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">directive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="roll.html">roll</a></li>
 <li class="toctree-l2"><a class="reference internal" href="doctree.html">doctree</a></li>
@@ -193,6 +194,8 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../extension/index.html">Extension</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../extension/builtin/index.html">組み込み拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../extension/builtin/autodoc.html">autodoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extension/builtin/graphviz.html">graphviz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extension/builtin/inheritance_diagram.html">inheritance_diagram</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../extension/thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -243,6 +246,31 @@
         <article role="main">
           <div class="tex2jax_ignore mathjax_ignore section" id="directive">
 <h1>directive<a class="headerlink" href="#directive" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/development/tutorials/helloworld.html">https://www.sphinx-doc.org/ja/master/development/tutorials/helloworld.html</a></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docutils.sourceforge.io/docs/howto/rst-directives.html">https://docutils.sourceforge.io/docs/howto/rst-directives.html</a></p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HelloWorld</span><span class="p">(</span><span class="n">Directive</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">paragraph_node</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">paragraph</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">'Hello World!'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">paragraph_node</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>.. helloworld::</p>
+<p>Hello World!</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tk0miya.hatenablog.com/entry/2014/08/11/003957">Sphinx ではどのようにラベルとキャプションを結びつけているのか</a></p></li>
+</ul>
+<ul class="simple">
+<li><p>Directive では独自ノードを作り</p></li>
+<li><p>visitor 関数で独自ノードを画像に変換する</p></li>
+</ul>
+<p>しかし、キャプションをうまく扱うためには次のようなやり方をするとよいでしょう。</p>
+<ul class="simple">
+<li><p>Directive では figure ノード、caption ノードと画像を表す独自ノードを作る</p></li>
+<li><p>visitor 関数で独自ノードを画像に変換する</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx.ext.graphviz</span></code></p>
 </div>
 
         </article>
@@ -259,14 +287,14 @@
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="nodes.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Docutils</div>
+                <div class="title">nodes</div>
                 
               </div>
             </a>

@@ -166,6 +166,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configuration/index.html">conf.py</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="docutils/index.html">Docutils</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="docutils/nodes.html">nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docutils/directive.html">directive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docutils/roll.html">roll</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docutils/doctree.html">doctree</a></li>
@@ -193,6 +194,8 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="extension/index.html">Extension</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="extension/builtin/index.html">組み込み拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="extension/builtin/autodoc.html">autodoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extension/builtin/graphviz.html">graphviz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extension/builtin/inheritance_diagram.html">inheritance_diagram</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="extension/thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -253,148 +256,58 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="debug.html">デバッグ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="debug.html#vscode">vscode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="debug.html#launch-json">launch.json</a></li>
-<li class="toctree-l3"><a class="reference internal" href="debug.html#problemmatcher">problemMatcher</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#vscode">vscode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debug.html#venv">venv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debug.html#mod">mod</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="debug.html#phase">phase</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#mod">mod</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="phase/index.html">BuildPhase</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="phase/init.html">INITIALIZATION</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="phase/init.html#sphinx-application-sphinx">sphinx.application.Sphinx</a></li>
-<li class="toctree-l3"><a class="reference internal" href="phase/init.html#extension-import-setup">extension の import と setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="phase/init.html#sphinx-application-sphinx-init-env">sphinx.application.Sphinx._init_env</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="phase/index.html#reading">Reading</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="phase/read.html">READING</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="phase/index.html#check-resolve-writing">Check, Resolve, Writing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="phase/consistency_check.html">CONSISTENCY_CHECK</a></li>
-<li class="toctree-l3"><a class="reference internal" href="phase/resolve.html">RESOLVING</a></li>
-<li class="toctree-l3"><a class="reference internal" href="phase/write.html">WRITING</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="phase/init.html">INITIALIZATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phase/index.html#reading">Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phase/index.html#check-resolve-writing">Check, Resolve, Writing</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configuration/index.html">conf.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docutils/index.html">Docutils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docutils/nodes.html">nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docutils/directive.html">directive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docutils/roll.html">roll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docutils/doctree.html">doctree</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="docutils/doctree.html#sphinx-addnodes-document">sphinx.addnodes.document</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docutils/doctree.html#docutils-nodes-document">docutils.nodes.document</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="docutils/transform.html">Transform</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="docutils/transform.html#app-registry-transforms">app.registry.transforms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docutils/transform.html#reading">reading</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="docutils/doctree.html">doctree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docutils/transform.html">Transform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docutils/index.html#id1">参考</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="environment/index.html">Environment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="environment/init.html">初期化</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="environment/init.html#sphinx-environment-buildenvironment">新規: sphinx.environment.BuildEnvironment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment/init.html#id2">更新: sphinx.environment.BuildEnvironment</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="environment/init.html">初期化</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environment/project.html">sphinx.project.Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="environment/domaindata.html">domaindata</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="environment/domaindata.html#c">c</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment/domaindata.html#changeset">changeset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment/domaindata.html#citation">citation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment/domaindata.html#cpp">cpp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment/domaindata.html#index">index</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment/domaindata.html#js">js</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment/domaindata.html#math">math</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment/domaindata.html#py">py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment/domaindata.html#rst">rst</a></li>
-<li class="toctree-l3"><a class="reference internal" href="environment/domaindata.html#std">std</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="environment/domaindata.html">domaindata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environment/collector.html">EnvironmentCollector</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="builder/index.html">Builder</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="builder/html/index.html">HTMLBuilder</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="builder/html/index.html#id1">動作</a></li>
-<li class="toctree-l3"><a class="reference internal" href="builder/html/index.html#sphinx-jinja2glue-builtintemplateloader">sphinx.jinja2glue.BuiltinTemplateLoader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="builder/html/index.html#static">static 要素のコピー動作は？</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="builder/html/index.html">HTMLBuilder</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="theme/index.html">Theme</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="theme/basic.html">basicテーマ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="theme/basic.html#id1">構成</a></li>
-<li class="toctree-l3"><a class="reference internal" href="theme/basic.html#id2">basic を継承するテーマ</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="theme/index.html#id1">その他のテーマ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="theme/furo.html">furo</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="theme/index.html#id2">テーマのカスタマイズ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="theme/customize.html">customize</a></li>
-<li class="toctree-l3"><a class="reference internal" href="theme/create.html">テーマの作成</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="theme/basic.html">basicテーマ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme/index.html#id1">その他のテーマ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme/index.html#id2">テーマのカスタマイズ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="extension/index.html">Extension</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="extension/builtin/index.html">組み込み拡張</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="extension/builtin/autodoc.html">autodoc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="extension/builtin/index.html#graphviz">graphviz</a></li>
-<li class="toctree-l3"><a class="reference internal" href="extension/builtin/index.html#autodoc">autodoc</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="extension/thirdparty/index.html">外部拡張</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="extension/thirdparty/myst_parser.html">myst_parser</a></li>
-<li class="toctree-l3"><a class="reference internal" href="extension/thirdparty/blockdiag.html">blockdiag</a></li>
-<li class="toctree-l3"><a class="reference internal" href="extension/thirdparty/ablog.html">ablog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="extension/thirdparty/nbsphinx.html">nbsphinx</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="extension/create_extension.html">拡張の作り方</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="extension/create_extension.html#setup">setup</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="extension/builtin/index.html">組み込み拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extension/thirdparty/index.html">外部拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extension/create_extension.html">拡張の作り方</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="command/index.html">Command</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="command/index.html#builtin">builtin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="command/index.html#sphinx-quickstart">sphinx-quickstart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="command/index.html#sphinx-build">sphinx-build</a></li>
-<li class="toctree-l3"><a class="reference internal" href="command/index.html#sphinx-apidoc">sphinx-apidoc</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="command/index.html#id1">外部コマンド</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="command/sphinx-autobuild.html">sphinx-autobuild</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="command/index.html#builtin">builtin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="command/index.html#id1">外部コマンド</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="i18n/index.html">Internationalization(i18n)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="i18n/workflow.html">workflow</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="i18n/workflow.html#pot-file">pot file の作成</a></li>
-<li class="toctree-l3"><a class="reference internal" href="i18n/workflow.html#po-file">po file の作成</a></li>
-<li class="toctree-l3"><a class="reference internal" href="i18n/workflow.html#po">po の翻訳作業</a></li>
-<li class="toctree-l3"><a class="reference internal" href="i18n/workflow.html#build">build</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="i18n/build.html">build</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="i18n/build.html#sphinx-transforms-i18n">sphinx.transforms.i18n</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="i18n/workflow.html">workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n/build.html">build</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="language_server/index.html">Language Server</a><ul>

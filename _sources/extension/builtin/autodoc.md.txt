@@ -12,7 +12,7 @@ python モジュールから docstring を抜き出してドキュメント化�
 
 ```py
 # todo
-sys.path.append(PATH_TO_IMPORT_MODULE) # sphinx が import して docstring を生成するのに必要かも(対象が sys.path に含まれない場合)
+sys.path.append(PATH_TO_IMPORT_MODULE) # sphinx が import して docstring を生成するのに必要(対象が sys.path に含まれない場合)
 
 extensinos = [
     'sphinx.ext.autodoc',
@@ -20,7 +20,7 @@ extensinos = [
 ]
 # 設定
 autodoc_default_options = {
-    'imported-members': True, # __all__ 無しでも出るが余計なものも出る。
+    'member-order': 'bysource',
 }
 ```
 
