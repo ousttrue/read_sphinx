@@ -2,6 +2,10 @@
 
 <https://www.sphinx-doc.org/ja/master/usage/extensions/index.html>
 
+```{toctree}
+autodoc
+```
+
 ## graphviz
 
 
@@ -33,3 +37,6 @@ C->A
 
 * [DOT 言語でグラフの方向を変えるには](https://www.johf.com/log/20121228a.html)
 * [クラス図を自動生成する](https://qiita.com/kenichi-hamaguchi/items/c0b947ed15725bfdfb5a)
+
+## autodoc
+

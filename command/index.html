@@ -191,8 +191,11 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../extension/index.html">Extension</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../extension/builtin/index.html">組み込み拡張</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../extension/thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../extension/builtin/index.html">組み込み拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extension/builtin/autodoc.html">autodoc</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../extension/thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/myst_parser.html">myst_parser</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/blockdiag.html">blockdiag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../extension/thirdparty/ablog.html">ablog</a></li>
@@ -202,11 +205,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../extension/create_extension.html">拡張の作り方</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Command</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Command</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="sphinx-autobuild.html">sphinx-autobuild</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../i18n/index.html">Internationalization(i18n)</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../i18n/index.html">Internationalization(i18n)</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../i18n/workflow.html">workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../i18n/build.html">build</a></li>
 </ul>
@@ -245,6 +248,61 @@
 <div class="section" id="sphinx-quickstart">
 <h3>sphinx-quickstart<a class="headerlink" href="#sphinx-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>ひな型になる conf.py の生成など。</p>
+<p>index.rst</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="cp">.. tmp documentation master file, created by</span>
+<span class="cp">   sphinx-quickstart on Sat Feb 19 18:06:59 2022.</span>
+<span class="cp">   You can adapt this file completely to your liking, but it should at least</span>
+<span class="cp">   contain the root `toctree` directive.</span>
+
+<span class="gh">Welcome to tmp's documentation!</span>
+<span class="gh">===============================</span>
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> Contents:
+
+
+
+<span class="gh">Indices and tables</span>
+<span class="gh">==================</span>
+
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`genindex`</span>
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`modindex`</span>
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`search`</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Sphinxはいくつかのドキュメント名を、自分で使用するために予約済み</p>
+</div></blockquote>
+<p><a class="reference external" href="https://www.sphinx-doc.org/ja/master/usage/restructuredtext/directives.html?highlight=modindex#special-names">https://www.sphinx-doc.org/ja/master/usage/restructuredtext/directives.html?highlight=modindex#special-names</a></p>
+<ul class="simple">
+<li><p>genindex</p></li>
+</ul>
+<blockquote>
+<div><p>index ディレクティブ</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>modindex</p></li>
+</ul>
+<p>autodoc の一覧を表示。</p>
+<blockquote>
+<div><p>モジュールインデックスには rst:dir:module ディレクティブで指定されたエントリーが含まれます</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>search</p></li>
+</ul>
+<p>conf.py</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="s1">'tmp'</span>
+<span class="n">copyright</span> <span class="o">=</span> <span class="s1">'2022, me'</span>
+<span class="n">author</span> <span class="o">=</span> <span class="s1">'me'</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">]</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_templates'</span><span class="p">]</span>
+<span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_build'</span><span class="p">,</span> <span class="s1">'Thumbs.db'</span><span class="p">,</span> <span class="s1">'.DS_Store'</span><span class="p">]</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">'alabaster'</span>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_static'</span><span class="p">]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="sphinx-build">
 <h3>sphinx-build<a class="headerlink" href="#sphinx-build" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -252,10 +310,23 @@
 </div>
 <div class="section" id="sphinx-apidoc">
 <h3>sphinx-apidoc<a class="headerlink" href="#sphinx-apidoc" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">python</span></code> のソースからAPIドキュメントになる <code class="docutils literal notranslate"><span class="pre">rst</span></code> を生成する。</p>
+<p><a class="reference internal" href="../extension/builtin/autodoc.html"><span class="doc">autodoc</span></a> の記事を自動生成するコマンド。
+<code class="docutils literal notranslate"><span class="pre">python</span></code> のソースからAPIドキュメントになる <code class="docutils literal notranslate"><span class="pre">rst</span></code> を生成する。</p>
+<p>例</p>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx-autodoc</span> <span class="pre">-o</span> <span class="pre">docs/autodoc</span> <span class="pre">src/module_path</span> <span class="pre">-f</span> <span class="pre">--separate</span></code></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-F</span></code>: conf.py, index.rst なども生成する</p></li>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html">https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html</a></p></li>
+<li><p><a class="reference external" href="https://qiita.com/satamame/items/65abd04e74b341ed1e80">reST を書かずに autodoc だけで Sphinx する</a></p></li>
+<li><p><a class="reference external" href="https://ymd_h.gitlab.io/ymd_blog/posts/cython_sphinx_api/">sphinx で cython モジュールのapiを自動生成</a></p></li>
 </ul>
+<div class="section" id="template">
+<h4>template<a class="headerlink" href="#template" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/29385564/customize-templates-for-sphinx-apidoc">https://stackoverflow.com/questions/29385564/customize-templates-for-sphinx-apidoc</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/59307596/how-to-add-inheritance-diagram-to-all-modules-in-sphinx">https://stackoverflow.com/questions/59307596/how-to-add-inheritance-diagram-to-all-modules-in-sphinx</a></p></li>
+</ul>
+<p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc">https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc</a></p>
+</div>
 </div>
 </div>
 <div class="section" id="id1">
@@ -323,7 +394,10 @@
 <li><a class="reference internal" href="#builtin">builtin</a><ul>
 <li><a class="reference internal" href="#sphinx-quickstart">sphinx-quickstart</a></li>
 <li><a class="reference internal" href="#sphinx-build">sphinx-build</a></li>
-<li><a class="reference internal" href="#sphinx-apidoc">sphinx-apidoc</a></li>
+<li><a class="reference internal" href="#sphinx-apidoc">sphinx-apidoc</a><ul>
+<li><a class="reference internal" href="#template">template</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#id1">外部コマンド</a></li>

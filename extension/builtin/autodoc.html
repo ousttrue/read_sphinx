@@ -2,10 +2,10 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="ablog" href="ablog.html" /><link rel="prev" title="myst_parser" href="myst_parser.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="外部拡張" href="../thirdparty/index.html" /><link rel="prev" title="組み込み拡張" href="index.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>blockdiag - read sphinx ドキュメント</title>
+        <title>autodoc - read sphinx ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -191,15 +191,15 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Extension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../builtin/index.html">組み込み拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../builtin/autodoc.html">autodoc</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">組み込み拡張</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">autodoc</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">外部拡張</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="myst_parser.html">myst_parser</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">blockdiag</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ablog.html">ablog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nbsphinx.html">nbsphinx</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../thirdparty/myst_parser.html">myst_parser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thirdparty/blockdiag.html">blockdiag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thirdparty/ablog.html">ablog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../thirdparty/nbsphinx.html">nbsphinx</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../create_extension.html">拡張の作り方</a></li>
@@ -235,79 +235,54 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="tex2jax_ignore mathjax_ignore section" id="blockdiag">
-<h1>blockdiag<a class="headerlink" href="#blockdiag" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="align-default"><svg height="120" viewbox="0 0 448 120" width="448" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
-<defs id="defs_block">
-<filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
-<fegaussianblur id="feGaussianBlur3780" inkspace:collect="always" stddeviation="4.2"></fegaussianblur>
-</filter>
-</defs>
-<title>blockdiag</title>
-<desc></desc>
-<rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="67" y="46"></rect>
-<rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="259" y="46"></rect>
-<rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="64" y="40"></rect>
-<text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textlength="6" x="128.0" y="66">A</text>
-<rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="256" y="40"></rect>
-<text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textlength="6" x="320.0" y="66">B</text>
-<path d="M 192 60 L 248 60" fill="none" stroke="rgb(0,0,0)"></path>
-<polygon fill="rgb(0,0,0)" points="255,60 248,56 248,64 255,60" stroke="rgb(0,0,0)"></polygon>
-</svg>
-</div>
+          <div class="tex2jax_ignore mathjax_ignore section" id="autodoc">
+<h1>autodoc<a class="headerlink" href="#autodoc" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>python モジュールから docstring を抜き出してドキュメント化する。
+<code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span></code> コマンド で rst を生成できる。</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/blockdiag/sphinxcontrib-blockdiag">https://github.com/blockdiag/sphinxcontrib-blockdiag</a></p>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html">https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html</a></p>
 <ul>
-<li><p><a class="reference external" href="https://github.com/blockdiag/sphinxcontrib-blockdiag/blob/master/sphinxcontrib/blockdiag.py#L299">https://github.com/blockdiag/sphinxcontrib-blockdiag/blob/master/sphinxcontrib/blockdiag.py#L299</a></p></li>
+<li><p><a class="reference external" href="https://autoapi.readthedocs.io/">https://autoapi.readthedocs.io/</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="http://blockdiag.com/ja/blockdiag/index.html">http://blockdiag.com/ja/blockdiag/index.html</a></p></li>
-<li><p><a class="reference external" href="https://blog.interstellar.co.jp/2018/09/sphinxblockdiag/">https://blog.interstellar.co.jp/2018/09/sphinxblockdiag/</a></p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sphinxcontrib-blockdiag</span> <span class="pre">sphinxcontrib-seqdiag</span> <span class="pre">sphinxcontrib-actdiag</span> <span class="pre">sphinxcontrib-nwdiag</span></code></p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'sphinxcontrib.blockdiag'</span><span class="p">,</span>
-    <span class="s1">'sphinxcontrib.seqdiag'</span><span class="p">,</span>
-    <span class="s1">'sphinxcontrib.actdiag'</span><span class="p">,</span>
-    <span class="s1">'sphinxcontrib.nwdiag'</span><span class="p">,</span>
-    <span class="s1">'sphinxcontrib.rackdiag'</span><span class="p">,</span>
-    <span class="s1">'sphinxcontrib.packetdiag'</span>
+<div class="section" id="id1">
+<h2>設定<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">conf.py</span></code> に設定が必要</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># todo</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PATH_TO_IMPORT_MODULE</span><span class="p">)</span> <span class="c1"># sphinx が import して docstring を生成するのに必要かも(対象が sys.path に含まれない場合)</span>
+
+<span class="n">extensinos</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'sphinx.ext.autodoc'</span><span class="p">,</span>
+    <span class="s1">'sphinx.ext.napoleon'</span><span class="p">,</span> <span class="c1"># docstring syle 拡張(google 書式, numpy 書式)</span>
 <span class="p">]</span>
-<span class="n">blockdiag_html_image_format</span> <span class="o">=</span> <span class="s2">"SVG"</span>
-<span class="n">seqdiag_html_image_format</span> <span class="o">=</span> <span class="s2">"SVG"</span>
-<span class="n">actdiag_html_image_format</span> <span class="o">=</span> <span class="s2">"SVG"</span>
-<span class="n">nwdiag_html_image_format</span> <span class="o">=</span> <span class="s2">"SVG"</span>
-<span class="n">rackdiag_html_image_format</span> <span class="o">=</span> <span class="s2">"SVG"</span>
-<span class="n">packetdiag_html_image_format</span> <span class="o">=</span> <span class="s2">"SVG"</span>
+<span class="c1"># 設定</span>
+<span class="n">autodoc_default_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'imported-members'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># __all__ 無しでも出るが余計なものも出る。</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">blockdiag_node</span><span class="p">,</span>
-                 <span class="n">html</span><span class="o">=</span><span class="p">(</span><span class="n">html_visit_blockdiag</span><span class="p">,</span> <span class="n">html_depart_blockdiag</span><span class="p">))</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">'blockdiag'</span><span class="p">,</span> <span class="n">Blockdiag</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="s1">'blockdiag_fontpath'</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">'html'</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="s1">'blockdiag_fontmap'</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">'html'</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="s1">'blockdiag_antialias'</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">'html'</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="s1">'blockdiag_transparency'</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">'html'</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="s1">'blockdiag_debug'</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">'html'</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="s1">'blockdiag_html_image_format'</span><span class="p">,</span> <span class="s1">'PNG'</span><span class="p">,</span> <span class="s1">'html'</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="s1">'blockdiag_tex_image_format'</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">'html'</span><span class="p">)</span>  <span class="c1"># backward compatibility for 1.3.1</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">add_config_value</span><span class="p">(</span><span class="s1">'blockdiag_latex_image_format'</span><span class="p">,</span> <span class="s1">'PNG'</span><span class="p">,</span> <span class="s1">'html'</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"builder-inited"</span><span class="p">,</span> <span class="n">on_builder_inited</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"doctree-resolved"</span><span class="p">,</span> <span class="n">on_doctree_resolved</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="s1">'version'</span><span class="p">:</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="s1">'blockdiag'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">version</span><span class="p">,</span>
-        <span class="s1">'parallel_read_safe'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">'parallel_write_safe'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="p">}</span>
-</pre></div>
+</div>
+<div class="section" id="docstring">
+<h2>docstring<a class="headerlink" href="#docstring" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">https://www.python.org/dev/peps/pep-0257/</a></p></li>
+<li><p><a class="reference external" href="https://atmarkit.itmedia.co.jp/ait/articles/1912/06/news025.html">Python入門］docstringの書き方</a></p></li>
+</ul>
+</div>
+<div class="section" id="docstring-style">
+<h2>docstring の style<a class="headerlink" href="#docstring-style" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://qiita.com/11ohina017/items/118b3b42b612e527dc1d">GoogleスタイルのPython Docstringの入門</a></p></li>
+<li><p><a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html</a></p></li>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html">https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html</a></p></li>
+</ul>
 </div>
 </div>
 
@@ -316,23 +291,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="ablog.html">
+          <a class="next-page" href="../thirdparty/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">ablog</div>
+                <div class="title">外部拡張</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="myst_parser.html">
+          <a class="prev-page" href="index.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">myst_parser</div>
+                <div class="title">組み込み拡張</div>
                 
               </div>
             </a>
@@ -342,7 +317,7 @@
               Copyright &#169; 2021, ousttrue |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/extension/thirdparty/blockdiag.md.txt"
+            | <a class="muted-link" href="../../_sources/extension/builtin/autodoc.md.txt"
                rel="nofollow">
               ソースコードを表示
             </a>
@@ -350,8 +325,29 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            コンテンツ
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">autodoc</a><ul>
+<li><a class="reference internal" href="#id1">設定</a></li>
+<li><a class="reference internal" href="#docstring">docstring</a></li>
+<li><a class="reference internal" href="#docstring-style">docstring の style</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
