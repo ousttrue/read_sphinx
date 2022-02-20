@@ -10,7 +10,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import sys
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import os
 import pathlib
@@ -20,6 +20,8 @@ HERE = pathlib.Path(__file__).absolute().parent
 if os.name == 'nt':
     os.environ['PATH'] = f"{os.environ['PATH']};C:\\Program Files\\Graphviz\\bin"
     os.environ['PATH'] = f"{os.environ['PATH']};C:\\Program Files\\Pandoc"
+
+sys.path.append(str(HERE / "_ext"))
 
 # -- Project information -----------------------------------------------------
 
@@ -34,6 +36,8 @@ author = 'ousttrue'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'helloworld',
+    #
     "myst_parser",
     'sphinx.ext.autodoc',
     'sphinxcontrib.blockdiag',

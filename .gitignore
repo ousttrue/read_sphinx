@@ -2,3 +2,4 @@
 /.venv/
 /imgui.ini
 /glfw.ini
+*.pyc

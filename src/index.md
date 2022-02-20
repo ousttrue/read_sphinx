@@ -4,7 +4,7 @@
     -   <https://github.com/sphinx-doc/sphinx/>
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 debug
 phase/index
 configuration/index

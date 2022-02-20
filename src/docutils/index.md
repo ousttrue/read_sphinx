@@ -2,7 +2,10 @@
 
 -   <https://www.python.org/dev/peps/pep-0258/>
 
+> docutils では、単体のファイルを扱う
+
 ```{toctree}
+nodes
 directive
 roll
 doctree
@@ -17,3 +20,4 @@ transform
 -   [中間ファイル \*.doctree の内容をみてSphinxがどのようにreSTをparseしているか知りたい](https://sphinx-users.jp/reverse-dict/system/doctree.html)
 -   [Inside Sphinx](https://booth.pm/ja/items/1576243)
 -   [マスタリング docutils](https://booth.pm/ja/items/1045430)
+- [ファイルを超えてリンクを貼る (domain#resolve_xref() のすゝめ)](https://tk0miya.hatenablog.com/entry/2014/07/29/122535)

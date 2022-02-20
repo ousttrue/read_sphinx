@@ -25,7 +25,13 @@ def show_doctree(node: docutils.nodes.Node, path):
     if not node.children:
         flags |= ImGui.ImGuiTreeNodeFlags_.Leaf
         flags |= ImGui.ImGuiTreeNodeFlags_.Bullet
-    if ImGui.TreeNodeEx(f'{node.tagname}###{path}', flags):
+    is_open = False
+    match node:
+        case docutils.nodes.Text():
+            is_open = ImGui.TreeNodeEx(f'{node.astext()}###{path}', flags)
+        case _:
+            is_open = ImGui.TreeNodeEx(f'{node.tagname}###{path}', flags)
+    if is_open:
         for i, child in enumerate(node.children):
             show_doctree(child, path + (i,))
         ImGui.TreePop()
