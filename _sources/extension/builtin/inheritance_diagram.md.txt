@@ -1,8 +1,9 @@
 # inheritance_diagram
 
-クラスの継承図。
+<https://www.sphinx-doc.org/en/master/usage/extensions/inheritance.html>
 
-graphviz に依存するのでそっちの設定もしておくこと。
+クラスの継承図。
+{ref}`graphviz` に依存するのでそっちの設定もしておくこと。
 
 conf.py
 
