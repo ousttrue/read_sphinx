@@ -248,9 +248,25 @@
 <h1>inheritance_diagram<a class="headerlink" href="#inheritance-diagram" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>クラスの継承図。</p>
 <p>graphviz に依存するのでそっちの設定もしておくこと。</p>
+<p>conf.py</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'sphinx.ext.autodoc'</span><span class="p">,</span>
+    <span class="s1">'sphinx.ext.napoleon'</span><span class="p">,</span>
+    <span class="s1">'sphinx.ext.graphviz'</span><span class="p">,</span>
+    <span class="s1">'sphinx.ext.inheritance_diagram'</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">autodoc_default_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'member-order'</span><span class="p">:</span> <span class="s1">'bysource'</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="section" id="apidoc">
 <h2>apidoc と連携する例<a class="headerlink" href="#apidoc" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><span class="xref std std-doc">/command/index#sphinx-apidoc</span> の template を改造する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span> <span class="pre">-t</span> <span class="pre">TEMPLATE_DIR</span></code> で指定する。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/59307596/how-to-add-inheritance-diagram-to-all-modules-in-sphinx">https://stackoverflow.com/questions/59307596/how-to-add-inheritance-diagram-to-all-modules-in-sphinx</a></p></li>
+</ul>
 </div>
 </div>
 
