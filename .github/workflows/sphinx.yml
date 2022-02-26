@@ -16,6 +16,7 @@ jobs:
       - run: sudo apt install pandoc
       - run: sudo apt install graphviz
       - run: pip install -r requirements.txt
+      - run: pip install folium
       - run: sphinx-build src build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
