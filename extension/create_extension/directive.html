@@ -2,10 +2,10 @@
 <html class="no-js" lang="ja">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="外部拡張" href="../thirdparty/index.html" /><link rel="prev" title="graphviz" href="graphviz.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="検索" href="../../search.html" /><link rel="next" title="Command" href="../../command/index.html" /><link rel="prev" title="拡張の作り方" href="index.html" />
 
     <meta name="generator" content="sphinx-4.3.2, furo 2022.01.02"/>
-        <title>inheritance_diagram - read sphinx ドキュメント</title>
+        <title>Directive - read sphinx ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -192,10 +192,10 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Extension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">組み込み拡張</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="autodoc.html">autodoc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="graphviz.html">graphviz</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">inheritance_diagram</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../builtin/index.html">組み込み拡張</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../builtin/autodoc.html">autodoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../builtin/graphviz.html">graphviz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../builtin/inheritance_diagram.html">inheritance_diagram</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../thirdparty/index.html">外部拡張</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -205,8 +205,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../thirdparty/nbsphinx.html">nbsphinx</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../create_extension/index.html">拡張の作り方</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../create_extension/directive.html">Directive</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">拡張の作り方</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Directive</a></li>
 </ul>
 </li>
 </ul>
@@ -241,37 +241,15 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="tex2jax_ignore mathjax_ignore section" id="inheritance-diagram">
-<h1>inheritance_diagram<a class="headerlink" href="#inheritance-diagram" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/inheritance.html">https://www.sphinx-doc.org/en/master/usage/extensions/inheritance.html</a></p>
-<p>クラスの継承図。
-<a class="reference internal" href="graphviz.html"><span class="doc">graphviz</span></a> に依存するのでそっちの設定もしておくこと。</p>
-<p>conf.py</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'sphinx.ext.autodoc'</span><span class="p">,</span>
-    <span class="s1">'sphinx.ext.napoleon'</span><span class="p">,</span>
-    <span class="s1">'sphinx.ext.graphviz'</span><span class="p">,</span>
-    <span class="s1">'sphinx.ext.inheritance_diagram'</span><span class="p">,</span>
-<span class="p">]</span>
-<span class="n">autodoc_default_options</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'member-order'</span><span class="p">:</span> <span class="s1">'bysource'</span><span class="p">,</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="section" id="apidoc">
-<h2>apidoc と連携する例<a class="headerlink" href="#apidoc" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><a class="reference internal" href="../../command/index.html"><span class="doc">Command</span></a> の template を改造する。</p>
-<p><code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span> <span class="pre">-t</span> <span class="pre">TEMPLATE_DIR</span></code> で指定する。</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://stackoverflow.com/questions/59307596/how-to-add-inheritance-diagram-to-all-modules-in-sphinx">https://stackoverflow.com/questions/59307596/how-to-add-inheritance-diagram-to-all-modules-in-sphinx</a></p></li>
-</ul>
-</div>
+          <div class="tex2jax_ignore mathjax_ignore section" id="directive">
+<h1>Directive<a class="headerlink" href="#directive" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference internal" href="../../docutils/directive/index.html"><span class="doc">directive</span></a></p>
 </div>
 
         </article>
@@ -279,23 +257,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../thirdparty/index.html">
+          <a class="next-page" href="../../command/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">外部拡張</div>
+                <div class="title">Command</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="graphviz.html">
+          <a class="prev-page" href="index.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">graphviz</div>
+                <div class="title">拡張の作り方</div>
                 
               </div>
             </a>
@@ -305,7 +283,7 @@
               Copyright &#169; 2021, ousttrue |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/extension/builtin/inheritance_diagram.md.txt"
+            | <a class="muted-link" href="../../_sources/extension/create_extension/directive.md.txt"
                rel="nofollow">
               ソースコードを表示
             </a>
@@ -313,27 +291,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            コンテンツ
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">inheritance_diagram</a><ul>
-<li><a class="reference internal" href="#apidoc">apidoc と連携する例</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

@@ -7,5 +7,5 @@ sphinx 拡張は、 setup 関数をもつ python モジュール。
 ```{toctree}
 builtin/index
 thirdparty/index
-create_extension
+create_extension/index
 ```

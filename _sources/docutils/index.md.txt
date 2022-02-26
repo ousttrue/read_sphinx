@@ -6,7 +6,7 @@
 
 ```{toctree}
 nodes
-directive
+directive/index
 roll
 doctree
 transform
