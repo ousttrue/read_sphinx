@@ -37,6 +37,7 @@ author = 'ousttrue'
 # ones.
 extensions = [
     'helloworld',
+    'folium_map',
     #
     "myst_parser",
     'sphinx.ext.autodoc',

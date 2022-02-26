@@ -1,5 +1,8 @@
 # 拡張の作り方
 
+- <https://www.sphinx-doc.org/ja/master/development/tutorials/index.html>
+- [Sphinxのプラグインの作り方を学ぶ](https://note.gosyujin.com/2013/10/02/sphinx-plugin/)
+
 ## setup
 
 setup は 引数 `app: sphinx.application.Sphinx` をとる。
@@ -34,4 +37,6 @@ def setup(app: sphinx.application.Sphinx):
     }
 ```
 
-<https://www.sphinx-doc.org/ja/master/development/tutorials/index.html>
+```{toctree}
+directive
+```
