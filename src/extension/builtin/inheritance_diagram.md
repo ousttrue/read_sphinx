@@ -3,7 +3,7 @@
 <https://www.sphinx-doc.org/en/master/usage/extensions/inheritance.html>
 
 クラスの継承図。
-{ref}`graphviz` に依存するのでそっちの設定もしておくこと。
+{doc}`graphviz` に依存するのでそっちの設定もしておくこと。
 
 conf.py
 
@@ -21,7 +21,7 @@ autodoc_default_options = {
 
 ## apidoc と連携する例
 
-{doc}`/command/index#sphinx-apidoc` の template を改造する。
+{doc}`/command/index` の template を改造する。
 
 `sphinx-apidoc -t TEMPLATE_DIR` で指定する。
 
