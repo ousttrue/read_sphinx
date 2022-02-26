@@ -1,8 +1,10 @@
 # directive
 
-<https://www.sphinx-doc.org/ja/master/development/tutorials/helloworld.html>
+- <https://docutils.sourceforge.io/docs/howto/rst-directives.html>
 
-* <https://docutils.sourceforge.io/docs/howto/rst-directives.html>
+## hello
+
+* <https://www.sphinx-doc.org/ja/master/development/tutorials/helloworld.html>
 
 ```py
 class HelloWorld(Directive):
@@ -24,6 +26,10 @@ class HelloWorld(Directive):
 
 * Directive では figure ノード、caption ノードと画像を表す独自ノードを作る
 * visitor 関数で独自ノードを画像に変換する
+
+## todo
+
+* <https://www.sphinx-doc.org/ja/master/development/tutorials/todo.html>
 
 ## `sphinx.ext.graphviz`
 
@@ -51,4 +57,14 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_css_file('graphviz.css')
     app.connect('build-finished', on_build_finished) # 👈 copy css
     return {'version': sphinx.__display_version__, 'parallel_read_safe': True}
+```
+
+## folium
+
+graphviz を参考に作ってみる。
+
+<https://python-visualization.github.io/folium/quickstart.html#Getting-Started>
+
+```{folium}
+:location: 45.5236, -122.6750
 ```
