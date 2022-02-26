@@ -65,6 +65,13 @@ graphviz を参考に作ってみる。
 
 <https://python-visualization.github.io/folium/quickstart.html#Getting-Started>
 
+```
+.. folium
+    :location: 45.5236, -122.6750
+    :caption: 45.5236, -122.6750
+```
+
 ```{folium}
 :location: 45.5236, -122.6750
+:caption: 45.5236, -122.6750
 ```

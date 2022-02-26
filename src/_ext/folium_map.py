@@ -17,7 +17,15 @@ class folium(nodes.General, nodes.Inline, nodes.Element):
 def render_dot_html(self: HTMLTranslator, node: folium, code: str, options: Dict,
                     prefix: str = 'folium', imgcls: Optional[str] = None, alt: Optional[str] = None,
                     filename: Optional[str] = None) -> Tuple[str, str]:
-    raise NotImplementedError()
+    import folium
+    m = folium.Map(location=node['location'])
+    f = folium.Figure()
+    f.add_child(m)
+    body = f.render()
+    assert(body)
+    import html
+    self.body.append(f'<iframe srcdoc="{html.escape(body)}"></iframe>')
+    raise nodes.SkipNode
 
 
 def html_visit_folium(self: HTMLTranslator, node: folium) -> None:
